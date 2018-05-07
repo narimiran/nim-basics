@@ -1,0 +1,356 @@
+= Basic data types
+
+
+
+== Integers
+
+As seen in the previous section, integers are numbers which are written without a fractional component and without a decimal point.
+
+For example: `32`, `-174`, `0`, `10_000_000` are all integers.
+Notice that we can use `_` as a thousands separator, to make larger numbers more readable (it is easier to see we're talking about 10 million when written like 10_000_000 than like 10000000).
+
+The expected mathematical operators -- addition (`+`), subtraction (`-`), multiplication (`*`), and division (`/`) -- work as one would expected.
+The first three operations always produce integers, while dividing two integers always gives floating point number (a number with a decimal point) as a result, even if two numbers can be divided without a remainder.
+
+Integer division (division where the fractional part is discarded) can be used with an operator `div`.
+An operator `mod` is used if one is interested in a remainder (modulus) of an integer division.
+The result of these two operations is always an integer.
+
+[source]
+.integers.nim
+----
+include::{source-dir}/integers.nim[]
+----
+<1> `echo` command will print to the screen everything that follows it separated by commas. In this case, it first prints the string ``a + b = ``, and then after it, in the same row, it prints the result of the expression `a + b`.
+
+We can compile and run the above code, and the output should be:
+[source, output]
+----
+a + b = 15
+a - b = 7
+a * b = 44
+a / b = 2.75
+a div b = 2
+a mod b = 3
+----
+
+
+
+
+== Floats
+
+Floating-point numbers, or floats for short, are an https://en.wikipedia.org/wiki/Floating-point_arithmetic[approximate representation] of real numbers.
+
+For example: `2.73`, `-3.14`, `5.0`, `4e7` are floats.
+Notice that we can use scientific notation for large floats, where number after `e` is the exponent.
+In this example, `4e7` is a notation representing `4 * 10^7`.
+
+We can also use the four basic mathematical operations between two floats.
+Operators `div` and `mod` are not defined for floats.
+
+[source]
+.floats.nim
+----
+include::{source-dir}/floats.nim[]
+----
+
+[source, output]
+----
+c + d = 9.0  <1>
+c - d = 4.5
+c * d = 15.1875
+c / d = 3.0  <1>
+----
+<1> Notice that in the addition and division examples, even though we get a number without a decimal part, the result is still of the floating type.
+
+{nbsp}
+
+The precedence of mathematical operations is as one would expect -- multiplication and division have higher priority than addition and subtraction.
+
+[source]
+----
+echo 2 + 3 * 4
+echo 24 - 8 / 4
+----
+
+[source, output]
+----
+14
+22.0
+----
+
+
+
+
+=== Converting floats and integers
+
+Mathematical operations between variables of different numerical types are not possible in Nim, and they will produce an error:
+[source]
+----
+let
+  e = 5
+  f = 23.456
+
+echo e + f   # error
+----
+
+The values of variables need to be converted to the same type.
+Conversion is straight-forward -- to convert to an integer, we use `int` function, and to convert to a float the `float` function is used.
+[source]
+----
+let
+  e = 5
+  f = 23.456
+
+echo float(e)       <1>
+echo int(f)         <2>
+
+echo float(e) + f   <3>
+echo e + int(f)     <4>
+----
+<1> Printing a `float` version of an integer `e`. (`e` remains of integer type)
+<2> Printing `int` version of a float `f`.
+<3> Both operands are floats and can be added.
+<4> Both operands are integers and can be added.
+
+[source, output]
+----
+5.0
+23
+28.456
+28
+----
+
+
+
+
+
+== Characters
+
+The `char` type is used for representing a single https://en.wikipedia.org/wiki/ASCII[ASCII] character.
+
+Chars are written between two single ticks (`'`).
+Chars can be letters, symbols, or single digits.
+Multiple digits or multiple letters produce an error.
+[source]
+----
+let
+  h = 'z'
+  i = '+'
+  j = '2'
+  k = '35' # error
+  l = 'xy' # error
+----
+
+
+
+
+== Strings
+
+Strings can be described as a series of characters. Their content is written between two double quotes (`"`).
+
+We might think of strings as words, but they can contain more than one word, some symbols, or digits.
+
+[source]
+.strings.nim
+----
+include::{source-dir}/strings.nim[]
+----
+<1> An empty string.
+<2> This is not a number (int). It inside double quotes, making it a string.
+<3> Even though this is only one character, it is not a char because it is enclosed inside of double quotes.
+
+
+
+
+
+=== Special characters
+
+If we try to print the following string:
+[source]
+----
+echo "some\nim\tips"
+----
+the result might surprise us:
+[source, output]
+----
+some
+im	ips
+----
+
+This is because there are several characters which have a special meaning.
+They are used by prepending the escape character `\` to them.
+
+* `\n` is a newline character
+* `\t` is a tab character
+* `\\` is a backslash (since one `\` is used as the escape character)
+
+If we wanted to print the above example as it was written, we have two possibilities: 
+
+* use `\\` instead of `\` to print backslashes, or
+* use raw strings which have syntax `r"..."` (putting a letter `r` immediately before the first quote), in which there are no escape characters and no special meanings -- everything is printed as it is.
+
+[source]
+----
+echo "some\\nim\\tips"
+echo r"some\nim\tips"
+----
+
+[source, output]
+----
+some\nim\tips
+some\nim\tips
+----
+
+
+
+
+=== String concatenation
+
+Strings in Nim are mutable, meaning their content can change.
+With the `add` function we can add (append) either another string or a char to an existing string.
+Two strings can be concatenated (joined together) with the operator `&`.
+
+[source]
+.stringConcat.nim
+----
+include::{source-dir}/stringConcat.nim[]
+----
+<1> If we plan to modify strings, they should be declared as `var`.
+<2> Adding another string modifies the existing string `p` in-place, changing its value.
+<3> We can also add a `char` to a string.
+<4> Concatenating two strings produces a new string, without modifying the original strings.
+
+[source, output]
+----
+p is now: abcdef
+q is now: xyz
+concat: abcdefxyz
+p is still: abcdef
+q is still: xyz
+----
+
+
+
+
+
+
+== Boolean
+
+Boolean data type can have only two values: `true` and `false`.
+Booleans are usually used in the control flow (next section), and they are often a result of relational operators.
+
+The usual naming convention for boolean variables is to write them as a simple yes/no (true/false) questions, e.g. `isEmpty`, `isFinished`, `isMoving`, etc.
+
+
+
+=== Relational operators
+
+Relational operators test the relation between two entities, which must be comparable.
+
+To compare if two values are the same, `==` (two equal signs) is used.
+Do not confuse it with `=`, which is used to assign some value to a variable.
+
+See the following example for all relational operators:
+
+[source]
+.relationalOperators.nim
+----
+include::{source-dir}/relationalOperators.nim[lines=1..11]
+----
+
+[source, output]
+----
+g is greater than h: false
+g is smaller than h: true
+g is equal to h: false
+g is not equal to h: true
+g is greater or equal to h: false
+g is smaller or equal to h: true
+----
+
+
+We can also compare characters and strings.
+
+[source]
+.relationalOperators.nim
+----
+include::{source-dir}/relationalOperators.nim[lines=13..30]
+----
+<1> All uppercase letters come before lowercase letters.
+<2> String comparison works char-by-char. First three characters are the same, and character `b` is smaller than character `z`.
+<3> String length doesn't matter for comparison if their characters are not identical.
+<4> Shorter string is smaller than the longer one.
+
+[source, output]
+----
+true
+false
+true
+true
+true
+----
+
+
+
+
+=== Logical operators
+
+Logical operators are used to test the truthiness of an expression consisting of two or more boolean operands.
+
+* logical `and` gives `true` only if both members are `true`
+* logical `or` gives `true` if there is at least one member which is `true`
+* logical `xor` gives `true` if one member is true, but the other is not 
+* logical `not` negates the truthiness of its member -- changing `true` to `false`, and vice versa (it is the only logical operator that takes just one operand)
+
+[source]
+.logicalOperators.nim
+----
+include::{source-dir}/logicalOperators.nim[]
+----
+
+[source, output]
+----
+T and T: true
+T and F: false
+F and F: false
+---
+T or T: true
+T or F: true
+F or F: false
+---
+T xor T: false
+T xor F: true
+F xor F: false
+---
+not T: false
+not F: true
+----
+
+
+Relational and logical operators can be combined together to form more complex expressions.
+
+For example: `(5 < 7) and (11+9 == 32 - 2*6)` will become `true and (20 == 20)`, which becomes `true and true`, and in the end this will give the final result of `true`.
+
+
+
+
+== Recap
+
+This was the longest chapter in this tutorial and we covered a lot of ground.
+Take your time to go trough each data type and experiment with what you can do with each of them.
+
+Now you know the basic data types and several operations on them, which should be enough to do some simple calculations in Nim.
+Test your knowledge by doing the following exercises.
+
+
+
+
+== Exercises
+
+1. Create an immutable variable containing your age (in years). Print your age in days. (1 year = 365 days)
+2. Check if your age is divisible by 3. (Hint: use `mod`)
+3. Create an immutable variable containing your height in centimeters. Print your height in inches. (1 in = 2.54 cm)
+4. A pipe has a 3/8 inch diameter. Express the diameter in centimeters.
+5. Create an immutable variable containing your first name, and another one containing your last name. Make a variable `fullName` by concatenating previous two variables. Don't forget to put a whitespace between. Print your full name.
+6. Alice earns $400 every 15 days. Bob earns $3.14 per hour and works 8 hours a day, 7 days a week. After 30 days, has Alice earned more than Bob? (Hint: use relational operators)

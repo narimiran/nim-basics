@@ -1,0 +1,248 @@
+= Containers
+
+
+
+Containers are data types which contain collection of items and allow us to access those elements.
+
+For example, grocery list is a container of items we want to buy, list of primes is a container of numbers.
+Written in pseudocode:
+[source]
+----
+groceryList = [ham, eggs, bread, apples]
+primes = [1, 2, 3, 5, 7]
+----
+
+
+
+== Arrays
+
+Arrays are simple homogenous (all members must be of the same type) containers of a known (at compile time) constant length.
+
+Array type is declared using `array[<length>, <type>]`, where `length` is a total capacity of the array (number of elements it can fit), and `type` is a type of all its elements.
+The declaration can be omitted if both length and type can be inferred from the passed elements.
+The elements of an array are enclosed inside of square brackets.
+
+[source]
+----
+var
+  a: array[3, int] = [5, 7, 9]
+  b = [5, 7, 9]         <1>
+  c = []  # error       <2>
+  d: array[7, string]   <3>
+----
+<1> If we provide the values, the length and type of array `b` are known at compile time. Although correct, there is no need to declare it like array `a`.
+<2> Neither the length nor the type of the elements can be inferred from this kind of declaration -- this produces an error.
+<3> The correct way to declare an empty array (which will be filled later) is to give its length and type, without providing the values of its elements -- array `d` can contain seven strings.
+
+
+The length of an array must be known at the compile time.
+
+[source]
+----
+let n = 5
+
+var a: array[n, char] # error <1>
+----
+<1> This produces an error because `n` is declared using `let` -- its value is not known at compile time. We can only use constants declared with `const` as a `length` parameter for an array initialization.
+
+
+
+
+
+== Sequences
+
+Sequences are containers similar to arrays, but their length doesn't have to be known at compile time, and it can change during runtime -- we declare only the type of the contained elements with `seq[<type>]`.
+The elements of a sequence are enclosed between `@[` and `]`.
+
+[source]
+----
+var
+  e1: seq[int] = @[]    <1>
+  e2 = newSeq[int]()    <2>
+  f = @["abc", "def"]   <3>
+----
+<1> The type of an empty sequence must be declared.
+<2> Empty sequences can also be created by calling `newSeq` function and providing the type parameter inside of square brackets. (A frequent error is omission of the final `()`, which must be included.)
+<3> The type of a non-empty sequence can be inferred. In this case, it is a sequence containing strings.
+
+
+We can add new elements to a sequence with the `add` function.
+The sequence must be mutable (defined with `var`), and the element we're adding must be of the same type as the elements in the sequence.
+
+[source]
+.seq.nim
+----
+include::{source-dir}/seq.nim[]
+----
+<1> Mutable type.
+<2> Adding a new element of the same type (char).
+<3> Adding another sequence containing the same type.
+
+[source, output]
+----
+@['x', 'y', 'z']
+@['1', '2', '3', 'x', 'y', 'z']
+----
+
+Trying to pass different types to the existing sequences will produce an error:
+
+[source]
+----
+var i = @[9, 8, 7]
+
+i.add(9.81) # error <1>
+g.add(i)    # error <2>
+----
+<1> Trying to add a `float` to a sequence of `int`.
+<2> Trying to add a sequence of `int` to a sequence of `char`.
+
+
+{nbsp}
+
+To get the length of a sequence, `len` function is used.
+
+[source]
+----
+var i = @[9, 8, 7]
+echo i.len
+
+i.add(6)
+echo i.len
+----
+
+[source, output]
+----
+3
+4
+----
+
+
+== Indexing and slicing
+
+Indexing allows us to get the wanted element from a container by its index.
+Think of index as a position inside of a container.
+
+Nim, like many other programming languages, has zero-based indexing, meaning that the first element in a container has an index zero, the second element has an index one, etc.
+
+If we want to index "from the back", it is done by using `^` prefix.
+The last element (first from the back) has `^1` index.
+
+The syntax for indexing is `<container>[<index>]`.
+
+[source]
+.indexing.nim
+----
+include::{source-dir}/indexing.nim[lines=1..4]
+----
+<1> Zero-based indexing: the element at index 1 is `b`.
+<2> Getting the last element.
+
+[source, output]
+----
+b
+e
+----
+
+{nbsp}
+
+Slicing allows us to get a series of elements with one call.
+It uses the same syntax as ranges (introduced in the <<For loop, for loop>> section).
+
+If we use `start .. stop` syntax, both ends are included in the slice.
+Using `start ..< stop` syntax, the `stop` index is not included in the slice.
+
+The syntax for slicing is `<container>[<start> .. <stop>]`.
+
+[source]
+.indexing.nim
+----
+include::{source-dir}/indexing.nim[lines=6..8]
+----
+
+[source, output]
+----
+@[a, b, c, d]
+@[a, b, c]
+----
+
+{nbsp}
+
+Both indexing and slicing can be used to assign new values to the existing mutable containers and strings.
+
+[source]
+.assign.nim
+----
+include::{source-dir}/assign.nim[]
+----
+<1> Array of length 5 has indexes from zero to four. We will assign a value to each element of the array.
+<2> Assigning (changing) the second element (index 1) of a sequence.
+<3> Changing characters of a string at indexes 8 and 9.
+
+
+[source, output]
+----
+[0, 7, 14, 21, 28]
+@['p', 'q', 'r']
+Tom and Barry
+----
+
+
+
+
+== Tuples
+
+Tuples are fixed-length containers of heterogenous data, i.e. elements of a tuple can be of different types.
+
+The elements of a tuple are enclosed inside of parentheses.
+
+[source]
+.tuples.nim
+----
+include::{source-dir}/tuples.nim[lines=1..3]
+----
+<1> Tuples can contain fields of different types. In this case: `string`, `int`, and `char`.
+
+[source, output]
+----
+(Field0: "Banana", Field1: 2, Field2: 'c')
+----
+
+
+
+We can give a name to each field of a tuple.
+This can be used for accessing the elements of the tuple, instead of indexing.
+
+[source]
+.tuples.nim
+----
+include::{source-dir}/tuples.nim[lines=5..10]
+----
+<1> Changing the value of a field by using the field's index.
+<2> Changing the value of a field by using the field's name.
+
+[source, output]
+----
+(name: "Apple", weight: 7, rating: 'c')
+----
+
+
+
+
+
+== Exercises
+
+1. Create an empty array which can contain ten integers.
+    * Fill that array with numbers 10, 20, ..., 100. (Hint: use loops)
+    * Print only the elements of that array that are on odd indices (values 20, 40, ...).
+    * Multiply elements on even indices by 5. Print the modified array.
+
+2. Re-do the <<_exercises_3, Collatz conjecture exercise>>, but this time instead of printing each step, add it to a sequence.
+    * pick a starting number. Interesting choices, among others, are 9, 19, 25 and 27.
+    * create a sequence whose only member is that starting number
+    * using the same logic as before, keep adding elements to the sequence until you reach 1
+    * print the length of the sequence, and sequence itself
+
+3. Find a number in a range from 2 to 100 which will produce the longest Collatz sequence.
+    * for each number in the given range calculate its Collatz sequence
+    * if the length of current sequence is longer than the previous record, save the current length and the starting number as a new record (you can use tuple `(longestLength, startingNumber)` or two separate variables)
+    * print the starting number which gives the longest sequence, and its length

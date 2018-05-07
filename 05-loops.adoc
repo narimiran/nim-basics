@@ -1,0 +1,242 @@
+= Loops
+
+
+
+Loops are constructs which allow us to run some parts of code repeatedly, either a known number of times (for-loops) or as long as some condition is satisfied (while-loops).
+
+
+
+== For loop
+
+Syntax of a for-loop is:
+[source]
+----
+for <loopVariable> in <iterable>:
+  <loop body>
+----
+
+Traditionally, `i` is often used as a `loopVariable` name, but any other name can be used.
+That variable will be available only inside the loop.
+Once the loop has finished, the value of the variable is discarded.
+
+The `iterable` is any object we can iterate through.
+Of the types already mentioned, strings are iterable objects. (More iterable types will be introduced in the next section.)
+
+All lines in the `loop body` are executed at every loop, which allows us to efficiently write repeating parts of code.
+
+{nbsp}
+
+If we want to iterate through a range of (integer) numbers, Nim syntax for that is `start .. finish`.
+This will iterate through all numbers between `start` and `finish`.
+Both ends are included in the iteration, and `start` needs to be smaller than `finish`.
+
+If we want to iterate _until_ a number (not including it), we use `..<`.
+
+[source]
+.for1.nim
+----
+include::{source-dir}/for1.nim[]
+----
+<1> Iterating through a range of numbers using `..` -- both ends are included in the range.
+<2> Iterating through the same range using `..<` -- it iterates until the higher end, not including it.
+
+[source, output]
+----
+5
+6
+7
+8
+9
+
+5
+6
+7
+8
+----
+
+
+
+{nbsp}
+
+If we want to iterate through a range of numbers with a step size different than one, `countup` is used, where we define the starting value, the stopping value (included in the range), and the step size.
+
+[source]
+.for2.nim
+----
+include::{source-dir}/for2.nim[lines=1..2]
+----
+<1> Counting up from zero to 16, with a step size of 4. The end (16) is included in the range.
+
+[source, output]
+----
+0
+4
+8
+12
+16
+----
+
+{nbsp}
+
+To iterate through a range of numbers where the `start` is larger than `finish`, a similar function called `countdown` is used.
+Even if we're counting down, the step size must be positive.
+
+[source]
+.for2.nim
+----
+include::{source-dir}/for2.nim[lines=5..12]
+----
+<1> To iterate from a higher to a lower number, we must use `countdown`. (Operator `..` can be used only when starting value is smaller than the end value.)
+<2> Even when counting down, the step size must be a positive number.
+
+[source, output]
+----
+4
+3
+2
+1
+0
+
+-3
+-5
+-7
+-9
+----
+
+{nbsp}
+
+We can use for-loop to iterate through each character of a string (this kind of iteration is sometimes called _for-each_ loop).
+
+[source]
+.for3.nim
+----
+include::{source-dir}/for3.nim[lines=1..4]
+----
+
+[source, output]
+----
+a
+l
+p
+h
+a
+b
+e
+t
+----
+
+{nbsp}
+
+If we also need to have an iteration counter (starting from zero), we can achieve that by using `for <counter>, <loopVariable> in <iterator>:` syntax.
+
+[source]
+.for3.nim
+----
+include::{source-dir}/for3.nim[lines=7..9]
+----
+
+[source, output]
+----
+letter 0 is: a
+letter 1 is: l
+letter 2 is: p
+letter 3 is: h
+letter 4 is: a
+letter 5 is: b
+letter 6 is: e
+letter 7 is: t
+----
+
+
+
+
+== While loop
+
+While loops are similar to if statements, but they keep executing their block of code as long as the condition remains true.
+They are used when we don't know in advance how many times the loop will run.
+
+We must make sure the loop will terminate at some point and not become an https://en.wikipedia.org/wiki/Infinite_loop[infinite loop].
+
+[source]
+.while.nim
+----
+include::{source-dir}/while.nim[]
+----
+<1> This condition will be checked every time before entering the new loop and executing the code inside of it.
+<2> `inc` is used to increment `a` by one. It is the same as writing `a = a + 1` or `a += 1`.
+
+[source, output]
+----
+a is: 1
+a is: 2
+a is: 3
+final value of a: 4
+----
+
+
+
+
+== Break and continue
+
+The `break` statement is used to prematurely exit from a loop, usually if some condition is met.
+
+In the next example, if there were no if statement with `break` in it, the loop would continue to run and print until `i` becomes 1000.
+With it, when `i` becomes 3, we immediately exit the loop (before printing the value of `i`).
+
+[source]
+.break.nim
+----
+include::{source-dir}/break.nim[]
+----
+
+[source, output]
+----
+1
+2
+----
+
+{nbsp}
+
+The `continue` statement starts the next iteration of a loop immediately, without executing the remaining lines of the current iteration.
+
+[source]
+.continue.nim
+----
+include::{source-dir}/continue.nim[]
+----
+
+[source, output]
+----
+1
+2
+4
+5
+7
+8
+----
+
+
+
+
+== Exercises
+
+1. https://en.wikipedia.org/wiki/Collatz_conjecture[Collatz conjecture] is a popular mathematical problem with the simple rules. Pick a number. If it is odd, multiply it by three and add one; if it is even, divide it by two. Repeat this procedure until you arrive at one. E.g. 5 -> odd -> 3*5 + 1 = 16 -> even -> 16 / 2 = 8 -> even -> 4 -> 2 -> 1 -> end! +
+Pick an integer (as a mutable variable) and create a loop which will print every step of the Collatz conjecture. (Hint: use `div` for division)
+
+2. Create an immutable variable containing your full name. Write a for-loop which will iterate through that string and print only the vowels (a, e, i, o, u). (Hint: use `case` statement with multiple values per branch)
+
+3. https://en.wikipedia.org/wiki/Fizz_buzz[Fizz buzz] is a kids game sometimes used to test basic programming knowledge. We count numbers from one upwards. If a number is divisible by 3 replace it with _fizz_, if it is divisible by 5 replace it with _buzz_, and if a number is divisible by 15 (both 3 and 5) replace it with _fizzbuzz_. First few rounds would look like this: 1, 2, fizz, 4, buzz, fizz, 7, ... +
+Create a program which will print first 30 rounds of Fizz buzz. (Hint: beware of the order of divisibility tests)
+
+4. In the previous exercises you have converted inches to centimeters, and vice versa. Create a conversion table with multiple values. For example, the table might look like this: +
+----
+in	| cm
+----------------
+1	| 2.54
+4	| 10.16
+7	| 17.78
+10	| 25.4
+13	| 33.02
+16	| 40.64
+19	| 48.26
+----

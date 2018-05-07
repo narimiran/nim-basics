@@ -1,0 +1,34 @@
+= Conclusion
+
+
+
+It is time to conclude this tutorial.
+Hopefully this has been useful to you, and you managed to make your first steps in programming and/or Nim programming language.
+
+These have only been the basics and we've only scratched the surface, but this should be enough to enable you to make simple programs and solve some simple tasks or puzzles.
+Nim has a lot more to offer, and hopefully you will continue to explore its possibilities.
+
+
+
+
+
+== Next steps
+
+If you want to continue learning from Nim tutorials:
+
+* https://nim-lang.org/docs/tut1.html[Official Nim tutorial]
+
+* https://nim-by-example.github.io/[Nim by example]
+
+
+If you want to solve some programming puzzles:
+
+* http://adventofcode.com/[Advent of Code]: series of interesting puzzles released every December. Archive of old puzzles (from 2015 onwards) is available.
+
+* https://projecteuler.net/[Project Euler]: mostly mathematical tasks.
+
+
+
+{nbsp}
+
+Happy coding!

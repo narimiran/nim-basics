@@ -1,0 +1,168 @@
+= Control flow
+
+
+
+So far in our programs every line of code was executed at some point.
+Control flow statements allow us to have parts of code which will be executed only if some boolean condition is satisfied.
+
+We can think of it as various branches, and we pick our path depending on some condition.
+For example, we will buy eggs only _if_ their price is less than some value. Or: _if_ it is raining, we will take an umbrella, otherwise (_else_) we will take sunglasses.
+
+Written in https://en.wikipedia.org/wiki/Pseudocode[pseudocode], these two examples would look like this:
+
+[source]
+----
+if eggPrice < wantedPrice:
+  buyEggs
+
+if isRaining:
+  take umbrella
+else:
+  take sunglasses
+----
+
+Nim syntax is very similar, as you'll see below.
+
+
+
+
+
+== If statement
+
+If statement is the simplest way to branch our program.
+
+The Nim syntax for writing if statement is:
+
+[source]
+----
+if <condition>:
+  <indented block>
+----
+
+The `condition` must be of boolean type -- either a boolean variable or relational and/or logical expression.
+All lines indented two spaces make the same if-block and will be executed only if the condition is `true`.
+
+If statements can be nested, i.e. inside one if-block there can be another if statement.
+
+[source]
+.if.nim
+----
+include::{source-dir}/if.nim[]
+----
+<1> The first condition is true, the second is false -- inner `echo` is not executed.
+<2> Both conditions are true and both lines are printed.
+<3> The first condition is false -- all lines inside of its block will be skipped, nothing is printed.
+
+[source, output]
+----
+a is smaller than b
+b is smaller than c
+not only that, b is *much* smaller than c
+----
+
+
+
+=== Else
+
+Else follows after an if-block and allows us to have a branch of code which will be executed when the condition in the if statement is not true.
+
+[source]
+.else.nim
+----
+include::{source-dir}/else.nim[]
+----
+
+[source, output]
+----
+d is a large number
+e is a small number
+----
+
+
+
+=== Elif
+
+Elif is short for "else if", and enables us to chain multiple if statements together.
+
+The program tests every statement until it finds one which is true.
+After that, all further statements are ignored.
+
+[source]
+.elif.nim
+----
+include::{source-dir}/elif.nim[]
+----
+
+[source, output]
+----
+f is larger than 1000
+g is smaller than 1000
+----
+
+NOTE: In the case of `g`, even though `g` satisfies all three conditions, only the first branch is executed, automatically skipping all the other branches.
+
+
+
+
+== Case
+
+Case statement is similar to the if statement with multiple ``elif``s.
+
+Code written with if-elif block which looks like this:
+
+[source]
+----
+if x == 5:
+  echo "Five!"
+elif x == 7:
+  echo "Seven!"
+elif x == 10:
+  echo "Ten!"
+else:
+  echo "unknown number"
+----
+can be written with case statement:
+
+[source]
+----
+case x
+  of 5:
+    echo "Five!"
+  of 7:
+    echo "Seven!"
+  of 10:
+    echo "Ten!"
+  else:
+    echo "unknown number"
+----
+
+Unlike the if statement, case statement must cover _all_ possible cases.
+If one is not interested in some of those cases, `else: discard` can be used.
+
+[source]
+.case.nim
+----
+include::{source-dir}/case.nim[]
+----
+<1> Even though we are interested in only three values of `h`, we must include this line to cover all other possible cases (all other characters). Without it, the code would not compile.
+
+[source, output]
+----
+You've chosen y
+----
+
+
+
+{nbsp}
+
+We can use multiple values for each branch.
+[source]
+.multipleCase.nim
+----
+include::{source-dir}/multipleCase.nim[]
+----
+
+[source, output]
+----
+i is odd
+----

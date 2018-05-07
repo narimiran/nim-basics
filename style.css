@@ -1,0 +1,226 @@
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+#header, #content, #footnotes, #footer {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 45em;
+    position: relative;
+    padding-left: 1em;
+    padding-right: 1em
+}
+
+body {
+    background: #fcfaf7;
+    color: #073642;
+    padding: 0;
+    margin: 0;
+    font-family: "Noto Serif", "DejaVu Serif", serif;
+    line-height: 1.6;
+    position: relative;
+    tab-size: 4;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased
+}
+
+h1, h2, h3, #toctitle, .sidebarblock>.content>.title, h4, h5, h6 {
+    font-family: "Open Sans", "DejaVu Sans", sans-serif;
+    font-weight: 400;
+    color: #cb4b16;
+    margin-top: 3em;
+    margin-bottom: 1.5em;
+    line-height: 1.2em
+}
+
+code {
+    font-family: "Droid Sans Mono", "DejaVu Sans Mono", monospace;
+    font-size: 0.9em;
+    font-weight: 400;
+    color: #073642;
+}
+
+a {
+    color: #268bd2;
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    color: #cb4b16
+}
+
+p {
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 2;
+    margin-bottom: 1.25em;
+    /* text-rendering: optimizeLegibility */
+}
+
+*:not(pre)>code {
+    font-size: .9em;
+    font-style: normal!important;
+    padding: .1em .5ex;
+    background-color: #eeebe2;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    line-height: 1.45;
+    word-wrap: break-word
+}
+
+pre, pre>code {
+    line-height: 1.45;
+    color: #073642;
+    font-family: "Droid Sans Mono", "DejaVu Sans Mono", monospace;
+    font-weight: 400;
+}
+
+.admonitionblock td.icon [class^="fa icon-"] {
+    font-size: 2.5em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+}
+
+.admonitionblock>table td.icon {
+    text-align: center;
+    width: 80px
+}
+
+.admonitionblock td.icon .icon-note:before {
+    content: "\f05a";
+    color: #586e75
+}
+
+.admonitionblock td.icon .icon-warning:before {
+    content: "\f071";
+    color: #cb4b16
+}
+
+.literalblock pre, .listingblock pre:not(.highlight), .listingblock pre[class="highlight"], .listingblock pre[class^="highlight "], .listingblock pre.CodeRay, .listingblock pre.prettyprint {
+    background: #eeebe2;
+    margin-top: 1.5em;
+    border-width: 0
+}
+
+.listingblock>.title {
+    line-height: 1.0;
+    font-size: 1em;
+    color: #cb4b16;
+    font-weight: 400;
+    font-style: italic;
+    margin-top: 1.5em;
+    margin-bottom: -0.75em
+}
+
+.conum[data-value] {
+    display: inline-block;
+    color: #fcfaf7;
+    background-color: #586e75;
+    -webkit-border-radius: 100px;
+    border-radius: 100px;
+    text-align: center;
+    font-size: .75em;
+    width: 3.0em;
+    height: 1.5em;
+    line-height: 1.5em;
+    margin-right: 1em;
+    font-family: "Open Sans", "DejaVu Sans", sans-serif;
+    font-style: normal;
+    font-weight: bold
+}
+
+hr {
+    border: solid #586e75;
+    border-width: 1px 0 0;
+    clear: both;
+    margin: 5.0em 0 5.0em;
+    height: 0
+}
+
+em, i {
+    font-style: italic;
+    line-height: inherit
+}
+
+strong, b {
+    font-weight: bold;
+    line-height: inherit
+}
+
+.conum[data-value]+b {
+    display: none
+}
+
+.conum[data-value]:after {
+    content: attr(data-value)
+}
+
+pre .conum[data-value] {
+    position: relative;
+    top: -.125em
+}
+
+b.conum * {
+    color: inherit!important
+}
+
+li {
+    margin-bottom: -0.5em;
+    margin-left: 0.5em;
+}
+
+@media only screen and (min-width:850px) {
+    #toctitle {
+        font-size: 1.375em
+    }
+    body.toc2 {
+        padding-left: 16em;
+        padding-right: 0
+    }
+    #toc.toc2 {
+        font-family: "Open Sans", "DejaVu Sans", sans-serif;
+        margin-top: 0!important;
+        background-color: #fcfaf7;
+        position: fixed;
+        width: 16em;
+        left: 0;
+        top: 0;
+        border-right: 1px solid #efefed;
+        border-top-width: 0!important;
+        border-bottom-width: 0!important;
+        z-index: 1000;
+        padding: 1.25em 0.5em;
+        height: 100%;
+        overflow: auto
+    }
+}
+
+#toc.toc2 #toctitle {
+    margin-top: 0;
+    margin-bottom: .8rem;
+    font-size: 1.2em
+}
+#toc.toc2>ul {
+    font-size: .9em;
+    margin-bottom: 0;
+    padding-left: 1em
+}
+
+#toc.toc2 ul ul {
+    margin-bottom: 0.5em;
+    margin-left: 0;
+    padding-left: 1em
+}
+
+#toc.toc2 li {
+    margin-bottom: 0em;
+    margin-left: 0.5em;
+}

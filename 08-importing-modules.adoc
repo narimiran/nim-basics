@@ -1,0 +1,53 @@
+= Importing modules
+
+
+
+So far we have used the functionality which is available by default every time we start a new Nim file.
+This can be extended with modules, which give more functionality for some specific topic.
+
+Some of the most used Nim modules are:
+
+* strutils: additional functionality when dealing with strings
+* sequtils: additional functionality for sequences
+* math: mathematical functions (logarithms, square roots, ...), trigonometry (sin, cos, ...)
+* times: measure and deal with time
+
+
+
+== Importing a module
+
+If we want to import a module and all of its functionality, all we have to do is put `import <moduleName>` at the top of our file.
+
+[source]
+.stringutils.nim
+----
+include::{source-dir}/stringutils.nim[]
+----
+<1> Importing https://nim-lang.org/docs/strutils.html[strutils].
+<2> Using `split` from `strutils` module. It splits the string in a sequence of words.
+<3> `toUpperAscii` converts all (ASCII) letters to the uppercase.
+<4> `repeat` is also from `strutils` module, and it repeats either a character or a whole string wanted amount of times.
+
+[source, output]
+----
+@["My", "string", "with", "whitespace."]
+MY STRING WITH WHITESPACE.
+!!!!!
+----
+
+[source]
+.maths.nim
+----
+include::{source-dir}/maths.nim[]
+----
+<1> Importing https://nim-lang.org/docs/math.html[math].
+<2> Converting degrees to radians with `degToRad`.
+<3> `sin` takes radians. We round (also from `math` module) the result to at most 2 decimal places. (Otherwise the result would be: 0.4999999999999999)
+<4> Math module also has `^` operator for calculating powers of a number.
+
+[source, output]
+----
+0.5235987755982988
+0.5
+32
+----
