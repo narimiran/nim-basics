@@ -1,8 +1,8 @@
-= Variables
+= Naming values
 
 
 
-Variables are names we give to some values to help us deal with data.
+It is often helpful to give the values in our programs names to help us keep track of things.
 
 In the example `pi = 3.14`, the name `pi` is connected to the value `3.14`.
 From our experience, we can tell that the type of a variable `pi` is a (decimal) number.
@@ -10,8 +10,7 @@ From our experience, we can tell that the type of a variable `pi` is a (decimal)
 Another example would be `firstName = Alice`, where `firstName` is the name of a variable with the value `Alice`.
 We would say that the type of this variable is a word.
 
-Variables in programming languages work similarly.
-They have their name, value, and type.
+In programming languages this works similarly. These name assignments have their name, the value, and a type.
 
 
 
@@ -19,12 +18,12 @@ They have their name, value, and type.
 == Variable declaration
 
 
-Nim is a https://en.wikipedia.org/wiki/Type_system#STATIC[statically typed] programming language, meaning the variables and their type need to be declared before using them.
+Nim is a https://en.wikipedia.org/wiki/Type_system#STATIC[statically typed] programming language, meaning that the type of an assignment need to be declared before using the value.
 
-We can declare a variable using `var` keyword, just by stating its name and type (the value can be added later) by using this syntax:
+In Nim we also distinguish values that can change, or mutate, from those that can't, but more on this later. We can declare a variable (a mutable assignment) using `var` keyword, just by stating its name and type (the value can be added later) by using this syntax:
 [source]
 ----
-var <name>: type
+var <name>: <type>
 ----
 
 If we already know its value, we can declare a variable and give it a value immediately:
@@ -32,29 +31,33 @@ If we already know its value, we can declare a variable and give it a value imme
 ----
 var <name>: <type> = <value>
 ----
+NOTE: Angular brackets(`<>`) are used to show something you can change. +
+So `<name>` is not literally the word "name" in angular brackets but rather any name.
 
-Nim also has https://en.wikipedia.org/wiki/Type_inference[type inference] ability -- compiler can automatically detect the type of a variable from its value, without explicitly stating the type.
-(More about various types in the next section.)
 
-We can do that like this:
+Nim also has https://en.wikipedia.org/wiki/Type_inference[type inference] ability -- the compiler can automatically detect the type of a name assignment from its value, without explicitly stating the type. We'll look more into the various types in the next section.
+
+So we can assign a variable without an explicit type like this:
 [source]
 ----
 var <name> = <value>
 ----
 
 
-An example in Nim looks like this:
+An example of this in Nim looks like this:
 [source]
 ----
 var a: int  # <1>
 var b = 7   # <2>
 ----
 <1> Variable `a` is of type `int` (integer) with no value explicitly set.
-<2> Variable `b` has a value of `7` -- its type is automatically detected as integer.
+<2> Variable `b` has a value of `7` -- its type is automatically detected as an integer.
+
+When assigning names it is important to choose names that mean something for your program. Simply naming them a, b, c, and so forth will quickly become confusing. It is not possible to use spaces in a name, as that would split it into two. So if the name you choose consists of more than one word the usual way is to write it in `camelCase` style (notice that the first letter in a name should be lowercase). Note however that Nim is both case- and underscore-insensitive meaning that `helloWorld` and `hello_world` would be the same name. The exception to this is the first character, which _is_ case-sensitive. Names can also include both numbers and other UTF-8 characters, even emojis should you wish that, but keep in mind you and possibly others will have to type them.
 
 
-Instead of typing `var` for each variable, multiple variables (not necessary of the same type) can be declared in the same `var` block.
-In Nim, blocks are parts of code with the same indentation (same number of spaces before the first character), and the default indentation level is two spaces.
+Instead of typing `var` for each variable, multiple variables (not necessarily of the same type) can be declared in the same `var` block.
+In Nim, blocks are parts of code with the same indentation (same number of spaces before the first character), and the default indentation level is two spaces. You will see such blocks everywhere in a Nim program, not only for assigning names.
 
 [source]
 ----
@@ -64,13 +67,13 @@ var
   e = '!'
 ----
 
-NOTE: In Nim tabs are not allowed as indentations. +
+NOTE: In Nim tabs are not allowed as indentation. +
 You can set up your code editor to convert pressing `Tab` to any number of spaces. +
 In VS Code, the default setting is to convert `Tab` to four spaces. This is easily overridden in settings (`Ctrl+,`) by setting `"editor.tabSize": 2`.
 
 {nbsp}
 
-Variables are mutable, i.e. their value can change (multiple times), but their type must stay the same as declared.
+As previously mentioned variables are mutable, i.e. their value can change (multiple times), but their type must stay the same as declared.
 
 [source]
 ----
@@ -83,20 +86,20 @@ f = "Hello" # error <3><4>
 <1> Variable `f` has an initial value of `7` and its type is inferred as `int`.
 <2> The value of `f` is first changed to `-3`, and then to `19`. Both of these are integers, the same as the original value.
 <3> Trying to change the value of `f` to `"Hello"` produces an error because `Hello` is not a number, and this would change the type of `f` from an integer to a string.
-<4> `# error` is a comment. Comments in Nim code are written after `#` character -- everything after it in the same line will be ignored.
+<4> `# error` is a comment. Comments in Nim code are written after a `#` character -- everything after it on the same line will be ignored.
 
 
 
 
-== Immutable variables
+== Immutable assignment
 
-Unlike variables declared with `var` keyword, two more types of variables exist in Nim, whose value cannot change, one declared with `const` keyword, and the other declared with `let` keyword.
+Unlike variables declared with `var` keyword, two more types of assignment exist in Nim, whose value cannot change, one declared with the `const` keyword, and the other declared with the `let` keyword.
 
 
 
 === Const
 
-The value of an immutable variable declared with `const` keyword must be known at compile time (before the program is run).
+The value of an immutable assignment declared with `const` keyword must be known at compile time (before the program is run).
 
 For example, we can declare the acceleration of gravity as `const g = 9.81` or pi as `const pi = 3.14`, as we know their values in advance and these values will not change during the execution of our program.
 
@@ -109,16 +112,15 @@ var h = -5
 const i = h + 7 # error <2>
 ----
 <1> The value of a constant cannot be changed.
-<2> Variable `h` is not evaluated at compile time (it is a variable and its value can change during the execution of a program), consequently the value of constant `i` is also not known at compile time, and this will raise an error.
+<2> Variable `h` is not evaluated at compile time (it is a variable and its value can change during the execution of a program), consequently the value of constant `i` can't be known at compile time, and this will raise an error.
 
-In some programming languages it is a common practice to have the names of constants written in `ALL_CAPS`.
-Constants in Nim are written just like any other variable (lowercase letters), and if a name consists of more than one word the usual way is to write it in `camelCase` style. (Notice that the first letter in a name should be lowercase.)
+In some programming languages it is a common practice to have the names of constants written in `ALL_CAPS`, constants in Nim are written just like any other variable.
 
 
 
 === Let
 
-Immutable values declared with `let` don't need to be known at compile time, their values can be set at any time during the execution of a program, but once it is set, their value cannot change.
+Immutable assignment declared with `let` don't need to be known at compile time, their value can be set at any time during the execution of a program, but once it is set, their value cannot change.
 
 [source]
 ----
