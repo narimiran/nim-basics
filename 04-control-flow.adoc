@@ -6,7 +6,8 @@ So far in our programs every line of code was executed at some point.
 Control flow statements allow us to have parts of code which will be executed only if some boolean condition is satisfied.
 
 If we think of our program as a road we can think of control flow as various branches, and we pick our path depending on some condition.
-For example, we will buy eggs only _if_ their price is less than some value. Or, _if_ it is raining, we will bring an umbrella, otherwise (_else_) we will bring sunglasses.
+For example, we will buy eggs only _if_ their price is less than some value.
+Or, _if_ it is raining, we will bring an umbrella, otherwise (_else_) we will bring sunglasses.
 
 Written in https://en.wikipedia.org/wiki/Pseudocode[pseudocode], these two examples would look like this:
 
@@ -106,7 +107,8 @@ NOTE: In the case of `g`, even though `g` satisfies all three conditions, only t
 
 == Case
 
-A case statement is another way to only choose one of multiple possible paths, similar to the if statement with multiple ``elif``s. A `case` statement however doesn't take multiple boolean conditions, but rather any value with distinct states and a path for each possible value.
+A case statement is another way to only choose one of multiple possible paths, similar to the if statement with multiple ``elif``s.
+A `case` statement however doesn't take multiple boolean conditions, but rather any value with distinct states and a path for each possible value.
 
 Code written with in if-elif block looking like this:
 

@@ -10,7 +10,8 @@ From our experience, we can tell that the type of a variable `pi` is a (decimal)
 Another example would be `firstName = Alice`, where `firstName` is the name of a variable with the value `Alice`.
 We would say that the type of this variable is a word.
 
-In programming languages this works similarly. These name assignments have their name, the value, and a type.
+In programming languages this works similarly.
+These name assignments have their name, the value, and a type.
 
 
 
@@ -20,7 +21,8 @@ In programming languages this works similarly. These name assignments have their
 
 Nim is a https://en.wikipedia.org/wiki/Type_system#STATIC[statically typed] programming language, meaning that the type of an assignment need to be declared before using the value.
 
-In Nim we also distinguish values that can change, or mutate, from those that can't, but more on this later. We can declare a variable (a mutable assignment) using `var` keyword, just by stating its name and type (the value can be added later) by using this syntax:
+In Nim we also distinguish values that can change, or mutate, from those that can't, but more on this later.
+We can declare a variable (a mutable assignment) using `var` keyword, just by stating its name and type (the value can be added later) by using this syntax:
 [source]
 ----
 var <name>: <type>
@@ -35,7 +37,8 @@ NOTE: Angular brackets(`<>`) are used to show something you can change. +
 So `<name>` is not literally the word "name" in angular brackets but rather any name.
 
 
-Nim also has https://en.wikipedia.org/wiki/Type_inference[type inference] ability -- the compiler can automatically detect the type of a name assignment from its value, without explicitly stating the type. We'll look more into the various types in the next section.
+Nim also has https://en.wikipedia.org/wiki/Type_inference[type inference] ability -- the compiler can automatically detect the type of a name assignment from its value, without explicitly stating the type.
+We'll look more into the various types in the next section.
 
 So we can assign a variable without an explicit type like this:
 [source]
@@ -53,11 +56,24 @@ var b = 7   # <2>
 <1> Variable `a` is of type `int` (integer) with no value explicitly set.
 <2> Variable `b` has a value of `7` -- its type is automatically detected as an integer.
 
-When assigning names it is important to choose names that mean something for your program. Simply naming them a, b, c, and so forth will quickly become confusing. It is not possible to use spaces in a name, as that would split it into two. So if the name you choose consists of more than one word the usual way is to write it in `camelCase` style (notice that the first letter in a name should be lowercase). Note however that Nim is both case- and underscore-insensitive meaning that `helloWorld` and `hello_world` would be the same name. The exception to this is the first character, which _is_ case-sensitive. Names can also include both numbers and other UTF-8 characters, even emojis should you wish that, but keep in mind you and possibly others will have to type them.
 
+{nbsp}
+
+When assigning names it is important to choose names that mean something for your program.
+Simply naming them `a`, `b`, `c`, and so forth will quickly become confusing.
+It is not possible to use spaces in a name, as that would split it into two.
+So if the name you choose consists of more than one word the usual way is to write it in `camelCase` style (notice that the first letter in a name should be lowercase).
+
+Note however that Nim is both case- and underscore-insensitive meaning that `helloWorld` and `hello_world` would be the same name.
+The exception to this is the first character, which _is_ case-sensitive.
+Names can also include both numbers and other UTF-8 characters, even emojis should you wish that, but keep in mind you and possibly others will have to type them.
+
+
+{nbsp}
 
 Instead of typing `var` for each variable, multiple variables (not necessarily of the same type) can be declared in the same `var` block.
-In Nim, blocks are parts of code with the same indentation (same number of spaces before the first character), and the default indentation level is two spaces. You will see such blocks everywhere in a Nim program, not only for assigning names.
+In Nim, blocks are parts of code with the same indentation (same number of spaces before the first character), and the default indentation level is two spaces.
+You will see such blocks everywhere in a Nim program, not only for assigning names.
 
 [source]
 ----
@@ -69,7 +85,8 @@ var
 
 NOTE: In Nim tabs are not allowed as indentation. +
 You can set up your code editor to convert pressing `Tab` to any number of spaces. +
-In VS Code, the default setting is to convert `Tab` to four spaces. This is easily overridden in settings (`Ctrl+,`) by setting `"editor.tabSize": 2`.
+In VS Code, the default setting is to convert `Tab` to four spaces.
+This is easily overridden in settings (`Ctrl+,`) by setting `"editor.tabSize": 2`.
 
 {nbsp}
 

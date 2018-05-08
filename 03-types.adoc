@@ -113,7 +113,6 @@ echo e + int(f)     <4>
 <3> Both operands are floats and can be added.
 <4> Both operands are integers and can be added.
 
-NOTE: When using the `int` function to convert a float to an integer no rounding will be performed. The number simply drops any decimals. To perform rounding we must call another function, but for that we must know a bit more about how to use Nim.
 
 [source, output]
 ----
@@ -123,6 +122,9 @@ NOTE: When using the `int` function to convert a float to an integer no rounding
 28
 ----
 
+NOTE: When using the `int` function to convert a float to an integer no rounding will be performed.
+The number simply drops any decimals. +
+To perform rounding we must call another function, but for that we must know a bit more about how to use Nim.
 
 
 
@@ -149,7 +151,8 @@ let
 
 == Strings
 
-Strings can be described as a series of characters. Their content is written between two double quotes (`"`).
+Strings can be described as a series of characters.
+Their content is written between two double quotes (`"`).
 
 We might think of strings as words, but they can contain more than one word, some symbols, or digits.
 
