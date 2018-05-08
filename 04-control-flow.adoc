@@ -36,11 +36,11 @@ The Nim syntax for writing if statement is:
 
 [source]
 ----
-if <condition>: <1>
-  <indented block> <2>
+if <condition>:     <1>
+  <indented block>  <2>
 ----
 
-<1> The `condition` must be of boolean type -- either a boolean variable or  a relational and/or logical expression.
+<1> The `condition` must be of boolean type -- either a boolean variable or a relational and/or logical expression.
 <2> All lines following the `if` line whiche are indented two spaces make the same block and will be executed only if the condition is `true`.
 
 If statements can be nested, i.e. inside one if-block there can be another if statement.
@@ -79,7 +79,10 @@ d is a large number
 e is a small number
 ----
 
-NOTE: If you only want to execute a block if the statement is false and don't need the `if` block you can simply negate the condition with the `not` operator.
+NOTE: If you only want to execute a block if the statement is `false`, you can simply negate the condition with the `not` operator.
+
+
+
 
 === Elif
 
@@ -108,7 +111,7 @@ NOTE: In the case of `g`, even though `g` satisfies all three conditions, only t
 == Case
 
 A case statement is another way to only choose one of multiple possible paths, similar to the if statement with multiple ``elif``s.
-A `case` statement however doesn't take multiple boolean conditions, but rather any value with distinct states and a path for each possible value.
+A `case` statement, however, doesn't take multiple boolean conditions, but rather any value with distinct states and a path for each possible value.
 
 Code written with in if-elif block looking like this:
 

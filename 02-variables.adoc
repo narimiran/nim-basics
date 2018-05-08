@@ -19,7 +19,7 @@ These name assignments have their name, the value, and a type.
 == Variable declaration
 
 
-Nim is a https://en.wikipedia.org/wiki/Type_system#STATIC[statically typed] programming language, meaning that the type of an assignment need to be declared before using the value.
+Nim is a https://en.wikipedia.org/wiki/Type_system#STATIC[statically typed] programming language, meaning that the type of an assignment needs to be declared before using the value.
 
 In Nim we also distinguish values that can change, or mutate, from those that can't, but more on this later.
 We can declare a variable (a mutable assignment) using `var` keyword, just by stating its name and type (the value can be added later) by using this syntax:
@@ -34,7 +34,7 @@ If we already know its value, we can declare a variable and give it a value imme
 var <name>: <type> = <value>
 ----
 NOTE: Angular brackets(`<>`) are used to show something you can change. +
-So `<name>` is not literally the word "name" in angular brackets but rather any name.
+So `<name>` is not literally the word `name` in angular brackets but rather any name.
 
 
 Nim also has https://en.wikipedia.org/wiki/Type_inference[type inference] ability -- the compiler can automatically detect the type of a name assignment from its value, without explicitly stating the type.
@@ -131,13 +131,14 @@ const i = h + 7 # error <2>
 <1> The value of a constant cannot be changed.
 <2> Variable `h` is not evaluated at compile time (it is a variable and its value can change during the execution of a program), consequently the value of constant `i` can't be known at compile time, and this will raise an error.
 
-In some programming languages it is a common practice to have the names of constants written in `ALL_CAPS`, constants in Nim are written just like any other variable.
+In some programming languages it is a common practice to have the names of constants written in `ALL_CAPS`.
+Constants in Nim are written just like any other variable.
 
 
 
 === Let
 
-Immutable assignment declared with `let` don't need to be known at compile time, their value can be set at any time during the execution of a program, but once it is set, their value cannot change.
+Immutable assignments declared with `let` don't need to be known at compile time, their value can be set at any time during the execution of a program, but once it is set, their value cannot change.
 
 [source]
 ----

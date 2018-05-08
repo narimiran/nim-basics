@@ -100,7 +100,7 @@ Conversion is straight-forward -- to convert to an integer, we use the `int` fun
 ----
 let
   e = 5
-  f = 23.456
+  f = 23.987
 
 echo float(e)       <1>
 echo int(f)         <2>
@@ -118,7 +118,7 @@ echo e + int(f)     <4>
 ----
 5.0
 23
-28.456
+28.987
 28
 ----
 
@@ -210,11 +210,14 @@ some\nim\tips
 There are more special characters than the ones listed above, and they are all found in the https://nim-lang.org/docs/manual.html#lexical-analysis-string-literals[Nim manual].
 
 
+
+
+
 === String concatenation
 
 Strings in Nim are mutable, meaning their content can change.
 With the `add` function we can add (append) either another string or a char to an existing string.
-If we don't want to change the original string we can also concatenate (joined together) strings with the `&` operator, this returns a new string.
+If we don't want to change the original string, we can also concatenate (join together) strings with the `&` operator, this returns a new string.
 
 [source]
 .stringConcat.nim
@@ -256,7 +259,7 @@ Relational operators test the relation between two entities, which must be compa
 To compare if two values are the same, `==` (two equal signs) is used.
 Do not confuse this with `=`, which is used for assignment as we saw earlier.
 
-Here are all the relational operators defined for integers, note that we can also create our own:
+Here are all the relational operators defined for integers:
 
 [source]
 .relationalOperators.nim
@@ -344,7 +347,8 @@ For example: `(5 < 7) and (11 + 9 == 32 - 2*6)` will become `true and (20 == 20)
 
 This was the longest chapter in this tutorial and we covered a lot of ground.
 Take your time to go trough each data type and experiment with what you can do with each of them.
-Types might seem like a restriction at first, but it allows the Nim compiler to both make your code faster, and make sure you're not doing something wrong by accident.
+
+Types might seem like a restriction at first, but they allow the Nim compiler to both make your code faster, and make sure you're not doing something wrong by accident.
 
 Now you know the basic data types and several operations on them, which should be enough to do some simple calculations in Nim.
 Test your knowledge by doing the following exercises.
