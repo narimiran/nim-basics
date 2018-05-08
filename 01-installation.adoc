@@ -4,17 +4,16 @@
 
 == Installing Nim
 
-Nim is available for installation on all three major operating systems and there are several options when it comes to installing Nim.
+Nim has ready made distributions for all three major operating systems and there are several options when it comes to installing Nim.
 
 You can follow https://nim-lang.org/install.html[the official installation procedure] to install the latest stable version, or you can use a tool called https://github.com/dom96/choosenim[choosenim] which enables you to easily switch between the stable and the latest development version if you're interested in the latest features and bugfixes.
 
-Whichever way you choose, just follow the installation procedure explained at each link and Nim should be installed.
-We will test the installation shortly.
+Whichever way you choose, just follow the installation procedure explained at each link and Nim should be installed. We will check that the installation went well in a comming chapter.
 
 If you're using Linux, there is a high probability that your distribution has Nim in the package manager.
-If you are installing that way, make sure it is the most recent version (0.18.0 or newer), otherwise install via one of two methods mentioned above.
+If you are installing it that way, make sure it's the most recent version (see the website for what is the latest version), otherwise install via one of two methods mentioned above.
 
-In this tutorial we will use the stable version, which was Nim 0.18.0 at the time this was written.
+In this tutorial we will use the stable version, which is Nim 0.18.0 at the time of writing.
 
 
 
@@ -22,11 +21,11 @@ In this tutorial we will use the stable version, which was Nim 0.18.0 at the tim
 == Installing additional tools
 
 You can write Nim code in any text editor, and then compile and run it from the terminal.
-If you want the syntax highlighting and code completion there are plugins for popular code editors which provide these features.
+If you want syntax highlighting and code completion there are plugins for popular code editors which provide these features.
 
-The author prefers https://code.visualstudio.com/[VS Code] editor, with https://marketplace.visualstudio.com/items?itemName=kosz78.nim[Nim extension] which provides syntax highlighting and code completion, and https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner[Code Runner extension] for quick compiling and running.
+The author prefers the https://code.visualstudio.com/[VS Code] editor, with the https://marketplace.visualstudio.com/items?itemName=kosz78.nim[Nim extension] which provides syntax highlighting and code completion, and the https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner[Code Runner extension] for quick compiling and running.
 
-If you're using other code editors, see https://github.com/nim-lang/Nim/wiki/Editor-Support[this link] for the available editor support.
+If you're using other code editors, see https://github.com/nim-lang/Nim/wiki/Editor-Support[the wiki] for available editor support.
 
 
 
@@ -35,7 +34,7 @@ If you're using other code editors, see https://github.com/nim-lang/Nim/wiki/Edi
 
 To check if the installation was successful, we will write a program which is traditionally used as an introductory example -- https://en.wikipedia.org/wiki/%22Hello,_World!%22_program[Hello World].
 
-Printing (as in: displaying on the screen; not on a paper with a printer :)) the phrase `Hello World!` in Nim is straightforward and it doesn't require any boilerplate code.
+Printing(as in: displaying on the screen; not on a paper with a printer) the phrase `Hello World!` in Nim is straightforward and it doesn't require any boilerplate code.
 
 In a new text file called `helloworld.nim` we need to write just one line of code:
 
@@ -57,7 +56,7 @@ nim c helloworld.nim
 ----
 
 After a successful compilation, we can run our program.
-On Linux we can run a program by typing `./helloworld` in the terminal, and on Windows we do it by typing `helloworld.exe`.
+On Linux we can run our program by typing `./helloworld` in the terminal, and on Windows we do it by typing `helloworld.exe`.
 
 There is also a possibility to both compile and run the program with just one command.
 We need to type:
@@ -79,6 +78,6 @@ Hello World!
 
 Congratulations, you have successfully run your first Nim program!
 
-Now you know how to print some stuff on the screen (using `echo` command), compile your program (typing `nim c programName.nim` in your terminal), and run it (various possibilities).
+Now you know how to print some stuff on the screen (using the `echo` command), compile your program (typing `nim c programName.nim` in your terminal), and run it (various possibilities).
 
 We can now start to explore the basic elements which will help us to write simple Nim programs.
