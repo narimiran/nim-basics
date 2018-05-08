@@ -5,8 +5,8 @@
 So far in our programs every line of code was executed at some point.
 Control flow statements allow us to have parts of code which will be executed only if some boolean condition is satisfied.
 
-We can think of it as various branches, and we pick our path depending on some condition.
-For example, we will buy eggs only _if_ their price is less than some value. Or: _if_ it is raining, we will take an umbrella, otherwise (_else_) we will take sunglasses.
+If we think of our program as a road we can think of control flow as various branches, and we pick our path depending on some condition.
+For example, we will buy eggs only _if_ their price is less than some value. Or, _if_ it is raining, we will bring an umbrella, otherwise (_else_) we will bring sunglasses.
 
 Written in https://en.wikipedia.org/wiki/Pseudocode[pseudocode], these two examples would look like this:
 
@@ -16,9 +16,9 @@ if eggPrice < wantedPrice:
   buyEggs
 
 if isRaining:
-  take umbrella
+  bring umbrella
 else:
-  take sunglasses
+  bring sunglasses
 ----
 
 Nim syntax is very similar, as you'll see below.
@@ -29,18 +29,18 @@ Nim syntax is very similar, as you'll see below.
 
 == If statement
 
-If statement is the simplest way to branch our program.
+An if statement as shown above is the simplest way to branch our program.
 
 The Nim syntax for writing if statement is:
 
 [source]
 ----
-if <condition>:
-  <indented block>
+if <condition>: <1>
+  <indented block> <2>
 ----
 
-The `condition` must be of boolean type -- either a boolean variable or relational and/or logical expression.
-All lines indented two spaces make the same if-block and will be executed only if the condition is `true`.
+<1> The `condition` must be of boolean type -- either a boolean variable or  a relational and/or logical expression.
+<2> All lines following the `if` line whiche are indented two spaces make the same block and will be executed only if the condition is `true`.
 
 If statements can be nested, i.e. inside one if-block there can be another if statement.
 
@@ -78,7 +78,7 @@ d is a large number
 e is a small number
 ----
 
-
+NOTE: If you only want to execute a block if the statement is false and don't need the `if` block you can simply negate the condition with the `not` operator.
 
 === Elif
 
@@ -106,9 +106,9 @@ NOTE: In the case of `g`, even though `g` satisfies all three conditions, only t
 
 == Case
 
-Case statement is similar to the if statement with multiple ``elif``s.
+A case statement is another way to only choose one of multiple possible paths, similar to the if statement with multiple ``elif``s. A `case` statement however doesn't take multiple boolean conditions, but rather any value with distinct states and a path for each possible value.
 
-Code written with if-elif block which looks like this:
+Code written with in if-elif block looking like this:
 
 [source]
 ----
@@ -121,7 +121,7 @@ elif x == 10:
 else:
   echo "unknown number"
 ----
-can be written with case statement:
+can be written with case statement like this:
 
 [source]
 ----
@@ -155,7 +155,7 @@ You've chosen y
 
 {nbsp}
 
-We can use multiple values for each branch.
+We can also use multiple values for each branch if the same action should happen for more than one value.
 [source]
 .multipleCase.nim
 ----
