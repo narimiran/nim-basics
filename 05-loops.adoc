@@ -2,7 +2,7 @@
 
 
 
-Loops are constructs which allow us to run some parts of code repeatedly, either a known number of times (for-loops) or as long as some condition is satisfied (while-loops).
+A loop is another control flow construct which allow us to run some parts of code multiple times. This can either be a known number of times (for-loops) or for as long as some condition is satisfied (while-loops).
 
 
 
@@ -26,11 +26,11 @@ All lines in the `loop body` are executed at every loop, which allows us to effi
 
 {nbsp}
 
-If we want to iterate through a range of (integer) numbers, Nim syntax for that is `start .. finish`.
-This will iterate through all numbers between `start` and `finish`.
-Both ends are included in the iteration, and `start` needs to be smaller than `finish`.
+If we want to iterate through a range of (integer) numbers in Nim, the syntax for the `iterable` is `start .. finish` where `start` and `finish` are numbers.
+This will iterate through all the numbers between `start` and `finish`, including both `start` and `finish`.
+For the default range iterable `start` needs to be smaller than `finish`.
 
-If we want to iterate _until_ a number (not including it), we use `..<`.
+If we want to iterate _until_ a number (not including it), we can use `..<`:
 
 [source]
 .for1.nim
@@ -58,7 +58,7 @@ include::{source-dir}/for1.nim[]
 
 {nbsp}
 
-If we want to iterate through a range of numbers with a step size different than one, `countup` is used, where we define the starting value, the stopping value (included in the range), and the step size.
+If we want to iterate through a range of numbers with a step size different than one, `countup` is used. With countup we define the starting value, the stopping value (included in the range), and the step size.
 
 [source]
 .for2.nim
@@ -86,7 +86,7 @@ Even if we're counting down, the step size must be positive.
 ----
 include::{source-dir}/for2.nim[lines=5..12]
 ----
-<1> To iterate from a higher to a lower number, we must use `countdown`. (Operator `..` can be used only when starting value is smaller than the end value.)
+<1> To iterate from a higher to a lower number, we must use `countdown` (The `..` operator can only be used when the starting value is smaller than the end value).
 <2> Even when counting down, the step size must be a positive number.
 
 [source, output]
@@ -105,7 +105,7 @@ include::{source-dir}/for2.nim[lines=5..12]
 
 {nbsp}
 
-We can use for-loop to iterate through each character of a string (this kind of iteration is sometimes called _for-each_ loop).
+Since string is an iterable We can use a for-loop to iterate through each character of the string (this kind of iteration is sometimes called a _for-each_ loop).
 
 [source]
 .for3.nim
@@ -127,7 +127,7 @@ t
 
 {nbsp}
 
-If we also need to have an iteration counter (starting from zero), we can achieve that by using `for <counter>, <loopVariable> in <iterator>:` syntax.
+If we also need to have an iteration counter (starting from zero), we can achieve that by using `for <counterVariable>, <loopVariable> in <iterator>:` syntax. This is very practical if you want to iterate through one iterable, and simultaneously access another iterable at the same offset.
 
 [source]
 .for3.nim
@@ -181,7 +181,7 @@ final value of a: 4
 The `break` statement is used to prematurely exit from a loop, usually if some condition is met.
 
 In the next example, if there were no if statement with `break` in it, the loop would continue to run and print until `i` becomes 1000.
-With it, when `i` becomes 3, we immediately exit the loop (before printing the value of `i`).
+With the `break` statement, when `i` becomes 3, we immediately exit the loop (before printing the value of `i`).
 
 [source]
 .break.nim
@@ -197,7 +197,7 @@ include::{source-dir}/break.nim[]
 
 {nbsp}
 
-The `continue` statement starts the next iteration of a loop immediately, without executing the remaining lines of the current iteration.
+The `continue` statement starts the next iteration of a loop immediately, without executing the remaining lines of the current iteration. Notice how 3 is missing from the output of the following code:
 
 [source]
 .continue.nim
@@ -220,7 +220,7 @@ include::{source-dir}/continue.nim[]
 
 == Exercises
 
-1. https://en.wikipedia.org/wiki/Collatz_conjecture[Collatz conjecture] is a popular mathematical problem with the simple rules. Pick a number. If it is odd, multiply it by three and add one; if it is even, divide it by two. Repeat this procedure until you arrive at one. E.g. 5 -> odd -> 3*5 + 1 = 16 -> even -> 16 / 2 = 8 -> even -> 4 -> 2 -> 1 -> end! +
+1. https://en.wikipedia.org/wiki/Collatz_conjecture[Collatz conjecture] is a popular mathematical problem with simple rules. First pick a number. If it is odd, multiply it by three and add one; if it is even, divide it by two. Repeat this procedure until you arrive at one. E.g. 5 -> odd -> 3*5 + 1 = 16 -> even -> 16 / 2 = 8 -> even -> 4 -> 2 -> 1 -> end! +
 Pick an integer (as a mutable variable) and create a loop which will print every step of the Collatz conjecture. (Hint: use `div` for division)
 
 2. Create an immutable variable containing your full name. Write a for-loop which will iterate through that string and print only the vowels (a, e, i, o, u). (Hint: use `case` statement with multiple values per branch)
