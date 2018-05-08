@@ -15,22 +15,22 @@
 
 == Who is this for?
 
-* people with minimal previous programming experience
-* people with some programming experience in other programming languages
-* people who want to explore Nim for the first time, starting from scratch
+* People with minimal previous programming experience
+* People with some programming experience in other programming languages
+* People who want to explore Nim for the first time, starting from scratch
 
 
 == Who is this __not__ for?
 
-* people with lots of programming experience -- other, more advanced, tutorials might suit you better. See https://nim-lang.org/docs/tut1.html[Official Tutorial] or https://nim-by-example.github.io/[Nim by Example].
-* people experienced in Nim (but you can help make this tutorial better)
+* People with lots of programming experience -- other, more advanced, tutorials might suit you better. See https://nim-lang.org/docs/tut1.html[Official Tutorial] or https://nim-by-example.github.io/[Nim by Example].
+* People experienced in Nim (feel free to help make this tutorial better)
 
 
 == How to use this tutorial?
 
-The aim of this tutorial is to give you the basics of programming and Nim syntax so you can have an easier time following other tutorials and/or explore further by yourself.
+The aim of this tutorial is to give you the basics of programming and the Nim syntax so you can have an easier time following other tutorials and/or explore further by yourself.
 
-Instead of just following what is written, it would be the best if you try the stuff by yourself, modify the examples, think of some examples of your own, and be curious in general.
+Instead of just reading what is written, it would be the best if you try the stuff by yourself, modify the examples, think of some examples of your own, and be curious in general.
 The exercises at the end of some chapters should be non-negotiable -- don't skip them.
 
 If you need an additional help with understanding some parts of the tutorial or with the exercises, you can always ask for help on https://forum.nim-lang.org/[Nim forum], https://gitter.im/nim-lang/Nim[Nim Gitter channel], or Nim IRC channel on freenode.
