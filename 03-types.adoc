@@ -7,13 +7,13 @@
 As seen in the previous section, integers are numbers which are written without a fractional component and without a decimal point.
 
 For example: `32`, `-174`, `0`, `10_000_000` are all integers.
-Notice that we can use `_` as a thousands separator, to make larger numbers more readable (it is easier to see we're talking about 10 million when written like 10_000_000 than like 10000000).
+Notice that we can use `_` as a thousands separator, to make larger numbers more readable (it is easier to see that we're talking about 10 million when it's written as 10_000_000 rather than as 10000000).
 
-The expected mathematical operators -- addition (`+`), subtraction (`-`), multiplication (`*`), and division (`/`) -- work as one would expected.
-The first three operations always produce integers, while dividing two integers always gives floating point number (a number with a decimal point) as a result, even if two numbers can be divided without a remainder.
+The expected mathematical operators -- addition (`+`), subtraction (`-`), multiplication (`*`), and division (`/`) -- work as one would expect.
+The first three operations always produce integers, while dividing two integers always gives a floating point number (a number with a decimal point) as a result, even if two numbers can be divided without a remainder.
 
-Integer division (division where the fractional part is discarded) can be used with an operator `div`.
-An operator `mod` is used if one is interested in a remainder (modulus) of an integer division.
+Integer division (division where the fractional part is discarded) can be achieved with the `div` operator.
+An operator `mod` is used if one is interested in the remainder (modulus) of an integer division.
 The result of these two operations is always an integer.
 
 [source]
@@ -21,7 +21,7 @@ The result of these two operations is always an integer.
 ----
 include::{source-dir}/integers.nim[]
 ----
-<1> `echo` command will print to the screen everything that follows it separated by commas. In this case, it first prints the string ``a + b = ``, and then after it, in the same row, it prints the result of the expression `a + b`.
+<1> The `echo` command will print to the screen everything that follows it separated by commas. In this case, it first prints the string ``a + b = ``, and then after it, in the same row, it prints the result of the expression `a + b`.
 
 We can compile and run the above code, and the output should be:
 [source, output]
@@ -42,7 +42,7 @@ a mod b = 3
 Floating-point numbers, or floats for short, are an https://en.wikipedia.org/wiki/Floating-point_arithmetic[approximate representation] of real numbers.
 
 For example: `2.73`, `-3.14`, `5.0`, `4e7` are floats.
-Notice that we can use scientific notation for large floats, where number after `e` is the exponent.
+Notice that we can use scientific notation for large floats, where the number after the `e` is the exponent.
 In this example, `4e7` is a notation representing `4 * 10^7`.
 
 We can also use the four basic mathematical operations between two floats.
@@ -95,7 +95,7 @@ echo e + f   # error
 ----
 
 The values of variables need to be converted to the same type.
-Conversion is straight-forward -- to convert to an integer, we use `int` function, and to convert to a float the `float` function is used.
+Conversion is straight-forward -- to convert to an integer, we use the `int` function, and to convert to a float the `float` function is used.
 [source]
 ----
 let
@@ -109,9 +109,11 @@ echo float(e) + f   <3>
 echo e + int(f)     <4>
 ----
 <1> Printing a `float` version of an integer `e`. (`e` remains of integer type)
-<2> Printing `int` version of a float `f`.
+<2> Printing an `int` version of a float `f`.
 <3> Both operands are floats and can be added.
 <4> Both operands are integers and can be added.
+
+NOTE: When using the `int` function to convert a float to an integer no rounding will be performed. The number simply drops any decimals. To perform rounding we must call another function, but for that we must know a bit more about how to use Nim.
 
 [source, output]
 ----
@@ -187,8 +189,8 @@ They are used by prepending the escape character `\` to them.
 
 If we wanted to print the above example as it was written, we have two possibilities: 
 
-* use `\\` instead of `\` to print backslashes, or
-* use raw strings which have syntax `r"..."` (putting a letter `r` immediately before the first quote), in which there are no escape characters and no special meanings -- everything is printed as it is.
+* Use `\\` instead of `\` to print backslashes, or
+* Use raw strings which have syntax `r"..."` (putting a letter `r` immediately before the first quote), in which there are no escape characters and no special meanings -- everything is printed as it is.
 
 [source]
 ----
@@ -202,14 +204,14 @@ some\nim\tips
 some\nim\tips
 ----
 
-
+There are more special characters than the ones listed above, and they are all found in the https://nim-lang.org/docs/manual.html#lexical-analysis-string-literals[Nim manual].
 
 
 === String concatenation
 
 Strings in Nim are mutable, meaning their content can change.
 With the `add` function we can add (append) either another string or a char to an existing string.
-Two strings can be concatenated (joined together) with the operator `&`.
+If we don't want to change the original string we can also concatenate (joined together) strings with the `&` operator, this returns a new string.
 
 [source]
 .stringConcat.nim
@@ -237,7 +239,7 @@ q is still: xyz
 
 == Boolean
 
-Boolean data type can have only two values: `true` and `false`.
+A boolean data type can only have two values: `true` or `false`.
 Booleans are usually used in the control flow (next section), and they are often a result of relational operators.
 
 The usual naming convention for boolean variables is to write them as a simple yes/no (true/false) questions, e.g. `isEmpty`, `isFinished`, `isMoving`, etc.
@@ -249,9 +251,9 @@ The usual naming convention for boolean variables is to write them as a simple y
 Relational operators test the relation between two entities, which must be comparable.
 
 To compare if two values are the same, `==` (two equal signs) is used.
-Do not confuse it with `=`, which is used to assign some value to a variable.
+Do not confuse this with `=`, which is used for assignment as we saw earlier.
 
-See the following example for all relational operators:
+Here are all the relational operators defined for integers, note that we can also create our own:
 
 [source]
 .relationalOperators.nim
@@ -270,7 +272,7 @@ g is smaller or equal to h: true
 ----
 
 
-We can also compare characters and strings.
+We can also compare characters and strings:
 
 [source]
 .relationalOperators.nim
@@ -296,12 +298,12 @@ true
 
 === Logical operators
 
-Logical operators are used to test the truthiness of an expression consisting of two or more boolean operands.
+Logical operators are used to test the truthiness of an expression consisting of one or more boolean values.
 
-* logical `and` gives `true` only if both members are `true`
-* logical `or` gives `true` if there is at least one member which is `true`
-* logical `xor` gives `true` if one member is true, but the other is not 
-* logical `not` negates the truthiness of its member -- changing `true` to `false`, and vice versa (it is the only logical operator that takes just one operand)
+* Logical `and` returns `true` only if both members are `true`
+* Logical `or` returns `true` if there is at least one member which is `true`
+* Logical `xor` returns `true` if one member is true, but the other is not 
+* Logical `not` negates the truthiness of its member -- changing `true` to `false`, and vice versa (it is the only logical operator that takes just one operand)
 
 [source]
 .logicalOperators.nim
@@ -330,7 +332,7 @@ not F: true
 
 Relational and logical operators can be combined together to form more complex expressions.
 
-For example: `(5 < 7) and (11+9 == 32 - 2*6)` will become `true and (20 == 20)`, which becomes `true and true`, and in the end this will give the final result of `true`.
+For example: `(5 < 7) and (11 + 9 == 32 - 2*6)` will become `true and (20 == 20)`, which becomes `true and true`, and in the end this will give the final result of `true`.
 
 
 
@@ -339,6 +341,7 @@ For example: `(5 < 7) and (11+9 == 32 - 2*6)` will become `true and (20 == 20)`,
 
 This was the longest chapter in this tutorial and we covered a lot of ground.
 Take your time to go trough each data type and experiment with what you can do with each of them.
+Types might seem like a restriction at first, but it allows the Nim compiler to both make your code faster, and make sure you're not doing something wrong by accident.
 
 Now you know the basic data types and several operations on them, which should be enough to do some simple calculations in Nim.
 Test your knowledge by doing the following exercises.
@@ -352,5 +355,5 @@ Test your knowledge by doing the following exercises.
 2. Check if your age is divisible by 3. (Hint: use `mod`)
 3. Create an immutable variable containing your height in centimeters. Print your height in inches. (1 in = 2.54 cm)
 4. A pipe has a 3/8 inch diameter. Express the diameter in centimeters.
-5. Create an immutable variable containing your first name, and another one containing your last name. Make a variable `fullName` by concatenating previous two variables. Don't forget to put a whitespace between. Print your full name.
+5. Create an immutable variable containing your first name, and another one containing your last name. Make a variable `fullName` by concatenating the previous two variables. Don't forget to put a whitespace in-between. Print your full name.
 6. Alice earns $400 every 15 days. Bob earns $3.14 per hour and works 8 hours a day, 7 days a week. After 30 days, has Alice earned more than Bob? (Hint: use relational operators)
