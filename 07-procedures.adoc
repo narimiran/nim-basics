@@ -2,16 +2,19 @@
 
 
 
-Procedures, or _functions_ in some other programming languages, are parts of code that perform a specific task, packaged as a unit.
+Procedures, or _functions_ as they are called in some other programming languages, are parts of code that perform a specific task, packaged as a unit.
+The benefit of grouping code together like this is that we can "call" these procedures instead of writing all the code over again when we want to do something again.
+In some of the previous chapters we looked at the Collatz conjecture in various different scenarios.
+By wrapping up the Collatz conjecture logic into a procedure we could have called the same code for all the exercises.
 
 So far we have used many built-in procedures, such as `echo` for printing, `add` for adding elements to a sequence, `inc` to increase the value of an integer, `len` to get the length of a container, etc.
 Now we'll see how to create and use our own procedures.
 
 Some of the advantages of using procedures are:
 
-* reducing code duplication
-* enabling reuse of code
-* decomposing a complex task into simpler steps
+* Reducing code duplication
+* Easier to read code as we can name pieces by what they do
+* Decomposing a complex task into simpler steps
 
 
 
@@ -20,7 +23,7 @@ Some of the advantages of using procedures are:
 
 == Declaring a procedure
 
-Before we can use (call) our procedure, we need to create it and define what does it do.
+Before we can use (call) our procedure, we need to create it and define what it does.
 
 A procedure is declared by using `proc` keyword and the procedure name, followed by the input parameters and their type inside of parentheses, and the last part is a colon and the type of the value returned from a procedure, like this:
 
