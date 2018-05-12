@@ -1,4 +1,4 @@
-proc add(x, y: int): int =  # <1>
+proc plus(x, y: int): int =  # <1>
   return x + y
 
 proc multi(x, y: int): int =
@@ -9,9 +9,9 @@ let
   b = 3
   c = 4
 
-echo a.add(b) == add(a, b)
+echo a.plus(b) == plus(a, b)
 echo c.multi(a) == multi(c, a)
 
 
-echo a.add(b).multi(c)  # <1>
-echo c.multi(b).add(a)  # <2>
+echo a.plus(b).multi(c)  # <2>
+echo c.multi(b).plus(a)  # <3>

@@ -16,7 +16,12 @@ Some of the advantages of using procedures are:
 * Easier to read code as we can name pieces by what they do
 * Decomposing a complex task into simpler steps
 
-
+NOTE: As mentioned in the beginning of this section, procedures are often called functions in other languages. +
+This is actually a bit of a misnomer if we consider the mathematical definition of a function. +
+Mathematical functions take a set of arguments (like `f(x)`) and always return the same answer for the same input. +
+Programmatic procedures on the other hand doesn't always return the same, or anything at all. +
+This is because our computer programs can store state in the variables we mentioned earlier which procedures can read and change. +
+In Nim the word `func` is currently reserved to be used as the more mathematically correct kind of function, forcing no side-effects.
 
 
 
@@ -29,10 +34,10 @@ A procedure is declared by using `proc` keyword and the procedure name, followed
 
 [source]
 ----
-proc <name>(<p1>: <type1>, <p2>: <type2>, ...): <returnType> =
+proc <name>(<p1>: <type1>, <p2>: <type2>, ...): <returnType>
 ----
 
-The body of a procedure is written in the indented block following the declaration.
+The body of a procedure is written in the indented block following the declaration. Note that to pass a block the procedure declaration must also be appended with a `=` sign.
 
 [source]
 .callProcs.nim
@@ -47,18 +52,69 @@ include::{source-dir}/callProcs.nim[lines=1..8]
 
 [source]
 ----
-proc echoLanguageRating(language: string) =     # <1>
+proc echoLanguageRating(language: string) = <1>
   case language
     of "Nim", "nim", "NIM":
       echo language, " is the best language!"
     else:
       echo language, " might be a second-best language."
 ----
-<1> Procedure `echoLanguageRating` just echoes given name, it doesn't return anything, so the return type is not declared.
+<1> The `echoLanguageRating` procedure just echoes the given name, it doesn't return anything, so the return type is not declared.
 
+Normally we're not allowed to change any of the parameters we are given.
+Doing something like this will throw an error:
 
+[source]
+----
+proc changeArgument(argument: int) =
+  argument += 5
 
+var ourVariable = 10
+changeArgument(ourVariable)
+----
 
+In order for this to work we need to let Nim, and the programmer using our procedure, that we are going to change it by declaring it as a variable:
+
+[source]
+----
+proc changeArgument(argument: var int) = <1>
+  argument += 5
+
+var ourVariable = 10
+changeArgument(ourVariable)
+echo ourVariable
+changeArgument(ourVariable)
+echo ourVariable
+----
+<1> Notice how `argument` is now declared as a `var int` and not just as an `int`
+[source, output]
+----
+15
+20
+----
+
+This of course means that the name we pass it must be declared as a variable as well, passing in something assigned with `const` or `let` will throw an error.
+
+While it's good practice to pass things as arguments it's also possible to use names declared outside the procedure, both variables and constants:
+
+[source]
+----
+var x = 100
+
+proc echoX() =
+  echo x       <1>
+  x += 1       <2>
+
+echoX()
+echoX()
+----
+<1> Here we access the outside variable x
+<2> We can also update its value, since it's declared as a variable
+[source, output]
+----
+100
+101
+----
 
 
 == Calling the procedures
@@ -80,7 +136,7 @@ If we want to call our `findMax` procedure from the above example, and save the 
 ----
 include::{source-dir}/callProcs.nim[lines=10..18]
 ----
-<1> The variable `c` is storing the result from the function `findMax` called with the results of first two calls (`findMax(987, 321)`).
+<1> The result from the function `findMax` is here named `c`, and is called with the results of our first two calls (`findMax(987, 321)`).
 
 [source, output]
 ----
@@ -91,7 +147,8 @@ include::{source-dir}/callProcs.nim[lines=10..18]
 
 {nbsp}
 
-Nim supports https://en.wikipedia.org/wiki/Uniform_Function_Call_Syntax[Uniform Function Call Syntax], which allows a second way of calling the procedures where the first argument is written before the function name, and the rest of the parameters are stated in parentheses:
+Nim, unlike many other languages, also supports https://en.wikipedia.org/wiki/Uniform_Function_Call_Syntax[Uniform Function Call Syntax], which allows many different ways of calling procedures.
+This one is also a call where the first argument is written before the function name, and the rest of the parameters are stated in parentheses:
 
 [source]
 ----
@@ -99,32 +156,37 @@ Nim supports https://en.wikipedia.org/wiki/Uniform_Function_Call_Syntax[Uniform 
 ----
 
 We have used this syntax when we were adding elements to an existing sequence (`<seq>.add(<element>)`), as this makes it more readable and expresses our intent more clearly than writing `add(<seq>, <element>)`.
+We can also omit the parenthesis around the arguments:
+
+[source]
+----
+<procName> <arg1>, <arg2>, ...
+----
+
+We've seen this style being used when we call the `echo` procedure, and when calling the `len` procedure without any arguments.
+These two can also of course be combined like this:
+
+[source]
+----
+<arg1>.<procName> <arg2>, <arg3>, ...
+----
+
+This syntax however is not seen very often.
+The uniform call syntax allows for more readable chaining of multiple procedures:
 
 [source]
 .ufcs.nim
 ----
-include::{source-dir}/ufcs.nim[lines=1..14]
+include::{source-dir}/ufcs.nim[]
 ----
 <1> If multiple parameters are of the same type, we can declare their type in this compact way.
+<2> First we add `a` and `b`, then the result of that operation (2 + 3 = 5) is passed as the first parameter to the `multi` procedure, where it is multiplied by `c` (5 * 4 = 20).
+<3> First we multiply `c` and `b`, then the result of that operation (4 * 3 = 12) is passed as the first parameter to the `plus` procedure, where it is added with `a` (12 + 2 = 14).
 
 [source, output]
 ----
 true
 true
-----
-
-This syntax allows for more readable chaining of multiple procedures:
-
-[source]
-.ufcs.nim
-----
-include::{source-dir}/ufcs.nim[lines=16..18]
-----
-<1> First we add `a` and `b`, then the result of that operation (2 + 3 = 5) is passed as a first parameter to the `multi` procedure, where it is multiplied by `c` (5 * 4 = 20).
-<2> First we multiply `c` and `b`, then the result of that operation (4 * 3 = 12) is passed as a first parameter to the `add` procedure, where it is added by `a` (12 + 2 = 14).
-
-[source, output]
-----
 20
 14
 ----
@@ -135,7 +197,7 @@ include::{source-dir}/ufcs.nim[lines=16..18]
 == Result variable
 
 In Nim, every procedure that returns a value has an implicitly declared and initialized (with a default value) `result` variable.
-The procedure will return the value of the `result` when it reaches the end of its indented block.
+The procedure will return the value of this `result` variable when it reaches the end of its indented block, even with no `return` statement.
 
 [source]
 .result.nim
@@ -162,7 +224,7 @@ The default value of strings and sequences is https://en.wikipedia.org/wiki/Null
 ----
 include::{source-dir}/result.nim[lines=11..20]
 ----
-<1> Sequences must be _initialized_. (Try deleting this line and see what happens.) Notice that `var` must _not_ be used, as `result` is already implicitly _declared_.
+<1> Sequences must be _initialized_, deleting this line will cause an error. Notice that `var` must _not_ be used, as `result` is already _implicitly declared_.
 
 [source, output]
 ----
@@ -179,9 +241,9 @@ Inside of a procedure we can also call other procedures.
 ----
 include::{source-dir}/filterOdds.nim[]
 ----
-<1> Initializing the `result` variable as an empty sequence. Because the return value is declared as `seq[int]`, the `result` can only accept integers.
-<2> Calling previously declared procedure. Its return type is `bool` and can be used in the if-statement.
-<3> Third way of calling procedure. Possible only when the procedure takes one argument.
+<1> Initializing the `result` variable as an empty sequence. Because the return value is declared as `seq[int]`, `result` can only accept integers.
+<2> Calling the previously declared procedure. Its return type is `bool` and can be used in the if-statement.
+<3> Third way of calling procedure, as we saw above.
 
 [source, output]
 ----
@@ -190,7 +252,35 @@ include::{source-dir}/filterOdds.nim[]
 @[45390, 3219]
 ----
 
+== Forward declaration
 
+As mentioned in the very beginning of this section we can declare a procedure without a code block.
+The reason for this is that we have to declare procedures before we can call them, doing this will not work:
+
+[source]
+----
+echo 5.plus(10)              <1>
+
+proc plus(x, y: int): int =  <2>
+  return x + y
+----
+<1> This will throw an error as plus isn't defined yet.
+<2> Here we define plus, but since it's after we use it Nim doesn't know about it yet.
+
+The way to get around this is what's called a forward declaration:
+
+[source]
+----
+proc plus(x, y: int): int    <1>
+
+echo 5.plus(10)              <2>
+
+proc plus(x, y: int): int =  <3>
+  return x + y
+----
+<1> Here we tell Nim that it should consider the `plus` procedure to exist with this definition.
+<2> Now we are free to use it in our code, this will work.
+<2> This is were `plus` is actually implemented, this must of course match our previous definition.
 
 
 
@@ -200,9 +290,8 @@ include::{source-dir}/filterOdds.nim[]
 
 2. Create a procedure `findMax3` which will return the largest of three values.
 
-3. Write a procedure which will test if a given number is a https://en.wikipedia.org/wiki/Prime_number[prime] or not.
+3. Points in 2D plane can be represented as `tuple[x, y: float]`. Write a procedure which will receive two points and return a new point which is a sum of those two points (add x's and y's separately).
 
-4. Points in 2D plane can be represented as `tuple[x, y: float]`. Write a procedure which will receive two points and return a new point which is a sum of those two points (add x's and y's separately).
-
+4. Create two procedures `tick` and `tock` which echo out the words "tick" and "tock". Have a global variable to keep track of how many times they have run, and run one from the other until the counter reaches 100. The expected output is to get lines with "tick" and "tock" alternating 100 times. NOTE: You can press Ctrl+C to stop execution of a program if you enter an infinite loop.
 
 Test all procedures by calling them with different parameters.
