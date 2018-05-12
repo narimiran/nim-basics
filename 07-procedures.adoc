@@ -4,6 +4,7 @@
 
 Procedures, or _functions_ as they are called in some other programming languages, are parts of code that perform a specific task, packaged as a unit.
 The benefit of grouping code together like this is that we can "call" these procedures instead of writing all the code over again when we want to do something again.
+
 In some of the previous chapters we looked at the Collatz conjecture in various different scenarios.
 By wrapping up the Collatz conjecture logic into a procedure we could have called the same code for all the exercises.
 
@@ -16,11 +17,12 @@ Some of the advantages of using procedures are:
 * Easier to read code as we can name pieces by what they do
 * Decomposing a complex task into simpler steps
 
-NOTE: As mentioned in the beginning of this section, procedures are often called functions in other languages. +
-This is actually a bit of a misnomer if we consider the mathematical definition of a function. +
-Mathematical functions take a set of arguments (like `f(x)`) and always return the same answer for the same input. +
-Programmatic procedures on the other hand doesn't always return the same, or anything at all. +
-This is because our computer programs can store state in the variables we mentioned earlier which procedures can read and change. +
+As mentioned in the beginning of this section, procedures are often called functions in other languages.
+This is actually a bit of a misnomer if we consider the mathematical definition of a function.
+Mathematical functions take a set of arguments (like `f(x)`) and always return the same answer for the same input.
+
+Programmatic procedures on the other hand doesn't always return the same, or anything at all.
+This is because our computer programs can store state in the variables we mentioned earlier which procedures can read and change.
 In Nim the word `func` is currently reserved to be used as the more mathematically correct kind of function, forcing no side-effects.
 
 
@@ -37,7 +39,7 @@ A procedure is declared by using `proc` keyword and the procedure name, followed
 proc <name>(<p1>: <type1>, <p2>: <type2>, ...): <returnType>
 ----
 
-The body of a procedure is written in the indented block following the declaration. Note that to pass a block the procedure declaration must also be appended with a `=` sign.
+The body of a procedure is written in the indented block following the declaration appended with a `=` sign.
 
 [source]
 .callProcs.nim
@@ -61,6 +63,9 @@ proc echoLanguageRating(language: string) = <1>
 ----
 <1> The `echoLanguageRating` procedure just echoes the given name, it doesn't return anything, so the return type is not declared.
 
+
+{nbsp}
+
 Normally we're not allowed to change any of the parameters we are given.
 Doing something like this will throw an error:
 
@@ -73,7 +78,7 @@ var ourVariable = 10
 changeArgument(ourVariable)
 ----
 
-In order for this to work we need to let Nim, and the programmer using our procedure, that we are going to change it by declaring it as a variable:
+In order for this to work we need to allow Nim, and the programmer using our procedure, changing the argument by declaring it as a variable:
 
 [source]
 ----
@@ -86,7 +91,8 @@ echo ourVariable
 changeArgument(ourVariable)
 echo ourVariable
 ----
-<1> Notice how `argument` is now declared as a `var int` and not just as an `int`
+<1> Notice how `argument` is now declared as a `var int` and not just as an `int`.
+
 [source, output]
 ----
 15
@@ -108,8 +114,8 @@ proc echoX() =
 echoX()
 echoX()
 ----
-<1> Here we access the outside variable x
-<2> We can also update its value, since it's declared as a variable
+<1> Here we access the outside variable `x`.
+<2> We can also update its value, since it's declared as a variable.
 [source, output]
 ----
 100
@@ -148,7 +154,8 @@ include::{source-dir}/callProcs.nim[lines=10..18]
 {nbsp}
 
 Nim, unlike many other languages, also supports https://en.wikipedia.org/wiki/Uniform_Function_Call_Syntax[Uniform Function Call Syntax], which allows many different ways of calling procedures.
-This one is also a call where the first argument is written before the function name, and the rest of the parameters are stated in parentheses:
+
+This one is a call where the first argument is written before the function name, and the rest of the parameters are stated in parentheses:
 
 [source]
 ----
@@ -164,14 +171,16 @@ We can also omit the parenthesis around the arguments:
 ----
 
 We've seen this style being used when we call the `echo` procedure, and when calling the `len` procedure without any arguments.
-These two can also of course be combined like this:
+These two can also be combined like this, but this syntax however is not seen very often:
 
 [source]
 ----
 <arg1>.<procName> <arg2>, <arg3>, ...
 ----
 
-This syntax however is not seen very often.
+
+{nbsp}
+
 The uniform call syntax allows for more readable chaining of multiple procedures:
 
 [source]
@@ -212,6 +221,7 @@ include::{source-dir}/result.nim[lines=1..9]
 33
 ----
 
+
 {nbsp}
 
 // TODO: delete/modify this part once the new behaviour for strings and sequences is in the stable version.
@@ -224,7 +234,7 @@ The default value of strings and sequences is https://en.wikipedia.org/wiki/Null
 ----
 include::{source-dir}/result.nim[lines=11..20]
 ----
-<1> Sequences must be _initialized_, deleting this line will cause an error. Notice that `var` must _not_ be used, as `result` is already _implicitly declared_.
+<1> Sequences must be _initialized_, deleting this line will cause an error. Notice that `var` must _not_ be used, as `result` is already implicitly declared.
 
 [source, output]
 ----
@@ -243,7 +253,7 @@ include::{source-dir}/filterOdds.nim[]
 ----
 <1> Initializing the `result` variable as an empty sequence. Because the return value is declared as `seq[int]`, `result` can only accept integers.
 <2> Calling the previously declared procedure. Its return type is `bool` and can be used in the if-statement.
-<3> Third way of calling procedure, as we saw above.
+<3> The third way of calling a procedure, as we saw above.
 
 [source, output]
 ----
@@ -252,6 +262,10 @@ include::{source-dir}/filterOdds.nim[]
 @[45390, 3219]
 ----
 
+
+
+
+
 == Forward declaration
 
 As mentioned in the very beginning of this section we can declare a procedure without a code block.
@@ -259,7 +273,7 @@ The reason for this is that we have to declare procedures before we can call the
 
 [source]
 ----
-echo 5.plus(10)              <1>
+echo 5.plus(10) # error      <1>
 
 proc plus(x, y: int): int =  <2>
   return x + y
@@ -280,7 +294,9 @@ proc plus(x, y: int): int =  <3>
 ----
 <1> Here we tell Nim that it should consider the `plus` procedure to exist with this definition.
 <2> Now we are free to use it in our code, this will work.
-<2> This is were `plus` is actually implemented, this must of course match our previous definition.
+<3> This is were `plus` is actually implemented, this must of course match our previous definition.
+
+
 
 
 
@@ -292,6 +308,8 @@ proc plus(x, y: int): int =  <3>
 
 3. Points in 2D plane can be represented as `tuple[x, y: float]`. Write a procedure which will receive two points and return a new point which is a sum of those two points (add x's and y's separately).
 
-4. Create two procedures `tick` and `tock` which echo out the words "tick" and "tock". Have a global variable to keep track of how many times they have run, and run one from the other until the counter reaches 100. The expected output is to get lines with "tick" and "tock" alternating 100 times. NOTE: You can press Ctrl+C to stop execution of a program if you enter an infinite loop.
+4. Create two procedures `tick` and `tock` which echo out the words "tick" and "tock". Have a global variable to keep track of how many times they have run, and run one from the other until the counter reaches 20. The expected output is to get lines with "tick" and "tock" alternating 20 times. (Hint: use forward declarations.)
+
+NOTE: You can press Ctrl+C to stop execution of a program if you enter an infinite loop.
 
 Test all procedures by calling them with different parameters.
