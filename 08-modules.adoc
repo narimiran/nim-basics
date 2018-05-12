@@ -54,6 +54,9 @@ include::{source-dir}/maths.nim[]
 32
 ----
 
+
+
+
 == Creating our own
 
 Often times we have so much code in a project that it makes sense to split it into pieces that each does a certain thing.
@@ -69,18 +72,16 @@ proc minus(a, b: int): int = <2>
   return a - b
 ----
 <1> Notice how the `plus` procedure now has an asterisk (`*`) after it's name, this tells Nim that another file importing this one will be able to use this procedure.
-<2> By contrast this will not be visible when importing this file
+<2> By contrast this will not be visible when importing this file.
 
 [source]
 .secondFile.nim
 ----
-import firstFile  <1>
+import firstFile          <1>
 
-echo plus(5, 10)  <2>
-echo minus(10, 5) <3>
+echo plus(5, 10)          <2>
+echo minus(10, 5) # error <3>
 ----
-<1> Here we import `firstFile.nim`, we don't need to put the `.nim` extension on here
-<2> This will work fine and output `15` as it's declared in `firstFile` and visible to us
-<3> However this will throw an error as the `minus` procedure is not visible since it doesn't have an asterisk behind it's name
-
-
+<1> Here we import `firstFile.nim`. We don't need to put the `.nim` extension on here.
+<2> This will work fine and output `15` as it's declared in `firstFile` and visible to us.
+<3> However this will throw an error as the `minus` procedure is not visible since it doesn't have an asterisk behind it's name.
