@@ -18,13 +18,13 @@ primes = [1, 2, 3, 5, 7]
 == Arrays
 
 An array is the simplest container type.
-All elements in an array, must share the same type, meaning they are homogenous.
-Arrays are also of static size, meaning that the amount of elements (or rather the amount of possible elements), must be known on compile-time.
-This means that we call arrays for a "homogenous container of constant length".
+Arrays are homogenous, i.e. all elements in an array must have the same type.
+Arrays are also of a constant size, meaning that the amount of elements (or rather the amount of _possible_ elements), must be known at compile-time.
+This means that we call arrays a "homogenous container of a constant length".
 
 The array type is declared using `array[<length>, <type>]`, where `length` is the total capacity of the array (number of elements it can fit), and `type` is a type of all its elements.
-Remember that since `length` here is a constant it must be known on compile-time.
 The declaration can be omitted if both length and type can be inferred from the passed elements.
+
 The elements of an array are enclosed inside of square brackets.
 
 [source]
@@ -41,7 +41,7 @@ var
 <3> The correct way to declare an empty array (which will be filled later) is to give its length and type, without providing the values of its elements -- array `d` can contain seven strings.
 
 
-Since the length has to be known at compile-time this will not work:
+Since the length of an array has to be known at compile-time this will not work:
 
 [source]
 ----
@@ -58,7 +58,8 @@ var a: array[n, char] # error <1>
 == Sequences
 
 Sequences are containers similar to arrays, but their length doesn't have to be known at compile time, and it can change during runtime -- we declare only the type of the contained elements with `seq[<type>]`.
-Note however that seqs are also homogenous so every element in a seq has to be the same type.
+Sequences are also homogenous -- every element in a sequence has to be the same type.
+
 The elements of a sequence are enclosed between `@[` and `]`.
 
 [source]
@@ -77,8 +78,11 @@ Another way to initialize an empty sequence is to call the `newSeq` procedure. W
 var
   e = newSeq[int]()    <1>
 ----
-<1> Providing the type parameter inside of square brackets allows the procedure to know that it shall return a sequence of a certain type.+
+<1> Providing the type parameter inside of square brackets allows the procedure to know that it shall return a sequence of a certain type. +
 A frequent error is omission of the final `()`, which must be included.
+
+
+{nbsp}
 
 We can add new elements to a sequence with the `add` function, similar to how we did with strings.
 For this to work the sequence must be mutable (defined with `var`), and the element we're adding must be of the same type as the elements in the sequence.
@@ -129,6 +133,9 @@ echo i.len
 3
 4
 ----
+
+
+
 
 
 == Indexing and slicing
@@ -205,9 +212,9 @@ Tom and Barry
 
 == Tuples
 
-Both of the containers we've seen so far have been homogenous, meaning they must contain only values of the same type.
-Tuples on the other hand contain heterogenous data, i.e. elements of a tuple can be of different types.
-Similarily to arrays, tuples are fixed-size.
+Both of the containers we've seen so far have been homogenous.
+Tuples, on the other hand, contain heterogenous data, i.e. elements of a tuple can be of different types.
+Similarly to arrays, tuples have fixed-size.
 
 The elements of a tuple are enclosed inside of parentheses.
 
