@@ -1,0 +1,86 @@
+= Modules
+
+
+
+So far we have used the functionality which is available by default every time we start a new Nim file.
+This can be extended with modules, which give more functionality for some specific topic.
+
+Some of the most used Nim modules are:
+
+* `strutils`: additional functionality when dealing with strings
+* `sequtils`: additional functionality for sequences
+* `math`: mathematical functions (logarithms, square roots, ...), trigonometry (sin, cos, ...)
+* `times`: measure and deal with time
+
+But there are many more, both in what's called the https://nim-lang.org/docs/lib.html[standard library] and in the https://nimble.directory/[nimble package manager].
+
+
+== Importing a module
+
+If we want to import a module and all of its functionality, all we have to do is put `import <moduleName>` in our file.
+This is commonly done on the top so we can easily see what our code uses.
+
+[source]
+.stringutils.nim
+----
+include::{source-dir}/stringutils.nim[]
+----
+<1> Importing https://nim-lang.org/docs/strutils.html[strutils].
+<2> Using `split` from `strutils` module. It splits the string in a sequence of words.
+<3> `toUpperAscii` converts all ASCII letters to uppercase.
+<4> `repeat` is also from `strutils` module, and it repeats either a character or a whole string the requested amount of times.
+
+[source, output]
+----
+@["My", "string", "with", "whitespace."]
+MY STRING WITH WHITESPACE.
+!!!!!
+----
+
+[source]
+.maths.nim
+----
+include::{source-dir}/maths.nim[]
+----
+<1> Importing https://nim-lang.org/docs/math.html[math].
+<2> Converting degrees to radians with `degToRad`.
+<3> `sin` takes radians. We round (also from `math` module) the result to at most 2 decimal places. (Otherwise the result would be: 0.4999999999999999)
+<4> Math module also has `^` operator for calculating powers of a number.
+
+[source, output]
+----
+0.5235987755982988
+0.5
+32
+----
+
+== Creating our own
+
+Often times we have so much code in a project that it makes sense to split it into pieces that each does a certain thing.
+If you create two files side by side in a folder, let's call them `firstFile.nim` and `secondFile.nim`, you can import one from the other as a module:
+
+[source]
+.firstFile.nim
+----
+proc plus*(a, b: int): int = <1>
+  return a + b
+
+proc minus(a, b: int): int = <2>
+  return a - b
+----
+<1> Notice how the `plus` procedure now has an asterisk (`*`) after it's name, this tells Nim that another file importing this one will be able to use this procedure.
+<2> By contrast this will not be visible when importing this file
+
+[source]
+.secondFile.nim
+----
+import firstFile  <1>
+
+echo plus(5, 10)  <2>
+echo minus(10, 5) <3>
+----
+<1> Here we import `firstFile.nim`, we don't need to put the `.nim` extension on here
+<2> This will work fine and output `15` as it's declared in `firstFile` and visible to us
+<3> However this will throw an error as the `minus` procedure is not visible since it doesn't have an asterisk behind it's name
+
+

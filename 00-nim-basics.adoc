@@ -60,7 +60,7 @@ include::06-containers.adoc[]
 include::07-procedures.adoc[]
 
 '''
-include::08-importing-modules.adoc[]
+include::08-modules.adoc[]
 
 '''
 include::09-user-input.adoc[]
