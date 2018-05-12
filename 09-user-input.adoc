@@ -2,7 +2,7 @@
 
 
 
-Using the stuff we introduced so far (basic data types and containers, control flow, loops) allows us to make quite a few simple programs.
+Using the stuff we've introduced so far (basic data types and containers, control flow, loops) allows us to make quite a few simple programs.
 To make our programs more interactive, we need an option to read data from a file, or ask a user for an input.
 
 
@@ -11,7 +11,7 @@ To make our programs more interactive, we need an option to read data from a fil
 == Reading from a file
 
 Let's say we have a text file called `people.txt` in the same directory as our Nim code.
-The contents of that file look like this:
+The contents of that file looks like this:
 
 [source]
 .people.txt
@@ -27,8 +27,8 @@ We want to use the contents of that file in our program, as a list (sequence) of
 ----
 include::{source-dir}/readFromFile.nim[]
 ----
-<1> To read contents of a file, we use `readFile` function, and we provide a path to the file from which to read (if the file is in the same directory as our Nim program, providing a filename is enough). The result is a multiline string.
-<2> To split a multiline string into a sequence of strings (each string contains all the contents of a single line) we use `splitLines` from `strutils` module.
+<1> To read contents of a file, we use the `readFile` procedure, and we provide a path to the file from which to read (if the file is in the same directory as our Nim program, providing a filename is enough). The result is a multiline string.
+<2> To split a multiline string into a sequence of strings (each string contains all the contents of a single line) we use `splitLines` from the `strutils` module.
 
 [source, output]
 ----
@@ -41,7 +41,9 @@ Carol C.
 <1> There was a final new line (empty last line) in the original file, which is also present here.
 <2> Because of the final new line, our sequence is longer than we expected/wanted.
 
-To solve the problem of a final new line, we can use `strip` function from `strutils` after we have read from a file.
+To solve the problem of a final new line, we can use the `strip` procedure from `strutils` after we have read from a file.
+All this does is remove any so-called whitespace from the start and end of our string.
+Whitespace is simply any character that makes some space, new-lines, spaces, tabs, etc.
 
 [source]
 .readFromFile2.nim
@@ -64,14 +66,14 @@ Carol C.
 == Reading user input
 
 If we want to interact with a user, we must be able to ask them for an input, and then process it and use it.
-We need to read from https://en.wikipedia.org/wiki/Standard_streams#Standard_input_(stdin)[standard input (stdin)] by passing `stdin` to `readLine` function.
+We need to read from https://en.wikipedia.org/wiki/Standard_streams#Standard_input_(stdin)[standard input (stdin)] by passing `stdin` to the `readLine` procedure.
 
 [source]
 .interaction1.nim
 ----
 include::{source-dir}/interaction1.nim[]
 ----
-<1> Type of `name` is inferred to be a string.
+<1> The type of `name` is inferred to be a string.
 
 
 [source, output]
@@ -79,7 +81,7 @@ include::{source-dir}/interaction1.nim[]
 Please enter your name:
         <1>
 ----
-<1> Waiting for a user input. After we write our name and press `Enter`, the program will continue.
+<1> Waiting for user input. After we write our name and press `Enter`, the program will continue.
 
 [source, output]
 ----
@@ -96,7 +98,7 @@ NOTE: VS Code users cannot run this the usual way (using `Ctrl+Alt+N`) because o
 == Dealing with numbers
 
 Reading from a file or from a user input always gives a string as a result.
-If we would like to use numbers, we need to convert strings to numbers -- we use `strutils` module and we convert to integers using `parseInt` or we convert to floats using `parseFloat` function.
+If we would like to use numbers, we need to convert strings to numbers -- we again use the `strutils` module and use `parseInt` to convert to integers or `parseFloat` to convert into a float.
 
 [source]
 .interaction2.nim
@@ -122,7 +124,7 @@ If we have file `numbers.txt` in the same directory as our Nim code, with the fo
 include::{source-dir}/numbers.txt[]
 ----
 
-We want to read that file and find the sum and average of the numbers provided.
+And we want to read that file and find the sum and average of the numbers provided, we can do something like this:
 
 [source]
 .interaction3.nim
@@ -131,8 +133,8 @@ include::{source-dir}/interaction3.nim[]
 ----
 <1> We import multiple modules. `strutils` gives us `strip` and `splitLines`, `sequtils` gives `map`, and `math` gives `sum`.
 <2> We strip the final new line, and split lines to create a sequence of strings.
-<3> `map` works by applying a function (in this case `parseFloat`) to the each member of a container. In other words, we convert each string to a float.
-<4> Using `sum` from `math` module to give us the sum of all elements of a sequence.
+<3> `map` works by applying a procedure (in this case `parseFloat`) to each member of a container. In other words, we convert each string to a float, returning a new sequence of floats.
+<4> Using `sum` from `math` module to give us the sum of all elements in a sequence.
 <5> We need to convert the length of a sequence to float, because `sumNums` is a float.
 
 [source, output]
@@ -150,4 +152,4 @@ include::{source-dir}/interaction3.nim[]
 
 2. Repeat <<_exercises_4, Collatz conjecture exercise>> so your program asks a user for a starting number. Print the resulting sequence.
 
-3. Ask a user for a string they want to have it reversed. Create a procedure which takes a string and returns a reversed version. For example, if user types `Nim-lang`, the procedure should return `gnal-miN`. (Hint: use indexing and `countdown`)
+3. Ask a user for a string they want to have reversed. Create a procedure which takes a string and returns a reversed version. For example, if user types `Nim-lang`, the procedure should return `gnal-miN`. (Hint: use indexing and `countdown`)
