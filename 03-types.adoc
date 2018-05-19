@@ -162,7 +162,7 @@ We might think of strings as words, but they can contain more than one word, som
 include::{source-dir}/strings.nim[]
 ----
 <1> An empty string.
-<2> This is not a number (int). It inside double quotes, making it a string.
+<2> This is not a number (int). It is inside double quotes, making it a string.
 <3> Even though this is only one character, it is not a char because it is enclosed inside of double quotes.
 
 

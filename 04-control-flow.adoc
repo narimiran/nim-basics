@@ -41,7 +41,7 @@ if <condition>:     <1>
 ----
 
 <1> The `condition` must be of boolean type -- either a boolean variable or a relational and/or logical expression.
-<2> All lines following the `if` line whiche are indented two spaces make the same block and will be executed only if the condition is `true`.
+<2> All lines following the `if` line which are indented two spaces make the same block and will be executed only if the condition is `true`.
 
 If statements can be nested, i.e. inside one if-block there can be another if statement.
 

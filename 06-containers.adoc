@@ -36,7 +36,7 @@ var
   d: array[7, string]         <3>
   x = 5
 ----
-<1> If we provide the values, the length and type of array `b` are known at compile time. Although correct, there is no need to specificly declare it like array `a`.
+<1> If we provide the values, the length and type of array `b` are known at compile time. Although correct, there is no need to specifically declare it like array `a`.
 <2> Neither the length nor the type of the elements can be inferred from this kind of declaration -- this produces an error.
 <3> The correct way to declare an empty array (which will be filled later) is to give its length and type, without providing the values of its elements -- array `d` can contain seven strings.
 
