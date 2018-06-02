@@ -3,6 +3,7 @@
 
 
 It is often helpful to give the values in our programs names to help us keep track of things.
+If we ask a user for his/her name, we want to store it for the later usage, without asking for it again and again every time we need to do some computation with it.
 
 In the example `pi = 3.14`, the name `pi` is connected to the value `3.14`.
 From our experience, we can tell that the type of a variable `pi` is a (decimal) number.
@@ -11,7 +12,7 @@ Another example would be `firstName = Alice`, where `firstName` is the name of a
 We would say that the type of this variable is a word.
 
 In programming languages this works similarly.
-These name assignments have their name, the value, and a type.
+These name assignments have their _name_, the _value_, and a _type_.
 
 
 
@@ -22,7 +23,7 @@ These name assignments have their name, the value, and a type.
 Nim is a https://en.wikipedia.org/wiki/Type_system#STATIC[statically typed] programming language, meaning that the type of an assignment needs to be declared before using the value.
 
 In Nim we also distinguish values that can change, or mutate, from those that can't, but more on this later.
-We can declare a variable (a mutable assignment) using `var` keyword, just by stating its name and type (the value can be added later) by using this syntax:
+We can declare a variable (a mutable assignment) using the `var` keyword, just by stating its name and type (the value can be added later) by using this syntax:
 [source]
 ----
 var <name>: <type>
@@ -153,9 +154,5 @@ let l = k + 7   <2>
 
 In practice, you will see/use `let` more frequently than `const`.
 
-
-
-
-// == Exercises
-
-// 1. Create an immutable variable containing your name. Print it on the screen.
+While you could use `var` for everything, your default choice should be `let`.
+Use `var` only for the variables which will be modified.

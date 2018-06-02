@@ -35,9 +35,9 @@ If you're using other code editors, see https://github.com/nim-lang/Nim/wiki/Edi
 
 To check if the installation was successful, we will write a program which is traditionally used as an introductory example -- https://en.wikipedia.org/wiki/%22Hello,_World!%22_program[Hello World].
 
-Printing(as in: displaying on the screen; not on a paper with a printer) the phrase `Hello World!` in Nim is straightforward and it doesn't require any boilerplate code.
+Printing (as in: displaying on the screen; not on a paper with a printer) the phrase `Hello World!` in Nim is straightforward and it doesn't require any boilerplate code.
 
-In a new text file called `helloworld.nim` we need to write just one line of code:
+In a new text file called e.g. `helloworld.nim` we need to write just one line of code:
 
 [source]
 .helloworld.nim
@@ -49,7 +49,8 @@ NOTE: The phrase you want to print must follow the `echo` command and must be en
 
 First we need to compile our program, and then run it to see if it works as expected.
 
-Open your terminal in the same directory where your file is.
+Open your terminal in the same directory where your file is (on Linux you can get "Open Terminal here" if you right-click the directory in your file manager, on Windows you should use Shift + right-click to get the menu option for opening the command line).
+
 We compile our program by typing in the terminal:
 [source, terminal]
 ----

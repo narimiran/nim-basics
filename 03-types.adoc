@@ -245,8 +245,8 @@ q is still: xyz
 
 == Boolean
 
-A boolean data type can only have two values: `true` or `false`.
-Booleans are usually used in the control flow (next section), and they are often a result of relational operators.
+A boolean (or just `bool`) data type can only have two values: `true` or `false`.
+Booleans are usually used for control flow (next section), and they are often a result of relational operators.
 
 The usual naming convention for boolean variables is to write them as a simple yes/no (true/false) questions, e.g. `isEmpty`, `isFinished`, `isMoving`, etc.
 
