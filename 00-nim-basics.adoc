@@ -13,6 +13,10 @@
 https://nim-lang.org/[Nim] is a relatively new programming language which allows the users to write an easy-to-read high-performance code.
 But if you are reading this Nim tutorial, the chances are that you already know about Nim.
 
+The tutorial is available both https://narimiran.github.io/nim-basics/[online] and as a https://github.com/narimiran/nim-basics/raw/master/nim-basics.pdf[PDF].
+
+This is a work-in-progress -- if you spot any errors and/or you have an idea how to make this tutorial better, please report it to the https://github.com/narimiran/nim-basics/issues[issue tracker].
+
 
 
 
