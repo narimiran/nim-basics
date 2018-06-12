@@ -105,7 +105,7 @@ If we would like to use numbers, we need to convert strings to numbers -- we aga
 ----
 include::{source-dir}/interaction2.nim[]
 ----
-<1> Convert a string to an integer.
+<1> Convert a string to an integer. When written like this, we trust our user to give a valid integer. What would happen if a user inputs `'79` or `ninety-three`? Try it yourself.
 
 [source, output]
 ----

@@ -53,6 +53,7 @@ include::{source-dir}/if.nim[]
 <1> The first condition is true, the second is false -- inner `echo` is not executed.
 <2> Both conditions are true and both lines are printed.
 <3> The first condition is false -- all lines inside of its block will be skipped, nothing is printed.
+<4> Using the logical `and` inside of the `if` statement.
 
 [source, output]
 ----
@@ -131,14 +132,14 @@ can be written with case statement like this:
 [source]
 ----
 case x
-  of 5:
-    echo "Five!"
-  of 7:
-    echo "Seven!"
-  of 10:
-    echo "Ten!"
-  else:
-    echo "unknown number"
+of 5:
+  echo "Five!"
+of 7:
+  echo "Seven!"
+of 10:
+  echo "Ten!"
+else:
+  echo "unknown number"
 ----
 
 Unlike the if statement, case statement must cover _all_ possible cases.

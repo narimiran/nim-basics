@@ -3,9 +3,9 @@
 
 
 Procedures, or _functions_ as they are called in some other programming languages, are parts of code that perform a specific task, packaged as a unit.
-The benefit of grouping code together like this is that we can "call" these procedures instead of writing all the code over again when we want to do something again.
+The benefit of grouping code together like this is that we can _call_ these procedures instead of writing all the code over again when we wish to use the procedure's code.
 
-In some of the previous chapters we looked at the Collatz conjecture in various different scenarios.
+In some of the previous chapters we've looked at the Collatz conjecture in various different scenarios.
 By wrapping up the Collatz conjecture logic into a procedure we could have called the same code for all the exercises.
 
 So far we have used many built-in procedures, such as `echo` for printing, `add` for adding elements to a sequence, `inc` to increase the value of an integer, `len` to get the length of a container, etc.
@@ -21,7 +21,8 @@ As mentioned in the beginning of this section, procedures are often called funct
 This is actually a bit of a misnomer if we consider the mathematical definition of a function.
 Mathematical functions take a set of arguments (like `f(x)`) and always return the same answer for the same input.
 
-Programmatic procedures on the other hand doesn't always return the same, or anything at all.
+Programmatic procedures on the other hand don't always return the same output for a given input.
+Sometimes they don't return anything at all.
 This is because our computer programs can store state in the variables we mentioned earlier which procedures can read and change.
 In Nim the word `func` is currently reserved to be used as the more mathematically correct kind of function, forcing no side-effects.
 
@@ -32,7 +33,7 @@ In Nim the word `func` is currently reserved to be used as the more mathematical
 
 Before we can use (call) our procedure, we need to create it and define what it does.
 
-A procedure is declared by using `proc` keyword and the procedure name, followed by the input parameters and their type inside of parentheses, and the last part is a colon and the type of the value returned from a procedure, like this:
+A procedure is declared by using the `proc` keyword and the procedure name, followed by the input parameters and their type inside of parentheses, and the last part is a colon and the type of the value returned from a procedure, like this:
 
 [source]
 ----
@@ -47,7 +48,7 @@ The body of a procedure is written in the indented block following the declarati
 include::{source-dir}/callProcs.nim[lines=1..8]
 ----
 <1> Declaring procedure called `findMax`, which has two parameters, `x` and `y`, and it returns an `int` type.
-<2> To return a value from a procedure, we use `return` keyword.
+<2> To return a value from a procedure, we use the `return` keyword.
 
 
 {nbsp}
@@ -56,10 +57,10 @@ include::{source-dir}/callProcs.nim[lines=1..8]
 ----
 proc echoLanguageRating(language: string) = <1>
   case language
-    of "Nim", "nim", "NIM":
-      echo language, " is the best language!"
-    else:
-      echo language, " might be a second-best language."
+  of "Nim", "nim", "NIM":
+    echo language, " is the best language!"
+  else:
+    echo language, " might be a second-best language."
 ----
 <1> The `echoLanguageRating` procedure just echoes the given name, it doesn't return anything, so the return type is not declared.
 
@@ -78,7 +79,7 @@ var ourVariable = 10
 changeArgument(ourVariable)
 ----
 
-In order for this to work we need to allow Nim, and the programmer using our procedure, changing the argument by declaring it as a variable:
+In order for this to work we need to allow Nim, and the programmer using our procedure, to change the argument by declaring it as a variable:
 
 [source]
 ----
@@ -163,7 +164,7 @@ This one is a call where the first argument is written before the function name,
 ----
 
 We have used this syntax when we were adding elements to an existing sequence (`<seq>.add(<element>)`), as this makes it more readable and expresses our intent more clearly than writing `add(<seq>, <element>)`.
-We can also omit the parenthesis around the arguments:
+We can also omit the parentheses around the arguments:
 
 [source]
 ----
@@ -227,7 +228,7 @@ include::{source-dir}/result.nim[lines=1..9]
 // TODO: delete/modify this part once the new behaviour for strings and sequences is in the stable version.
 
 WARNING: Beware!
-The default value of strings and sequences is https://en.wikipedia.org/wiki/Null_pointer[`nil`], and when we use them as returning types, `result` variable needs to be initialized as an empty string (`""`) or as an empty sequence (`@[]`).
+The default value of strings and sequences is https://en.wikipedia.org/wiki/Null_pointer[`nil`], and when we use them as returning types, the `result` variable needs to be initialized as an empty string (`""`) or as an empty sequence (`@[]`).
 
 [source]
 .result.nim

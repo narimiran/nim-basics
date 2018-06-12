@@ -140,12 +140,12 @@ echo i.len
 
 == Indexing and slicing
 
-Indexing allows us to get the wanted element from a container by its index.
-Think of index as a position inside of a container.
+Indexing allows us to get a specific element from a container by its index.
+Think of the index as a position inside of the container.
 
-Nim, like many other programming languages, has zero-based indexing, meaning that the first element in a container has an index zero, the second element has an index one, etc.
+Nim, like many other programming languages, has zero-based indexing, meaning that the first element in a container has the index zero, the second element has the index one, etc.
 
-If we want to index "from the back", it is done by using `^` prefix.
+If we want to index "from the back", it is done by using the `^` prefix.
 The last element (first from the back) has index `^1`.
 
 The syntax for indexing is `<container>[<index>]`.

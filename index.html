@@ -1238,8 +1238,9 @@ if b &lt; c:
 
 if a+b &gt; c:     <i class="conum" data-value="3"></i><b>(3)</b>
   echo "a and b are larger than c"
-  if 1 &lt; 100:
-    echo "did you know that 1 is smaller than 100?"</code></pre>
+  if 1 &lt; 100 and 321 &gt; 123:   <i class="conum" data-value="4"></i><b>(4)</b>
+    echo "did you know that 1 is smaller than 100?"
+    echo "and 321 is larger than 123! wow!"</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1255,6 +1256,10 @@ if a+b &gt; c:     <i class="conum" data-value="3"></i><b>(3)</b>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
 <td>The first condition is false&#8201;&#8212;&#8201;all lines inside of its block will be skipped, nothing is printed.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Using the logical <code>and</code> inside of the <code>if</code> statement.</td>
 </tr>
 </table>
 </div>
@@ -1389,14 +1394,14 @@ else:
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-nim" data-lang="nim">case x
-  of 5:
-    echo "Five!"
-  of 7:
-    echo "Seven!"
-  of 10:
-    echo "Ten!"
-  else:
-    echo "unknown number"</code></pre>
+of 5:
+  echo "Five!"
+of 7:
+  echo "Seven!"
+of 10:
+  echo "Ten!"
+else:
+  echo "unknown number"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1409,13 +1414,13 @@ If one is not interested in some of those cases, <code>else: discard</code> can 
 <pre class="prettyprint highlight"><code class="language-nim" data-lang="nim">let h = 'y'
 
 case h
-  of 'x':
-    echo "You've chosen x"
-  of 'y':
-    echo "You've chosen y"
-  of 'z':
-    echo "You've chosen z"
-  else: discard   <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+of 'x':
+  echo "You've chosen x"
+of 'y':
+  echo "You've chosen y"
+of 'z':
+  echo "You've chosen z"
+else: discard   <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -2029,14 +2034,14 @@ echo i.len</code></pre>
 <h2 id="_indexing_and_slicing">Indexing and slicing</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Indexing allows us to get the wanted element from a container by its index.
-Think of index as a position inside of a container.</p>
+<p>Indexing allows us to get a specific element from a container by its index.
+Think of the index as a position inside of the container.</p>
 </div>
 <div class="paragraph">
-<p>Nim, like many other programming languages, has zero-based indexing, meaning that the first element in a container has an index zero, the second element has an index one, etc.</p>
+<p>Nim, like many other programming languages, has zero-based indexing, meaning that the first element in a container has the index zero, the second element has the index one, etc.</p>
 </div>
 <div class="paragraph">
-<p>If we want to index "from the back", it is done by using <code>^</code> prefix.
+<p>If we want to index "from the back", it is done by using the <code>^</code> prefix.
 The last element (first from the back) has index <code>^1</code>.</p>
 </div>
 <div class="paragraph">
@@ -2276,10 +2281,10 @@ echo o</code></pre>
 <div class="content">
 <div class="paragraph">
 <p>Procedures, or <em>functions</em> as they are called in some other programming languages, are parts of code that perform a specific task, packaged as a unit.
-The benefit of grouping code together like this is that we can "call" these procedures instead of writing all the code over again when we want to do something again.</p>
+The benefit of grouping code together like this is that we can <em>call</em> these procedures instead of writing all the code over again when we wish to use the procedure&#8217;s code.</p>
 </div>
 <div class="paragraph">
-<p>In some of the previous chapters we looked at the Collatz conjecture in various different scenarios.
+<p>In some of the previous chapters we&#8217;ve looked at the Collatz conjecture in various different scenarios.
 By wrapping up the Collatz conjecture logic into a procedure we could have called the same code for all the exercises.</p>
 </div>
 <div class="paragraph">
@@ -2308,7 +2313,8 @@ This is actually a bit of a misnomer if we consider the mathematical definition 
 Mathematical functions take a set of arguments (like <code>f(x)</code>) and always return the same answer for the same input.</p>
 </div>
 <div class="paragraph">
-<p>Programmatic procedures on the other hand doesn&#8217;t always return the same, or anything at all.
+<p>Programmatic procedures on the other hand don&#8217;t always return the same output for a given input.
+Sometimes they don&#8217;t return anything at all.
 This is because our computer programs can store state in the variables we mentioned earlier which procedures can read and change.
 In Nim the word <code>func</code> is currently reserved to be used as the more mathematically correct kind of function, forcing no side-effects.</p>
 </div>
@@ -2321,7 +2327,7 @@ In Nim the word <code>func</code> is currently reserved to be used as the more m
 <p>Before we can use (call) our procedure, we need to create it and define what it does.</p>
 </div>
 <div class="paragraph">
-<p>A procedure is declared by using <code>proc</code> keyword and the procedure name, followed by the input parameters and their type inside of parentheses, and the last part is a colon and the type of the value returned from a procedure, like this:</p>
+<p>A procedure is declared by using the <code>proc</code> keyword and the procedure name, followed by the input parameters and their type inside of parentheses, and the last part is a colon and the type of the value returned from a procedure, like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2351,7 +2357,7 @@ In Nim the word <code>func</code> is currently reserved to be used as the more m
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>To return a value from a procedure, we use <code>return</code> keyword.</td>
+<td>To return a value from a procedure, we use the <code>return</code> keyword.</td>
 </tr>
 </table>
 </div>
@@ -2362,10 +2368,10 @@ In Nim the word <code>func</code> is currently reserved to be used as the more m
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-nim" data-lang="nim">proc echoLanguageRating(language: string) = <i class="conum" data-value="1"></i><b>(1)</b>
   case language
-    of "Nim", "nim", "NIM":
-      echo language, " is the best language!"
-    else:
-      echo language, " might be a second-best language."</code></pre>
+  of "Nim", "nim", "NIM":
+    echo language, " is the best language!"
+  else:
+    echo language, " might be a second-best language."</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -2393,7 +2399,7 @@ changeArgument(ourVariable)</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>In order for this to work we need to allow Nim, and the programmer using our procedure, changing the argument by declaring it as a variable:</p>
+<p>In order for this to work we need to allow Nim, and the programmer using our procedure, to change the argument by declaring it as a variable:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2521,7 +2527,7 @@ echo c</code></pre>
 </div>
 <div class="paragraph">
 <p>We have used this syntax when we were adding elements to an existing sequence (<code>&lt;seq&gt;.add(&lt;element&gt;)</code>), as this makes it more readable and expresses our intent more clearly than writing <code>add(&lt;seq&gt;, &lt;element&gt;)</code>.
-We can also omit the parenthesis around the arguments:</p>
+We can also omit the parentheses around the arguments:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2639,7 +2645,7 @@ echo findBiggest(d)</code></pre>
 </td>
 <td class="content">
 Beware!
-The default value of strings and sequences is <a href="https://en.wikipedia.org/wiki/Null_pointer"><code>nil</code></a>, and when we use them as returning types, <code>result</code> variable needs to be initialized as an empty string (<code>""</code>) or as an empty sequence (<code>@[]</code>).
+The default value of strings and sequences is <a href="https://en.wikipedia.org/wiki/Null_pointer"><code>nil</code></a>, and when we use them as returning types, the <code>result</code> variable needs to be initialized as an empty string (<code>""</code>) or as an empty sequence (<code>@[]</code>).
 </td>
 </tr>
 </table>
@@ -3188,7 +3194,7 @@ echo "You are ", age, " years old."</code></pre>
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Convert a string to an integer.</td>
+<td>Convert a string to an integer. When written like this, we trust our user to give a valid integer. What would happen if a user inputs <code>'79</code> or <code>ninety-three</code>? Try it yourself.</td>
 </tr>
 </table>
 </div>
@@ -3343,6 +3349,9 @@ Nim has a lot more to offer, and hopefully you will continue to explore its poss
 <hr>
 <div class="paragraph">
 <p>&#160;</p>
+</div>
+<div class="paragraph">
+<p>The source files are available <a href="https://github.com/narimiran/nim-basics">on Github</a>.</p>
 </div>
 </div>
 </div>
