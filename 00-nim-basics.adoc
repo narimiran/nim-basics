@@ -40,7 +40,7 @@ The aim of this tutorial is to give you the basics of programming and the Nim sy
 Instead of just reading what is written, it would be the best if you try the stuff by yourself, modify the examples, think of some examples of your own, and be curious in general.
 The exercises at the end of some chapters should be non-negotiable -- don't skip them.
 
-If you need additional help understanding some parts of the tutorial or with the exercises, you can always ask for help on the https://forum.nim-lang.org/[Nim forum], the https://gitter.im/nim-lang/Nim[Nim Gitter channel], or Nim's IRC channel on freenode, #nim.
+If you need additional help understanding some parts of the tutorial or with the exercises, you can always ask for help on the https://forum.nim-lang.org/[Nim forum], the https://gitter.im/nim-lang/Nim[Nim Gitter channel], their https://discordapp.com/invite/ezDFDw2[Discord server], or Nim's IRC channel on freenode, #nim.
 
 
 '''
