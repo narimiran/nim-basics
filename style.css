@@ -38,12 +38,12 @@ h1, h2, h3, #toctitle, .sidebarblock>.content>.title, h4, h5, h6 {
     color: #cb4b16;
     margin-top: 3em;
     margin-bottom: 1.5em;
-    line-height: 1.2em
+    line-height: 1.25em
 }
 
 code {
     font-family: "Droid Sans Mono", "DejaVu Sans Mono", monospace;
-    font-size: 0.9em;
+    font-size: 1.0em;
     font-weight: 400;
     color: #073642;
 }
@@ -60,14 +60,14 @@ a:hover, a:focus {
 p {
     font-family: inherit;
     font-weight: 400;
-    font-size: 1em;
+    font-size: 1.125em;
     line-height: 2;
     margin-bottom: 1.25em;
     /* text-rendering: optimizeLegibility */
 }
 
 *:not(pre)>code {
-    font-size: .9em;
+    font-size: 1.0em;
     font-style: normal!important;
     padding: .1em .5ex;
     background-color: #eeebe2;
