@@ -292,7 +292,6 @@ include::{source-dir}/relationalOperators.nim[lines=13..30]
 
 [source, output]
 ----
-true
 false
 true
 true
