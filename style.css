@@ -1,6 +1,7 @@
 table {
     border-collapse: collapse;
-    border-spacing: 0
+    border-spacing: 0;
+    margin-bottom: 3em;
 }
 
 *, *:before, *:after {
@@ -13,7 +14,7 @@ table {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    max-width: 45em;
+    max-width: 40em;
     position: relative;
     padding-left: 1em;
     padding-right: 1em
@@ -24,8 +25,9 @@ body {
     color: #073642;
     padding: 0;
     margin: 0;
+    margin-top: -12em;
     font-family: "Noto Serif", "DejaVu Serif", serif;
-    line-height: 1.6;
+    line-height: 1.5;
     position: relative;
     tab-size: 4;
     -moz-osx-font-smoothing: grayscale;
@@ -33,17 +35,21 @@ body {
 }
 
 h1, h2, h3, #toctitle, .sidebarblock>.content>.title, h4, h5, h6 {
-    font-family: "Open Sans", "DejaVu Sans", sans-serif;
+    font-family: "Noto Sans", "DejaVu Sans", sans-serif;
     font-weight: 400;
     color: #cb4b16;
-    margin-top: 3em;
-    margin-bottom: 1.5em;
-    line-height: 1.25em
+    margin-top: 4em;
+    margin-bottom: 2em;
+    line-height: 1.2em
+}
+
+h1 {
+    margin-top: 8em;
 }
 
 code {
-    font-family: "Droid Sans Mono", "DejaVu Sans Mono", monospace;
-    font-size: 1.0em;
+    font-family: "Hack", "Noto Sans Mono", "DejaVu Sans Mono", monospace;
+    font-size: 0.9em;
     font-weight: 400;
     color: #073642;
 }
@@ -59,28 +65,30 @@ a:hover, a:focus {
 
 p {
     font-family: inherit;
-    font-weight: 400;
     font-size: 1.125em;
     line-height: 2;
-    margin-bottom: 1.25em;
+    margin-bottom: 2em;
     /* text-rendering: optimizeLegibility */
 }
+
 
 *:not(pre)>code {
     font-size: 1.0em;
     font-style: normal!important;
     padding: .1em .5ex;
     background-color: #eeebe2;
-    -webkit-border-radius: 6px;
     border-radius: 6px;
-    line-height: 1.45;
+    -webkit-border-radius: 6px;
+    /* line-height: 1.45; */
     word-wrap: break-word
 }
 
 pre, pre>code {
-    line-height: 1.45;
+    line-height: 1.30;
     color: #073642;
-    font-family: "Droid Sans Mono", "DejaVu Sans Mono", monospace;
+    font-family: "Hack", "Noto Sans Mono", "DejaVu Sans Mono", monospace;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
     font-weight: 400;
 }
 
@@ -106,18 +114,20 @@ pre, pre>code {
 
 .literalblock pre, .listingblock pre:not(.highlight), .listingblock pre[class="highlight"], .listingblock pre[class^="highlight "], .listingblock pre.CodeRay, .listingblock pre.prettyprint {
     background: #eeebe2;
-    margin-top: 1.5em;
-    border-width: 0
+    margin-top: -1.5em;
+    border-width: 0;
+    padding: 10px;
+    margin-bottom: 2em;
 }
 
 .listingblock>.title {
     line-height: 1.0;
-    font-size: 1em;
+    font-size: 0.95em;
     color: #cb4b16;
     font-weight: 400;
     font-style: italic;
-    margin-top: 1.5em;
-    margin-bottom: -0.75em
+    margin-top: -1em;
+    margin-bottom: 2em
 }
 
 .conum[data-value] {
@@ -132,7 +142,7 @@ pre, pre>code {
     height: 1.5em;
     line-height: 1.5em;
     margin-right: 1em;
-    font-family: "Open Sans", "DejaVu Sans", sans-serif;
+    font-family: "Noto Sans", "DejaVu Sans", sans-serif;
     font-style: normal;
     font-weight: bold
 }
@@ -173,8 +183,9 @@ b.conum * {
 }
 
 li {
-    margin-bottom: -0.5em;
+    margin-bottom: -2em;
     margin-left: 0.5em;
+    margin-top: -2em;
 }
 
 @media only screen and (min-width:850px) {
@@ -186,7 +197,7 @@ li {
         padding-right: 0
     }
     #toc.toc2 {
-        font-family: "Open Sans", "DejaVu Sans", sans-serif;
+        font-family: "Noto Sans", "DejaVu Sans", sans-serif;
         margin-top: 0!important;
         background-color: #fcfaf7;
         position: fixed;
@@ -209,18 +220,19 @@ li {
     font-size: 1.2em
 }
 #toc.toc2>ul {
-    font-size: .9em;
-    margin-bottom: 0;
+    font-size: 0.875em;
+    line-height: 1.4em;
     padding-left: 1em
 }
 
 #toc.toc2 ul ul {
     margin-bottom: 0.5em;
     margin-left: 0;
-    padding-left: 1em
+    padding-left: 0.75em
 }
 
 #toc.toc2 li {
     margin-bottom: 0em;
     margin-left: 0.5em;
+    margin-top: 0em;
 }
