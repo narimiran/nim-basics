@@ -1,8 +1,6 @@
 table {
     border-collapse: separate;
-    border-spacing: 0.5em;
-    margin-bottom: 2.7em;
-    margin-top: -1em;
+    border-spacing: 0.2em 0.6em;
 }
 
 *, *:before, *:after {
@@ -23,18 +21,17 @@ table {
 
 body {
     background: #fcfaf7;
-    color: #073642;
+    color: #2e3738;
     margin-top: -1.8em;
-    font-family: "Open Sans", "Noto Sans", "DejaVu Sans", sans-serif;
-    line-height: 1.5;
+    font-family: "Fira Sans", "Open Sans", "Noto Sans", "DejaVu Sans", sans-serif;
+    line-height: 1.6;
     tab-size: 4;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, #toctitle, .sidebarblock>.content>.title, h4, h5, h6 {
-    font-family: "Open Sans", "Noto Sans", "DejaVu Sans", sans-serif;
-    font-weight: 600;
+    font-weight: 400;
     font-style: normal;
     color: #cb4b16;
     margin-top: 2.7em;
@@ -44,7 +41,7 @@ h3 {
 }
 
 code {
-    font-family: "Hack", "Noto Sans Mono", "DejaVu Sans Mono", monospace;
+    font-family: "Fira Mono", "Hack", "Noto Sans Mono", "DejaVu Sans Mono", monospace;
     font-size: 0.9em;
     font-weight: 400;
 }
@@ -61,8 +58,6 @@ a:hover, a:focus {
 
 p {
     font-size: 1.125em;
-    line-height: 1.8em;
-    margin-bottom: 1.8em;
     text-rendering: optimizeLegibility
 }
 
@@ -77,7 +72,7 @@ p {
 
 pre, pre>code {
     line-height: 1.30;
-    font-family: "Hack", "Noto Sans Mono", "DejaVu Sans Mono", monospace;
+    font-family: "Fira Mono", "Hack", "Noto Sans Mono", "DejaVu Sans Mono", monospace;
     font-size: 0.95em;
     border-radius: 12px;
     -webkit-border-radius: 12px;
@@ -105,9 +100,7 @@ pre, pre>code {
 
 .literalblock pre, .listingblock pre:not(.highlight), .listingblock pre[class="highlight"], .listingblock pre[class^="highlight "], .listingblock pre.CodeRay, .listingblock pre.prettyprint {
     background: #eeebe2;
-    margin-top: -1em;
     padding: 10px;
-    margin-bottom: 1.8em;
 }
 
 .listingblock>.title {
@@ -116,8 +109,7 @@ pre, pre>code {
     color: #cb4b16;
     font-weight: 400;
     font-style: italic;
-    margin-top: -1em;
-    margin-bottom: 1.8em;
+    margin-bottom: -0.5em;
 }
 
 .conum[data-value] {
@@ -127,12 +119,10 @@ pre, pre>code {
     border-radius: 5px;
     -webkit-border-radius: 5px;
     text-align: center;
-    font-size: .75em;
+    font-size: 0.8em;
     width: 3.0em;
-    height: 1.5em;
     line-height: 1.5em;
     margin-right: 1em;
-    font-family: "Open Sans", "Noto Sans", "DejaVu Sans", sans-serif;
     font-style: normal;
     font-weight: bold;
 }
@@ -170,11 +160,6 @@ b.conum * {
     color: inherit!important;
 }
 
-li {
-    margin-bottom: -1em;
-    margin-top: -1em;
-}
-
 ol li {
     padding-left: 1em;
 }
@@ -185,7 +170,6 @@ ol li {
     }
 
     #toc.toc2 {
-        font-family: "Open Sans", "Noto Sans", "DejaVu Sans", sans-serif;
         background: #fcfaf7;
         position: fixed;
         width: 16em;
