@@ -38,7 +38,7 @@ NOTE: Angular brackets(`<>`) are used to show something you can change. +
 So `<name>` is not literally the word `name` in angular brackets but rather any name.
 
 
-Nim also has https://en.wikipedia.org/wiki/Type_inference[type inference] ability -- the compiler can automatically detect the type of a name assignment from its value, without explicitly stating the type.
+Nim also has https://en.wikipedia.org/wiki/Type_inference[type inference] ability: the compiler can automatically detect the type of a name assignment from its value, without explicitly stating the type.
 We'll look more into the various types in the next section.
 
 So we can assign a variable without an explicit type like this:
@@ -55,10 +55,8 @@ var a: int  # <1>
 var b = 7   # <2>
 ----
 <1> Variable `a` is of type `int` (integer) with no value explicitly set.
-<2> Variable `b` has a value of `7` -- its type is automatically detected as an integer.
+<2> Variable `b` has a value of `7`. Its type is automatically detected as an integer.
 
-
-{nbsp}
 
 When assigning names it is important to choose names that mean something for your program.
 Simply naming them `a`, `b`, `c`, and so forth will quickly become confusing.
@@ -89,8 +87,6 @@ You can set up your code editor to convert pressing `Tab` to any number of space
 In VS Code, the default setting is to convert `Tab` to four spaces.
 This is easily overridden in settings (`Ctrl+,`) by setting `"editor.tabSize": 2`.
 
-{nbsp}
-
 As previously mentioned variables are mutable, i.e. their value can change (multiple times), but their type must stay the same as declared.
 
 [source]
@@ -104,7 +100,7 @@ f = "Hello" # error <3><4>
 <1> Variable `f` has an initial value of `7` and its type is inferred as `int`.
 <2> The value of `f` is first changed to `-3`, and then to `19`. Both of these are integers, the same as the original value.
 <3> Trying to change the value of `f` to `"Hello"` produces an error because `Hello` is not a number, and this would change the type of `f` from an integer to a string.
-<4> `# error` is a comment. Comments in Nim code are written after a `#` character -- everything after it on the same line will be ignored.
+<4> `# error` is a comment. Comments in Nim code are written after a `#` character. Everything after it on the same line will be ignored.
 
 
 

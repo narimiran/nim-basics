@@ -3,12 +3,12 @@ var
   l = @['p', 'w', 'r']
   m = "Tom and Jerry"
 
-for i in 0 .. 4:    # <1>
+for i in 0 .. 4:  # <1>
   k[i] = 7 * i
 echo k
 
-l[1] = 'q'          # <2>
+l[1] = 'q'        # <2>
 echo l
 
-m[8 .. 9] = "Ba"    # <3>
+m[8 .. 9] = "Ba"  # <3>
 echo m

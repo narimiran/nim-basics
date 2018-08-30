@@ -131,7 +131,7 @@ But if you are reading this Nim tutorial, the chances are that you already know 
 <p>The tutorial is available both <a href="https://narimiran.github.io/nim-basics/">online</a> and as a <a href="https://github.com/narimiran/nim-basics/raw/master/nim-basics.pdf">PDF</a>.</p>
 </div>
 <div class="paragraph">
-<p>This is a work-in-progress&#8201;&#8212;&#8201;if you spot any errors and/or you have an idea how to make this tutorial better, please report it to the <a href="https://github.com/narimiran/nim-basics/issues">issue tracker</a>.</p>
+<p>This is a work-in-progress: if you spot any errors and/or you have an idea how to make this tutorial better, please report it to the <a href="https://github.com/narimiran/nim-basics/issues">issue tracker</a>.</p>
 </div>
 </div>
 </div>
@@ -159,7 +159,7 @@ But if you are reading this Nim tutorial, the chances are that you already know 
 <div class="ulist">
 <ul>
 <li>
-<p>People with lots of programming experience&#8201;&#8212;&#8201;other, more advanced, tutorials might suit you better. See <a href="https://nim-lang.org/docs/tut1.html">Official Tutorial</a> or <a href="https://nim-by-example.github.io/">Nim by Example</a>.</p>
+<p>People with lots of programming experience: other, more advanced, tutorials might suit you better. See <a href="https://nim-lang.org/docs/tut1.html">Official Tutorial</a> or <a href="https://nim-by-example.github.io/">Nim by Example</a>.</p>
 </li>
 <li>
 <p>People experienced in Nim (feel free to help make this tutorial better)</p>
@@ -226,7 +226,7 @@ If you want syntax highlighting and code completion there are plugins for popula
 <h2 id="_testing_the_installation">Testing the installation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To check if the installation was successful, we will write a program which is traditionally used as an introductory example&#8201;&#8212;&#8201;<a href="https://en.wikipedia.org/wiki/%22Hello,_World!%22_program">Hello World</a>.</p>
+<p>To check if the installation was successful, we will write a program which is traditionally used as an introductory example: <a href="https://en.wikipedia.org/wiki/%22Hello,_World!%22_program">Hello World</a>.</p>
 </div>
 <div class="paragraph">
 <p>Printing (as in: displaying on the screen; not on a paper with a printer) the phrase <code>Hello World!</code> in Nim is straightforward and it doesn&#8217;t require any boilerplate code.</p>
@@ -373,7 +373,7 @@ So <code>&lt;name&gt;</code> is not literally the word <code>name</code> in angu
 </table>
 </div>
 <div class="paragraph">
-<p>Nim also has <a href="https://en.wikipedia.org/wiki/Type_inference">type inference</a> ability&#8201;&#8212;&#8201;the compiler can automatically detect the type of a name assignment from its value, without explicitly stating the type.
+<p>Nim also has <a href="https://en.wikipedia.org/wiki/Type_inference">type inference</a> ability: the compiler can automatically detect the type of a name assignment from its value, without explicitly stating the type.
 We&#8217;ll look more into the various types in the next section.</p>
 </div>
 <div class="paragraph">
@@ -401,12 +401,9 @@ var b = 7   <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Variable <code>b</code> has a value of <code>7</code>&#8201;&#8212;&#8201;its type is automatically detected as an integer.</td>
+<td>Variable <code>b</code> has a value of <code>7</code>. Its type is automatically detected as an integer.</td>
 </tr>
 </table>
-</div>
-<div class="paragraph">
-<p>&#160;</p>
 </div>
 <div class="paragraph">
 <p>When assigning names it is important to choose names that mean something for your program.
@@ -451,9 +448,6 @@ This is easily overridden in settings (<code>Ctrl+,</code>) by setting <code>"ed
 </table>
 </div>
 <div class="paragraph">
-<p>&#160;</p>
-</div>
-<div class="paragraph">
 <p>As previously mentioned variables are mutable, i.e. their value can change (multiple times), but their type must stay the same as declared.</p>
 </div>
 <div class="listingblock">
@@ -481,7 +475,7 @@ f = "Hello" # error <i class="conum" data-value="3"></i><b>(3)</b><i class="conu
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
-<td><code># error</code> is a comment. Comments in Nim code are written after a <code>#</code> character&#8201;&#8212;&#8201;everything after it on the same line will be ignored.</td>
+<td><code># error</code> is a comment. Comments in Nim code are written after a <code>#</code> character. Everything after it on the same line will be ignored.</td>
 </tr>
 </table>
 </div>
@@ -576,7 +570,7 @@ Use <code>var</code> only for the variables which will be modified.</p>
 Notice that we can use <code>_</code> as a thousands separator, to make larger numbers more readable (it is easier to see that we&#8217;re talking about 10 million when it&#8217;s written as 10_000_000 rather than as 10000000).</p>
 </div>
 <div class="paragraph">
-<p>The expected mathematical operators&#8201;&#8212;&#8201;addition (<code>+</code>), subtraction (<code>-</code>), multiplication (<code>*</code>), and division (<code>/</code>)&#8201;&#8212;&#8201;work as one would expect.
+<p>The usual mathematical operators&#8201;&#8212;&#8201;addition (<code>+</code>), subtraction (<code>-</code>), multiplication (<code>*</code>), and division (<code>/</code>)&#8201;&#8212;&#8201;work as one would expect.
 The first three operations always produce integers, while dividing two integers always gives a floating point number (a number with a decimal point) as a result, even if two numbers can be divided without a remainder.</p>
 </div>
 <div class="paragraph">
@@ -667,10 +661,7 @@ c / d = 3.0  <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
 </table>
 </div>
 <div class="paragraph">
-<p>&#160;</p>
-</div>
-<div class="paragraph">
-<p>The precedence of mathematical operations is as one would expect&#8201;&#8212;&#8201;multiplication and division have higher priority than addition and subtraction.</p>
+<p>The precedence of mathematical operations is as one would expect: multiplication and division have higher priority than addition and subtraction.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -700,7 +691,7 @@ echo e + f   # error</code></pre>
 </div>
 <div class="paragraph">
 <p>The values of variables need to be converted to the same type.
-Conversion is straight-forward&#8201;&#8212;&#8201;to convert to an integer, we use the <code>int</code> function, and to convert to a float the <code>float</code> function is used.</p>
+Conversion is straight-forward: to convert to an integer, we use the <code>int</code> function, and to convert to a float the <code>float</code> function is used.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -708,11 +699,11 @@ Conversion is straight-forward&#8201;&#8212;&#8201;to convert to an integer, we 
   e = 5
   f = 23.987
 
-echo float(e)       <i class="conum" data-value="1"></i><b>(1)</b>
-echo int(f)         <i class="conum" data-value="2"></i><b>(2)</b>
+echo float(e)      <i class="conum" data-value="1"></i><b>(1)</b>
+echo int(f)        <i class="conum" data-value="2"></i><b>(2)</b>
 
-echo float(e) + f   <i class="conum" data-value="3"></i><b>(3)</b>
-echo e + int(f)     <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
+echo float(e) + f  <i class="conum" data-value="3"></i><b>(3)</b>
+echo e + int(f)    <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -865,7 +856,7 @@ They are used by prepending the escape character <code>\</code> to them.</p>
 <p>Use <code>\\</code> instead of <code>\</code> to print backslashes, or</p>
 </li>
 <li>
-<p>Use raw strings which have syntax <code>r"&#8230;&#8203;"</code> (putting a letter <code>r</code> immediately before the first quote), in which there are no escape characters and no special meanings&#8201;&#8212;&#8201;everything is printed as it is.</p>
+<p>Use raw strings which have syntax <code>r"&#8230;&#8203;"</code> (putting a letter <code>r</code> immediately before the first quote), in which there are no escape characters and no special meanings: everything is printed as it is.</p>
 </li>
 </ul>
 </div>
@@ -1003,7 +994,7 @@ g is smaller or equal to h: true</code></pre>
   k = 'Z'
 
 echo i &lt; j
-echo i &lt; k    <i class="conum" data-value="1"></i><b>(1)</b>
+echo i &lt; k  <i class="conum" data-value="1"></i><b>(1)</b>
 
 let
   m = "axyb"
@@ -1011,9 +1002,9 @@ let
   o = "ba"
   p = "ba "
 
-echo m &lt; n    <i class="conum" data-value="2"></i><b>(2)</b>
-echo n &lt; o    <i class="conum" data-value="3"></i><b>(3)</b>
-echo o &lt; p    <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
+echo m &lt; n  <i class="conum" data-value="2"></i><b>(2)</b>
+echo n &lt; o  <i class="conum" data-value="3"></i><b>(3)</b>
+echo o &lt; p  <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1063,7 +1054,7 @@ true</code></pre>
 <p>Logical <code>xor</code> returns <code>true</code> if one member is true, but the other is not</p>
 </li>
 <li>
-<p>Logical <code>not</code> negates the truthiness of its member&#8201;&#8212;&#8201;changing <code>true</code> to <code>false</code>, and vice versa (it is the only logical operator that takes just one operand)</p>
+<p>Logical <code>not</code> negates the truthiness of its member: changing <code>true</code> to <code>false</code>, and vice versa (it is the only logical operator that takes just one operand)</p>
 </li>
 </ul>
 </div>
@@ -1207,7 +1198,7 @@ else:
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>The <code>condition</code> must be of boolean type&#8201;&#8212;&#8201;either a boolean variable or a relational and/or logical expression.</td>
+<td>The <code>condition</code> must be of boolean type: either a boolean variable or a relational and/or logical expression.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
@@ -1238,7 +1229,7 @@ if b &lt; c:
 
 if a+b &gt; c:     <i class="conum" data-value="3"></i><b>(3)</b>
   echo "a and b are larger than c"
-  if 1 &lt; 100 and 321 &gt; 123:   <i class="conum" data-value="4"></i><b>(4)</b>
+  if 1 &lt; 100 and 321 &gt; 123:  <i class="conum" data-value="4"></i><b>(4)</b>
     echo "did you know that 1 is smaller than 100?"
     echo "and 321 is larger than 123! wow!"</code></pre>
 </div>
@@ -1420,7 +1411,7 @@ of 'y':
   echo "You've chosen y"
 of 'z':
   echo "You've chosen z"
-else: discard   <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+else: discard  <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1435,9 +1426,6 @@ else: discard   <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-output" data-lang="output">You've chosen y</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>&#160;</p>
 </div>
 <div class="paragraph">
 <p>We can also use multiple values for each branch if the same action should happen for more than one value.</p>
@@ -1552,15 +1540,12 @@ for n in 5 ..&lt; 9: <i class="conum" data-value="2"></i><b>(2)</b>
 </div>
 </div>
 <div class="paragraph">
-<p>&#160;</p>
-</div>
-<div class="paragraph">
 <p>If we want to iterate through a range of numbers with a step size different than one, <code>countup</code> is used. With <code>countup</code> we define the starting value, the stopping value (included in the range), and the step size.</p>
 </div>
 <div class="listingblock">
 <div class="title">for2.nim</div>
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-nim" data-lang="nim">for n in countup(0, 16, 4):     <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="prettyprint highlight"><code class="language-nim" data-lang="nim">for n in countup(0, 16, 4):  <i class="conum" data-value="1"></i><b>(1)</b>
   echo n</code></pre>
 </div>
 </div>
@@ -1580,9 +1565,6 @@ for n in 5 ..&lt; 9: <i class="conum" data-value="2"></i><b>(2)</b>
 12
 16</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>&#160;</p>
 </div>
 <div class="paragraph">
 <p>To iterate through a range of numbers where the <code>start</code> is larger than <code>finish</code>, a similar function called <code>countdown</code> is used.
@@ -1627,9 +1609,6 @@ for n in countdown(-3, -9, 2):  <i class="conum" data-value="2"></i><b>(2)</b>
 </div>
 </div>
 <div class="paragraph">
-<p>&#160;</p>
-</div>
-<div class="paragraph">
 <p>Since string is an iterable, we can use a for-loop to iterate through each character of the string (this kind of iteration is sometimes called a <em>for-each</em> loop).</p>
 </div>
 <div class="listingblock">
@@ -1652,9 +1631,6 @@ b
 e
 t</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>&#160;</p>
 </div>
 <div class="paragraph">
 <p>If we also need to have an iteration counter (starting from zero), we can achieve that by using <code>for &lt;counterVariable&gt;, &lt;loopVariable&gt; in &lt;iterator&gt;:</code> syntax.
@@ -1857,9 +1833,9 @@ The declaration can be omitted if both length and type can be inferred from the 
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-nim" data-lang="nim">var
   a: array[3, int] = [5, 7, 9]
-  b = [5, 7, 9]               <i class="conum" data-value="1"></i><b>(1)</b>
-  c = []  # error             <i class="conum" data-value="2"></i><b>(2)</b>
-  d: array[7, string]         <i class="conum" data-value="3"></i><b>(3)</b>
+  b = [5, 7, 9]        <i class="conum" data-value="1"></i><b>(1)</b>
+  c = []  # error      <i class="conum" data-value="2"></i><b>(2)</b>
+  d: array[7, string]  <i class="conum" data-value="3"></i><b>(3)</b>
   x = 5</code></pre>
 </div>
 </div>
@@ -1903,8 +1879,8 @@ var a: array[n, char] # error <i class="conum" data-value="1"></i><b>(1)</b></co
 <h2 id="_sequences">Sequences</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Sequences are containers similar to arrays, but their length doesn&#8217;t have to be known at compile time, and it can change during runtime&#8201;&#8212;&#8201;we declare only the type of the contained elements with <code>seq[&lt;type&gt;]</code>.
-Sequences are also homogenous&#8201;&#8212;&#8201;every element in a sequence has to be the same type.</p>
+<p>Sequences are containers similar to arrays, but their length doesn&#8217;t have to be known at compile time, and it can change during runtime: we declare only the type of the contained elements with <code>seq[&lt;type&gt;]</code>.
+Sequences are also homogenous, i.e. every element in a sequence has to be the same type.</p>
 </div>
 <div class="paragraph">
 <p>The elements of a sequence are enclosed between <code>@[</code> and <code>]</code>.</p>
@@ -1912,8 +1888,8 @@ Sequences are also homogenous&#8201;&#8212;&#8201;every element in a sequence ha
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-nim" data-lang="nim">var
-  e1: seq[int] = @[]    <i class="conum" data-value="1"></i><b>(1)</b>
-  f = @["abc", "def"]   <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+  e1: seq[int] = @[]   <i class="conum" data-value="1"></i><b>(1)</b>
+  f = @["abc", "def"]  <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1934,7 +1910,7 @@ Sequences are also homogenous&#8201;&#8212;&#8201;every element in a sequence ha
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-nim" data-lang="nim">var
-  e = newSeq[int]()    <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+  e = newSeq[int]() <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1945,9 +1921,6 @@ Sequences are also homogenous&#8201;&#8212;&#8201;every element in a sequence ha
 A frequent error is omission of the final <code>()</code>, which must be included.</td>
 </tr>
 </table>
-</div>
-<div class="paragraph">
-<p>&#160;</p>
 </div>
 <div class="paragraph">
 <p>We can add new elements to a sequence with the <code>add</code> function, similar to how we did with strings.
@@ -2011,9 +1984,6 @@ g.add(i)    # error <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 <td>Trying to add a sequence of <code>int</code> to a sequence of <code>char</code>.</td>
 </tr>
 </table>
-</div>
-<div class="paragraph">
-<p>&#160;</p>
 </div>
 <div class="paragraph">
 <p>Since sequences can vary in length we need a way to get their length, for this we can use the <code>len</code> function.</p>
@@ -2107,9 +2077,6 @@ echo j[0 ..&lt; 3]</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>&#160;</p>
-</div>
-<div class="paragraph">
 <p>Both indexing and slicing can be used to assign new values to the existing mutable containers and strings.</p>
 </div>
 <div class="listingblock">
@@ -2120,14 +2087,14 @@ echo j[0 ..&lt; 3]</code></pre>
   l = @['p', 'w', 'r']
   m = "Tom and Jerry"
 
-for i in 0 .. 4:    <i class="conum" data-value="1"></i><b>(1)</b>
+for i in 0 .. 4:  <i class="conum" data-value="1"></i><b>(1)</b>
   k[i] = 7 * i
 echo k
 
-l[1] = 'q'          <i class="conum" data-value="2"></i><b>(2)</b>
+l[1] = 'q'        <i class="conum" data-value="2"></i><b>(2)</b>
 echo l
 
-m[8 .. 9] = "Ba"    <i class="conum" data-value="3"></i><b>(3)</b>
+m[8 .. 9] = "Ba"  <i class="conum" data-value="3"></i><b>(3)</b>
 echo m</code></pre>
 </div>
 </div>
@@ -2345,9 +2312,9 @@ In Nim the word <code>func</code> is currently reserved to be used as the more m
 <div class="listingblock">
 <div class="title">callProcs.nim</div>
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-nim" data-lang="nim">proc findMax(x: int, y: int): int = <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="prettyprint highlight"><code class="language-nim" data-lang="nim">proc findMax(x: int, y: int): int =  <i class="conum" data-value="1"></i><b>(1)</b>
   if x &gt; y:
-    return x    <i class="conum" data-value="2"></i><b>(2)</b>
+    return x  <i class="conum" data-value="2"></i><b>(2)</b>
   else:
     return y
   # this is inside of the procedure
@@ -2436,15 +2403,15 @@ echo ourVariable</code></pre>
 <p>This of course means that the name we pass it must be declared as a variable as well, passing in something assigned with <code>const</code> or <code>let</code> will throw an error.</p>
 </div>
 <div class="paragraph">
-<p>While it&#8217;s good practice to pass things as arguments it&#8217;s also possible to use names declared outside the procedure, both variables and constants:</p>
+<p>While it is good practice to pass things as arguments it is also possible to use names declared outside the procedure, both variables and constants:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-nim" data-lang="nim">var x = 100
 
 proc echoX() =
-  echo x       <i class="conum" data-value="1"></i><b>(1)</b>
-  x += 1       <i class="conum" data-value="2"></i><b>(2)</b>
+  echo x  <i class="conum" data-value="1"></i><b>(1)</b>
+  x += 1  <i class="conum" data-value="2"></i><b>(2)</b>
 
 echoX()
 echoX()</code></pre>
@@ -2494,7 +2461,7 @@ The usual way of calling procedures/functions in many programming languages is t
 <pre class="prettyprint highlight"><code class="language-nim" data-lang="nim">let
   a = findMax(987, 789)
   b = findMax(123, 321)
-  c = findMax(a, b)     <i class="conum" data-value="1"></i><b>(1)</b>
+  c = findMax(a, b)  <i class="conum" data-value="1"></i><b>(1)</b>
 
 echo a
 echo b
@@ -2626,7 +2593,7 @@ echo findBiggest(d)</code></pre>
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>The return type is <code>int</code>. The <code>result</code> variable is initialized with the default value for <code>int</code>&#8201;&#8212;&#8201;<code>0</code>.</td>
+<td>The return type is <code>int</code>. The <code>result</code> variable is initialized with the default value for <code>int</code>: <code>0</code>.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
@@ -3180,7 +3147,7 @@ VS Code users cannot run this the usual way (using <code>Ctrl+Alt+N</code>) beca
 <div class="sectionbody">
 <div class="paragraph">
 <p>Reading from a file or from a user input always gives a string as a result.
-If we would like to use numbers, we need to convert strings to numbers&#8201;&#8212;&#8201;we again use the <code>strutils</code> module and use <code>parseInt</code> to convert to integers or <code>parseFloat</code> to convert into a float.</p>
+If we would like to use numbers, we need to convert strings to numbers: we again use the <code>strutils</code> module and use <code>parseInt</code> to convert to integers or <code>parseFloat</code> to convert into a float.</p>
 </div>
 <div class="listingblock">
 <div class="title">interaction2.nim</div>
@@ -3227,20 +3194,20 @@ You are 84 years old.</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>And we want to read that file and find the sum and average of the numbers provided, we can do something like this:</p>
+<p>and we want to read that file and find the sum and average of the numbers provided, we can do something like this:</p>
 </div>
 <div class="listingblock">
 <div class="title">interaction3.nim</div>
 <div class="content">
-<pre class="prettyprint highlight"><code class="language-nim" data-lang="nim">import strutils, sequtils, math         <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="prettyprint highlight"><code class="language-nim" data-lang="nim">import strutils, sequtils, math        <i class="conum" data-value="1"></i><b>(1)</b>
 
 let
   strNums = readFile("numbers.txt").strip().splitLines()  <i class="conum" data-value="2"></i><b>(2)</b>
-  nums = strNums.map(parseFloat)        <i class="conum" data-value="3"></i><b>(3)</b>
+  nums = strNums.map(parseFloat)       <i class="conum" data-value="3"></i><b>(3)</b>
 
 let
-  sumNums = sum(nums)                   <i class="conum" data-value="4"></i><b>(4)</b>
-  average = sumNums / float(nums.len)   <i class="conum" data-value="5"></i><b>(5)</b>
+  sumNums = sum(nums)                  <i class="conum" data-value="4"></i><b>(4)</b>
+  average = sumNums / float(nums.len)  <i class="conum" data-value="5"></i><b>(5)</b>
 
 echo sumNums
 echo average</code></pre>

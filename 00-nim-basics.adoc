@@ -15,7 +15,7 @@ But if you are reading this Nim tutorial, the chances are that you already know 
 
 The tutorial is available both https://narimiran.github.io/nim-basics/[online] and as a https://github.com/narimiran/nim-basics/raw/master/nim-basics.pdf[PDF].
 
-This is a work-in-progress -- if you spot any errors and/or you have an idea how to make this tutorial better, please report it to the https://github.com/narimiran/nim-basics/issues[issue tracker].
+This is a work-in-progress: if you spot any errors and/or you have an idea how to make this tutorial better, please report it to the https://github.com/narimiran/nim-basics/issues[issue tracker].
 
 
 
@@ -29,7 +29,7 @@ This is a work-in-progress -- if you spot any errors and/or you have an idea how
 
 == Who is this __not__ for?
 
-* People with lots of programming experience -- other, more advanced, tutorials might suit you better. See https://nim-lang.org/docs/tut1.html[Official Tutorial] or https://nim-by-example.github.io/[Nim by Example].
+* People with lots of programming experience: other, more advanced, tutorials might suit you better. See https://nim-lang.org/docs/tut1.html[Official Tutorial] or https://nim-by-example.github.io/[Nim by Example].
 * People experienced in Nim (feel free to help make this tutorial better)
 
 

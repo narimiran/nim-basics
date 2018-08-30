@@ -58,8 +58,6 @@ include::{source-dir}/for1.nim[]
 
 
 
-{nbsp}
-
 If we want to iterate through a range of numbers with a step size different than one, `countup` is used. With `countup` we define the starting value, the stopping value (included in the range), and the step size.
 
 [source]
@@ -78,7 +76,6 @@ include::{source-dir}/for2.nim[lines=1..2]
 16
 ----
 
-{nbsp}
 
 To iterate through a range of numbers where the `start` is larger than `finish`, a similar function called `countdown` is used.
 Even if we're counting down, the step size must be positive.
@@ -105,7 +102,6 @@ include::{source-dir}/for2.nim[lines=5..12]
 -9
 ----
 
-{nbsp}
 
 Since string is an iterable, we can use a for-loop to iterate through each character of the string (this kind of iteration is sometimes called a _for-each_ loop).
 
@@ -127,7 +123,6 @@ e
 t
 ----
 
-{nbsp}
 
 If we also need to have an iteration counter (starting from zero), we can achieve that by using `for <counterVariable>, <loopVariable> in <iterator>:` syntax.
 This is very practical if you want to iterate through one iterable, and simultaneously access another iterable at the same offset.

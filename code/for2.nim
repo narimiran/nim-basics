@@ -1,4 +1,4 @@
-for n in countup(0, 16, 4):     # <1>
+for n in countup(0, 16, 4):  # <1>
   echo n
 
 

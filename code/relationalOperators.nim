@@ -16,7 +16,7 @@ let
   k = 'Z'
 
 echo i < j
-echo i < k    # <1>
+echo i < k  # <1>
 
 let
   m = "axyb"
@@ -24,6 +24,6 @@ let
   o = "ba"
   p = "ba "
 
-echo m < n    # <2>
-echo n < o    # <3>
-echo o < p    # <4>
+echo m < n  # <2>
+echo n < o  # <3>
+echo o < p  # <4>

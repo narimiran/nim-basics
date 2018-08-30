@@ -9,7 +9,7 @@ As seen in the previous section, integers are numbers which are written without 
 For example: `32`, `-174`, `0`, `10_000_000` are all integers.
 Notice that we can use `_` as a thousands separator, to make larger numbers more readable (it is easier to see that we're talking about 10 million when it's written as 10_000_000 rather than as 10000000).
 
-The expected mathematical operators -- addition (`+`), subtraction (`-`), multiplication (`*`), and division (`/`) -- work as one would expect.
+The usual mathematical operators -- addition (`+`), subtraction (`-`), multiplication (`*`), and division (`/`) -- work as one would expect.
 The first three operations always produce integers, while dividing two integers always gives a floating point number (a number with a decimal point) as a result, even if two numbers can be divided without a remainder.
 
 Integer division (division where the fractional part is discarded) can be achieved with the `div` operator.
@@ -63,9 +63,7 @@ c / d = 3.0  <1>
 ----
 <1> Notice that in the addition and division examples, even though we get a number without a decimal part, the result is still of the floating type.
 
-{nbsp}
-
-The precedence of mathematical operations is as one would expect -- multiplication and division have higher priority than addition and subtraction.
+The precedence of mathematical operations is as one would expect: multiplication and division have higher priority than addition and subtraction.
 
 [source]
 ----
@@ -95,18 +93,18 @@ echo e + f   # error
 ----
 
 The values of variables need to be converted to the same type.
-Conversion is straight-forward -- to convert to an integer, we use the `int` function, and to convert to a float the `float` function is used.
+Conversion is straight-forward: to convert to an integer, we use the `int` function, and to convert to a float the `float` function is used.
 [source]
 ----
 let
   e = 5
   f = 23.987
 
-echo float(e)       <1>
-echo int(f)         <2>
+echo float(e)      <1>
+echo int(f)        <2>
 
-echo float(e) + f   <3>
-echo e + int(f)     <4>
+echo float(e) + f  <3>
+echo e + int(f)    <4>
 ----
 <1> Printing a `float` version of an integer `e`. (`e` remains of integer type)
 <2> Printing an `int` version of a float `f`.
@@ -193,7 +191,7 @@ They are used by prepending the escape character `\` to them.
 If we wanted to print the above example as it was written, we have two possibilities: 
 
 * Use `\\` instead of `\` to print backslashes, or
-* Use raw strings which have syntax `r"..."` (putting a letter `r` immediately before the first quote), in which there are no escape characters and no special meanings -- everything is printed as it is.
+* Use raw strings which have syntax `r"..."` (putting a letter `r` immediately before the first quote), in which there are no escape characters and no special meanings: everything is printed as it is.
 
 [source]
 ----
@@ -309,7 +307,7 @@ Logical operators are used to test the truthiness of an expression consisting of
 * Logical `and` returns `true` only if both members are `true`
 * Logical `or` returns `true` if there is at least one member which is `true`
 * Logical `xor` returns `true` if one member is true, but the other is not 
-* Logical `not` negates the truthiness of its member -- changing `true` to `false`, and vice versa (it is the only logical operator that takes just one operand)
+* Logical `not` negates the truthiness of its member: changing `true` to `false`, and vice versa (it is the only logical operator that takes just one operand)
 
 [source]
 .logicalOperators.nim

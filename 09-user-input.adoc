@@ -98,7 +98,7 @@ NOTE: VS Code users cannot run this the usual way (using `Ctrl+Alt+N`) because o
 == Dealing with numbers
 
 Reading from a file or from a user input always gives a string as a result.
-If we would like to use numbers, we need to convert strings to numbers -- we again use the `strutils` module and use `parseInt` to convert to integers or `parseFloat` to convert into a float.
+If we would like to use numbers, we need to convert strings to numbers: we again use the `strutils` module and use `parseInt` to convert to integers or `parseFloat` to convert into a float.
 
 [source]
 .interaction2.nim
@@ -124,7 +124,7 @@ If we have file `numbers.txt` in the same directory as our Nim code, with the fo
 include::{source-dir}/numbers.txt[]
 ----
 
-And we want to read that file and find the sum and average of the numbers provided, we can do something like this:
+and we want to read that file and find the sum and average of the numbers provided, we can do something like this:
 
 [source]
 .interaction3.nim

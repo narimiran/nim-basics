@@ -15,6 +15,6 @@ if b < c:
 
 if a+b > c:     # <3>
   echo "a and b are larger than c"
-  if 1 < 100 and 321 > 123:   # <4>
+  if 1 < 100 and 321 > 123:  # <4>
     echo "did you know that 1 is smaller than 100?"
     echo "and 321 is larger than 123! wow!"

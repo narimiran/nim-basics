@@ -33,7 +33,7 @@ If you're using other code editors, see https://github.com/nim-lang/Nim/wiki/Edi
 
 == Testing the installation
 
-To check if the installation was successful, we will write a program which is traditionally used as an introductory example -- https://en.wikipedia.org/wiki/%22Hello,_World!%22_program[Hello World].
+To check if the installation was successful, we will write a program which is traditionally used as an introductory example: https://en.wikipedia.org/wiki/%22Hello,_World!%22_program[Hello World].
 
 Printing (as in: displaying on the screen; not on a paper with a printer) the phrase `Hello World!` in Nim is straightforward and it doesn't require any boilerplate code.
 

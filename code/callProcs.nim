@@ -1,6 +1,6 @@
-proc findMax(x: int, y: int): int = # <1>
+proc findMax(x: int, y: int): int =  # <1>
   if x > y:
-    return x    # <2>
+    return x  # <2>
   else:
     return y
   # this is inside of the procedure
@@ -10,7 +10,7 @@ proc findMax(x: int, y: int): int = # <1>
 let
   a = findMax(987, 789)
   b = findMax(123, 321)
-  c = findMax(a, b)     # <1>
+  c = findMax(a, b)  # <1>
 
 echo a
 echo b

@@ -7,4 +7,4 @@ of 'y':
   echo "You've chosen y"
 of 'z':
   echo "You've chosen z"
-else: discard   # <1>
+else: discard  # <1>

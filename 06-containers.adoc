@@ -31,9 +31,9 @@ The elements of an array are enclosed inside of square brackets.
 ----
 var
   a: array[3, int] = [5, 7, 9]
-  b = [5, 7, 9]               <1>
-  c = []  # error             <2>
-  d: array[7, string]         <3>
+  b = [5, 7, 9]        <1>
+  c = []  # error      <2>
+  d: array[7, string]  <3>
   x = 5
 ----
 <1> If we provide the values, the length and type of array `b` are known at compile time. Although correct, there is no need to specifically declare it like array `a`.
@@ -57,16 +57,16 @@ var a: array[n, char] # error <1>
 
 == Sequences
 
-Sequences are containers similar to arrays, but their length doesn't have to be known at compile time, and it can change during runtime -- we declare only the type of the contained elements with `seq[<type>]`.
-Sequences are also homogenous -- every element in a sequence has to be the same type.
+Sequences are containers similar to arrays, but their length doesn't have to be known at compile time, and it can change during runtime: we declare only the type of the contained elements with `seq[<type>]`.
+Sequences are also homogenous, i.e. every element in a sequence has to be the same type.
 
 The elements of a sequence are enclosed between `@[` and `]`.
 
 [source]
 ----
 var
-  e1: seq[int] = @[]    <1>
-  f = @["abc", "def"]   <2>
+  e1: seq[int] = @[]   <1>
+  f = @["abc", "def"]  <2>
 ----
 <1> The type of an empty sequence must be declared.
 <2> The type of a non-empty sequence can be inferred. In this case, it is a sequence containing strings.
@@ -76,13 +76,11 @@ Another way to initialize an empty sequence is to call the `newSeq` procedure. W
 [source]
 ----
 var
-  e = newSeq[int]()    <1>
+  e = newSeq[int]() <1>
 ----
 <1> Providing the type parameter inside of square brackets allows the procedure to know that it shall return a sequence of a certain type. +
 A frequent error is omission of the final `()`, which must be included.
 
-
-{nbsp}
 
 We can add new elements to a sequence with the `add` function, similar to how we did with strings.
 For this to work the sequence must be mutable (defined with `var`), and the element we're adding must be of the same type as the elements in the sequence.
@@ -114,8 +112,6 @@ g.add(i)    # error <2>
 <1> Trying to add a `float` to a sequence of `int`.
 <2> Trying to add a sequence of `int` to a sequence of `char`.
 
-
-{nbsp}
 
 Since sequences can vary in length we need a way to get their length, for this we can use the `len` function.
 
@@ -186,7 +182,6 @@ include::{source-dir}/indexing.nim[lines=6..8]
 @[a, b, c]
 ----
 
-{nbsp}
 
 Both indexing and slicing can be used to assign new values to the existing mutable containers and strings.
 
