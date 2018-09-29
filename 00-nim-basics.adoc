@@ -22,7 +22,7 @@ This is a work-in-progress: if you spot any errors and/or you have an idea how t
 
 == Who is this for?
 
-* People with minimal previous programming experience
+* People with no or minimal previous programming experience
 * People with some programming experience in other programming languages
 * People who want to explore Nim for the first time, starting from scratch
 

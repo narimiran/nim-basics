@@ -225,17 +225,17 @@ include::{source-dir}/result.nim[lines=1..9]
 
 {nbsp}
 
-// TODO: delete/modify this part once the new behaviour for strings and sequences is in the stable version.
 
 WARNING: Beware!
-The default value of strings and sequences is https://en.wikipedia.org/wiki/Null_pointer[`nil`], and when we use them as returning types, the `result` variable needs to be initialized as an empty string (`""`) or as an empty sequence (`@[]`).
+In older Nim versions (before Nim 0.19.0), the default value of strings and sequences was https://en.wikipedia.org/wiki/Null_pointer[`nil`], and when we would use them as returning types, the `result` variable would need to be initialized as an empty string (`""`) or as an empty sequence (`@[]`).
 
 [source]
 .result.nim
 ----
 include::{source-dir}/result.nim[lines=11..20]
 ----
-<1> Sequences must be _initialized_, deleting this line will cause an error. Notice that `var` must _not_ be used, as `result` is already implicitly declared.
+<1> In Nim version 0.19.0 and newer, this line is not needed -- sequences are automatically initialized as empty sequences. +
+In older Nim versions, sequences must be initialized, and without this line the compiler would throw an error. (Notice that `var` must _not_ be used, as `result` is already implicitly declared.) 
 
 [source, output]
 ----
@@ -252,7 +252,7 @@ Inside of a procedure we can also call other procedures.
 ----
 include::{source-dir}/filterOdds.nim[]
 ----
-<1> Initializing the `result` variable as an empty sequence. Because the return value is declared as `seq[int]`, `result` can only accept integers.
+<1> Once again, this line is not needed in the newer versions of Nim.
 <2> Calling the previously declared procedure. Its return type is `bool` and can be used in the if-statement.
 <3> The third way of calling a procedure, as we saw above.
 
@@ -279,8 +279,8 @@ echo 5.plus(10) # error      <1>
 proc plus(x, y: int): int =  <2>
   return x + y
 ----
-<1> This will throw an error as plus isn't defined yet.
-<2> Here we define plus, but since it's after we use it Nim doesn't know about it yet.
+<1> This will throw an error as `plus` isn't defined yet.
+<2> Here we define `plus`, but since it's after we use it Nim doesn't know about it yet.
 
 The way to get around this is what's called a forward declaration:
 

@@ -141,7 +141,7 @@ But if you are reading this Nim tutorial, the chances are that you already know 
 <div class="ulist">
 <ul>
 <li>
-<p>People with minimal previous programming experience</p>
+<p>People with no or minimal previous programming experience</p>
 </li>
 <li>
 <p>People with some programming experience in other programming languages</p>
@@ -203,7 +203,7 @@ We will check that the installation went well in a coming chapter.</p>
 If you are installing it that way, make sure it&#8217;s the most recent version (see the website for what is the latest version), otherwise install via one of two methods mentioned above.</p>
 </div>
 <div class="paragraph">
-<p>In this tutorial we will use the stable version, which is Nim 0.18.0 at the time of writing.</p>
+<p>In this tutorial we will use the stable version, which is Nim 0.19.0 at the time of writing.</p>
 </div>
 </div>
 </div>
@@ -2617,7 +2617,7 @@ echo findBiggest(d)</code></pre>
 </td>
 <td class="content">
 Beware!
-The default value of strings and sequences is <a href="https://en.wikipedia.org/wiki/Null_pointer"><code>nil</code></a>, and when we use them as returning types, the <code>result</code> variable needs to be initialized as an empty string (<code>""</code>) or as an empty sequence (<code>@[]</code>).
+In older Nim versions (before Nim 0.19.0), the default value of strings and sequences was <a href="https://en.wikipedia.org/wiki/Null_pointer"><code>nil</code></a>, and when we would use them as returning types, the <code>result</code> variable would need to be initialized as an empty string (<code>""</code>) or as an empty sequence (<code>@[]</code>).
 </td>
 </tr>
 </table>
@@ -2626,7 +2626,7 @@ The default value of strings and sequences is <a href="https://en.wikipedia.org/
 <div class="title">result.nim</div>
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-nim" data-lang="nim">proc keepOdds(a: seq[int]): seq[int] =
-  result = @[]            <i class="conum" data-value="1"></i><b>(1)</b>
+  # result = @[]          <i class="conum" data-value="1"></i><b>(1)</b>
   for number in a:
     if number mod 2 == 1:
       result.add(number)
@@ -2640,7 +2640,8 @@ echo keepOdds(f)</code></pre>
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Sequences must be <em>initialized</em>, deleting this line will cause an error. Notice that <code>var</code> must <em>not</em> be used, as <code>result</code> is already implicitly declared.</td>
+<td>In Nim version 0.19.0 and newer, this line is not needed&#8201;&#8212;&#8201;sequences are automatically initialized as empty sequences.<br>
+In older Nim versions, sequences must be initialized, and without this line the compiler would throw an error. (Notice that <code>var</code> must <em>not</em> be used, as <code>result</code> is already implicitly declared.)</td>
 </tr>
 </table>
 </div>
@@ -2662,7 +2663,7 @@ echo keepOdds(f)</code></pre>
   return x mod 3 == 0
 
 proc filterMultiplesOf3(a: seq[int]): seq[int] =
-  result = @[]              <i class="conum" data-value="1"></i><b>(1)</b>
+  # result = @[]            <i class="conum" data-value="1"></i><b>(1)</b>
   for i in a:
     if i.isDivisibleBy3():  <i class="conum" data-value="2"></i><b>(2)</b>
       result.add(i)
@@ -2682,7 +2683,7 @@ echo filterMultiplesOf3 i   <i class="conum" data-value="3"></i><b>(3)</b></code
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Initializing the <code>result</code> variable as an empty sequence. Because the return value is declared as <code>seq[int]</code>, <code>result</code> can only accept integers.</td>
+<td>Once again, this line is not needed in the newer versions of Nim.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
@@ -2722,11 +2723,11 @@ proc plus(x, y: int): int =  <i class="conum" data-value="2"></i><b>(2)</b>
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>This will throw an error as plus isn&#8217;t defined yet.</td>
+<td>This will throw an error as <code>plus</code> isn&#8217;t defined yet.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Here we define plus, but since it&#8217;s after we use it Nim doesn&#8217;t know about it yet.</td>
+<td>Here we define <code>plus</code>, but since it&#8217;s after we use it Nim doesn&#8217;t know about it yet.</td>
 </tr>
 </table>
 </div>

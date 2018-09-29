@@ -2,7 +2,7 @@ proc isDivisibleBy3(x: int): bool =
   return x mod 3 == 0
 
 proc filterMultiplesOf3(a: seq[int]): seq[int] =
-  result = @[]              # <1>
+  # result = @[]            # <1>
   for i in a:
     if i.isDivisibleBy3():  # <2>
       result.add(i)

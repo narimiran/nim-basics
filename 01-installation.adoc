@@ -14,7 +14,7 @@ We will check that the installation went well in a coming chapter.
 If you're using Linux, there is a high probability that your distribution has Nim in the package manager.
 If you are installing it that way, make sure it's the most recent version (see the website for what is the latest version), otherwise install via one of two methods mentioned above.
 
-In this tutorial we will use the stable version, which is Nim 0.18.0 at the time of writing.
+In this tutorial we will use the stable version, which is Nim 0.19.0 at the time of writing.
 
 
 

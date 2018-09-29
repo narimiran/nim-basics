@@ -9,7 +9,7 @@ echo findBiggest(d)
 
 
 proc keepOdds(a: seq[int]): seq[int] =
-  result = @[]            # <1>
+  # result = @[]          # <1>
   for number in a:
     if number mod 2 == 1:
       result.add(number)
