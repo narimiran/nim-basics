@@ -85,3 +85,29 @@ echo minus(10, 5) # error <3>
 <1> Here we import `firstFile.nim`. We don't need to put the `.nim` extension on here.
 <2> This will work fine and output `15` as it's declared in `firstFile` and visible to us.
 <3> However this will throw an error as the `minus` procedure is not visible since it doesn't have an asterisk behind it's name.
+
+
+In case you have more than these two files, you might want to organize them in a subdirectory (or more than one subdirectory).
+With the following directory structure:
+
+[source, output]
+----
+.
+├── myOtherSubdir
+│   ├── fifthFile.nim
+│   └── fourthFile.nim
+├── mySubdir
+│   └── thirdFile.nim
+├── firstFile.nim
+└── secondFile.nim
+----
+
+if you wanted to import all other files in your `secondFile.nim` this is how you would do it:
+
+[source]
+.secondFile.nim
+----
+import firstFile
+import mySubdir/thirdFile
+import myOtherSubdir / [fourthFile, fifthFile]
+----

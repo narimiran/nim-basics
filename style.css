@@ -13,7 +13,7 @@ table {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    max-width: 40em;
+    max-width: 45em;
     position: relative;
     padding-left: 1em;
     padding-right: 1em
@@ -21,7 +21,7 @@ table {
 
 body {
     background: #fcfaf7;
-    color: #2e3738;
+    color: #222727;
     margin-top: -1.8em;
     font-family: "Fira Sans", "Open Sans", "Noto Sans", "DejaVu Sans", sans-serif;
     line-height: 1.6;
@@ -34,8 +34,13 @@ h1, h2, h3, #toctitle, .sidebarblock>.content>.title, h4, h5, h6 {
     font-weight: 400;
     font-style: normal;
     color: #cb4b16;
-    margin-top: 2.7em;
+    margin-top: 2.5em;
 }
+
+h1 {
+  margin-top: 4.0em;
+}
+
 h3 {
     font-style: italic;
 }
@@ -68,6 +73,10 @@ p {
     border-radius: 6px;
     -webkit-border-radius: 6px;
     word-wrap: break-word;
+}
+
+pre.rouge {
+  padding: 1.0em;
 }
 
 pre, pre>code {
@@ -166,13 +175,14 @@ ol li {
 
 @media only screen and (min-width:850px) {
     body.toc2 {
-        padding-left: 16em;
+        padding-left: 15em;
+        margin-top: -5em;
     }
 
     #toc.toc2 {
         background: #fcfaf7;
         position: fixed;
-        width: 16em;
+        width: 15em;
         left: 0;
         top: 0;
         border-right: 2px solid #efefed;
@@ -185,15 +195,15 @@ ol li {
 #toc.toc2 #toctitle {
     margin-top: 0;
     margin-bottom: .8rem;
-    font-size: 1.125em;
+    font-size: 1.25em;
 }
 #toc.toc2>ul {
     font-size: 0.875em;
-    padding-left: 1em;
+    padding-left: 0.5em;
 }
 
 #toc.toc2 ul ul {
-    padding-left: 0.75em;
+    padding-left: 0.5em;
 }
 
 #toc.toc2 a {

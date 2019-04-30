@@ -188,7 +188,7 @@ They are used by prepending the escape character `\` to them.
 * `\t` is a tab character
 * `\\` is a backslash (since one `\` is used as the escape character)
 
-If we wanted to print the above example as it was written, we have two possibilities: 
+If we wanted to print the above example as it was written, we have two possibilities:
 
 * Use `\\` instead of `\` to print backslashes, or
 * Use raw strings which have syntax `r"..."` (putting a letter `r` immediately before the first quote), in which there are no escape characters and no special meanings: everything is printed as it is.
@@ -306,7 +306,7 @@ Logical operators are used to test the truthiness of an expression consisting of
 
 * Logical `and` returns `true` only if both members are `true`
 * Logical `or` returns `true` if there is at least one member which is `true`
-* Logical `xor` returns `true` if one member is true, but the other is not 
+* Logical `xor` returns `true` if one member is true, but the other is not
 * Logical `not` negates the truthiness of its member: changing `true` to `false`, and vice versa (it is the only logical operator that takes just one operand)
 
 [source]
@@ -346,7 +346,7 @@ For example: `(5 < 7) and (11 + 9 == 32 - 2*6)` will become `true and (20 == 20)
 This was the longest chapter in this tutorial and we covered a lot of ground.
 Take your time to go trough each data type and experiment with what you can do with each of them.
 
-Types might seem like a restriction at first, but they allow the Nim compiler to both make your code faster, and make sure you're not doing something wrong by accident.
+Types might seem like a restriction at first, but they allow the Nim compiler to both make your code faster, and make sure you're not doing something wrong by accident -- this is especially beneficial in large code bases.
 
 Now you know the basic data types and several operations on them, which should be enough to do some simple calculations in Nim.
 Test your knowledge by doing the following exercises.

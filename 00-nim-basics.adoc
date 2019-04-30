@@ -1,5 +1,6 @@
 = Nim basics
-:source-highlighter: prettify
+:source-highlighter: rouge
+:rouge-style: gruvbox
 :source-language: nim
 :source-dir: code
 :icons: font
@@ -43,36 +44,24 @@ The exercises at the end of some chapters should be non-negotiable -- don't skip
 If you need additional help understanding some parts of the tutorial or with the exercises, you can always ask for help on the https://forum.nim-lang.org/[Nim forum], the https://gitter.im/nim-lang/Nim[Nim Gitter channel], their https://discordapp.com/invite/ezDFDw2[Discord server], or Nim's IRC channel on freenode, #nim.
 
 
-'''
-
-
 include::01-installation.adoc[]
 
-'''
 include::02-variables.adoc[]
 
-'''
 include::03-types.adoc[]
 
-'''
 include::04-control-flow.adoc[]
 
-'''
 include::05-loops.adoc[]
 
-'''
 include::06-containers.adoc[]
 
-'''
 include::07-procedures.adoc[]
 
-'''
 include::08-modules.adoc[]
 
-'''
 include::09-user-input.adoc[]
 
-'''
 include::10-conclusion.adoc[]
 
 
