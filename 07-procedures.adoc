@@ -19,12 +19,12 @@ Some of the advantages of using procedures are:
 
 As mentioned in the beginning of this section, procedures are often called functions in other languages.
 This is actually a bit of a misnomer if we consider the mathematical definition of a function.
-Mathematical functions take a set of arguments (like `f(x)`) and always return the same answer for the same input.
+Mathematical functions take a set of arguments (like `f(x, y)`, where `f` is a function, and `x` and `y` are its arguments) and _always_ return the same answer for the same input.
 
 Programmatic procedures on the other hand don't always return the same output for a given input.
 Sometimes they don't return anything at all.
 This is because our computer programs can store state in the variables we mentioned earlier which procedures can read and change.
-In Nim the word `func` is currently reserved to be used as the more mathematically correct kind of function, forcing no side-effects.
+In Nim, the word `func` is currently reserved to be used as the more mathematically correct kind of function, forcing no side-effects.
 
 
 

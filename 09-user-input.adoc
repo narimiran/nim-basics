@@ -3,7 +3,9 @@
 
 
 Using the stuff we've introduced so far (basic data types and containers, control flow, loops) allows us to make quite a few simple programs.
-To make our programs more interactive, we need an option to read data from a file, or ask a user for an input.
+
+In this chapter we will learn how to make our programs more interactive.
+For that we need an option to read data from a file, or ask a user for an input.
 
 
 

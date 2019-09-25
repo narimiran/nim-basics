@@ -39,7 +39,7 @@ So `<name>` is not literally the word `name` in angular brackets but rather any 
 
 
 Nim also has https://en.wikipedia.org/wiki/Type_inference[type inference] ability: the compiler can automatically detect the type of a name assignment from its value, without explicitly stating the type.
-We'll look more into the various types in the next section.
+We'll look more into the various types in the <<Basic data types, next chapter>>.
 
 So we can assign a variable without an explicit type like this:
 [source]

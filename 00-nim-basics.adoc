@@ -28,9 +28,10 @@ This is a work-in-progress: if you spot any errors and/or you have an idea how t
 * People who want to explore Nim for the first time, starting from scratch
 
 
-== Who is this __not__ for?
+== Who is this _not_ for?
 
-* People with lots of programming experience: other, more advanced, tutorials might suit you better. See https://nim-lang.org/docs/tut1.html[Official Tutorial] or https://nim-by-example.github.io/[Nim by Example].
+* People with lots of programming experience: other, more advanced, tutorials might suit you better.
+  See https://nim-lang.org/docs/tut1.html[Official Tutorial] or https://nim-by-example.github.io/[Nim by Example].
 * People experienced in Nim (feel free to help make this tutorial better)
 
 

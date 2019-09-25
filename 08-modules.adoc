@@ -15,10 +15,12 @@ Some of the most used Nim modules are:
 But there are many more, both in what's called the https://nim-lang.org/docs/lib.html[standard library] and in the https://nimble.directory/[nimble package manager].
 
 
+
+
 == Importing a module
 
 If we want to import a module and all of its functionality, all we have to do is put `import <moduleName>` in our file.
-This is commonly done on the top so we can easily see what our code uses.
+This is commonly done on the top of the file so we can easily see what our code uses.
 
 [source]
 .stringutils.nim
@@ -36,6 +38,11 @@ include::{source-dir}/stringutils.nim[]
 MY STRING WITH WHITESPACE.
 !!!!!
 ----
+
+NOTE: To the users coming from other programming languages (especially Python), the way that imports work in Nim might seem "wrong". If that's the case, https://narimiran.github.io/2019/07/01/nim-import.html[this] is the recommended reading.
+
+{nbsp}
+
 
 [source]
 .maths.nim

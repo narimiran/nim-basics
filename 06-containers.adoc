@@ -3,7 +3,7 @@
 
 
 Containers are data types which contain a collection of items and allow us to access those elements.
-Typically a container is also iterable, meaning that we can use them the same way we used strings in the loop chapter.
+Typically a container is also iterable, meaning that we can use them the same way we used strings in the <<Loops, loops chapter>>.
 
 For example, a grocery list is a container of items we want to buy, and a list of primes is a container of numbers.
 Written in pseudocode:
@@ -18,9 +18,9 @@ primes = [1, 2, 3, 5, 7]
 == Arrays
 
 An array is the simplest container type.
-Arrays are homogenous, i.e. all elements in an array must have the same type.
-Arrays are also of a constant size, meaning that the amount of elements (or rather the amount of _possible_ elements), must be known at compile-time.
-This means that we call arrays a "homogenous container of a constant length".
+Arrays are homogeneous, i.e. all elements in an array must have the same type.
+Arrays are also of a constant size, meaning that the amount of elements (or rather: the amount of _possible_ elements), must be known at compile-time.
+This means that we call arrays a "homogeneous container of a constant length".
 
 The array type is declared using `array[<length>, <type>]`, where `length` is the total capacity of the array (number of elements it can fit), and `type` is a type of all its elements.
 The declaration can be omitted if both length and type can be inferred from the passed elements.
@@ -34,20 +34,21 @@ var
   b = [5, 7, 9]        <1>
   c = []  # error      <2>
   d: array[7, string]  <3>
-  x = 5
 ----
 <1> If we provide the values, the length and type of array `b` are known at compile time. Although correct, there is no need to specifically declare it like array `a`.
 <2> Neither the length nor the type of the elements can be inferred from this kind of declaration -- this produces an error.
 <3> The correct way to declare an empty array (which will be filled later) is to give its length and type, without providing the values of its elements -- array `d` can contain seven strings.
 
 
-Since the length of an array has to be known at compile-time this will not work:
+Since the length of an array has to be known at compile-time, this will not work:
 
 [source]
 ----
+const m = 3
 let n = 5
 
-var a: array[n, char] # error <1>
+var a: array[m, char]
+var b: array[n, char] # error <1>
 ----
 <1> This produces an error because `n` is declared using `let` -- its value is not known at compile time. We can only use values declared with `const` as a `length` parameter for an array initialization.
 
@@ -58,7 +59,7 @@ var a: array[n, char] # error <1>
 == Sequences
 
 Sequences are containers similar to arrays, but their length doesn't have to be known at compile time, and it can change during runtime: we declare only the type of the contained elements with `seq[<type>]`.
-Sequences are also homogenous, i.e. every element in a sequence has to be the same type.
+Sequences are also homogeneous, i.e. every element in a sequence has to be the same type.
 
 The elements of a sequence are enclosed between `@[` and `]`.
 
@@ -71,7 +72,7 @@ var
 <1> The type of an empty sequence must be declared.
 <2> The type of a non-empty sequence can be inferred. In this case, it is a sequence containing strings.
 
-Another way to initialize an empty sequence is to call the `newSeq` procedure. We'll look more at procedure calls in the next section but for now just know that this is also a possibility:
+Another way to initialize an empty sequence is to call the `newSeq` procedure. We'll look more at procedure calls in the <<Procedures, next chapter>> but for now just know that this is also a possibility:
 
 [source]
 ----
@@ -90,9 +91,8 @@ For this to work the sequence must be mutable (defined with `var`), and the elem
 ----
 include::{source-dir}/seq.nim[]
 ----
-<1> Mutable type.
-<2> Adding a new element of the same type (char).
-<3> Adding another sequence containing the same type.
+<1> Adding a new element of the same type (char).
+<2> Adding another sequence containing the same type.
 
 [source, output]
 ----
@@ -163,7 +163,7 @@ e
 {nbsp}
 
 Slicing allows us to get a series of elements with one call.
-It uses the same syntax as ranges (introduced in the <<For loop, for loop>> section).
+It uses the same syntax as ranges (introduced in the <<For loop, for loop section>>).
 
 If we use `start .. stop` syntax, both ends are included in the slice.
 Using `start ..< stop` syntax, the `stop` index is not included in the slice.
@@ -207,8 +207,8 @@ Tom and Barry
 
 == Tuples
 
-Both of the containers we've seen so far have been homogenous.
-Tuples, on the other hand, contain heterogenous data, i.e. elements of a tuple can be of different types.
+Both of the containers we've seen so far have been homogeneous.
+Tuples, on the other hand, contain heterogeneous data, i.e. elements of a tuple can be of different types.
 Similarly to arrays, tuples have fixed-size.
 
 The elements of a tuple are enclosed inside of parentheses.
@@ -254,7 +254,7 @@ include::{source-dir}/tuples.nim[lines=5..10]
     * Print only the elements of that array that are on odd indices (values 20, 40, ...).
     * Multiply elements on even indices by 5. Print the modified array.
 
-2. Re-do the <<_exercises_3, Collatz conjecture exercise>>, but this time instead of printing each step, add it to a sequence.
+2. Re-do the <<_exercises_2, Collatz conjecture exercise>>, but this time instead of printing each step, add it to a sequence.
     * Pick a starting number. Interesting choices, among others, are 9, 19, 25 and 27.
     * Create a sequence whose only member is that starting number
     * Using the same logic as before, keep adding elements to the sequence until you reach 1

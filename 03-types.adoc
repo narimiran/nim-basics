@@ -4,7 +4,7 @@
 
 == Integers
 
-As seen in the previous section, integers are numbers which are written without a fractional component and without a decimal point.
+As seen in the previous chapter, integers are numbers which are written without a fractional component and without a decimal point.
 
 For example: `32`, `-174`, `0`, `10_000_000` are all integers.
 Notice that we can use `_` as a thousands separator, to make larger numbers more readable (it is easier to see that we're talking about 10 million when it's written as 10_000_000 rather than as 10000000).
@@ -244,7 +244,7 @@ q is still: xyz
 == Boolean
 
 A boolean (or just `bool`) data type can only have two values: `true` or `false`.
-Booleans are usually used for control flow (next section), and they are often a result of relational operators.
+Booleans are usually used for control flow (see <<Control flow, next chapter>>), and they are often a result of relational operators.
 
 The usual naming convention for boolean variables is to write them as a simple yes/no (true/false) questions, e.g. `isEmpty`, `isFinished`, `isMoving`, etc.
 

@@ -14,7 +14,8 @@ We will check that the installation went well in a coming chapter.
 If you're using Linux, there is a high probability that your distribution has Nim in the package manager.
 If you are installing it that way, make sure it's the most recent version (see the website for what is the latest version), otherwise install via one of two methods mentioned above.
 
-In this tutorial we will use the stable version, which is Nim 0.19.0 at the time of writing.
+In this tutorial we will use the stable version.
+Originally, this tutorial was written for Nim 0.19 (released in September 2018), and it should work for any newer version, including Nim 1.0.
 
 
 
@@ -24,7 +25,9 @@ In this tutorial we will use the stable version, which is Nim 0.19.0 at the time
 You can write Nim code in any text editor, and then compile and run it from the terminal.
 If you want syntax highlighting and code completion there are plugins for popular code editors which provide these features.
 
-The author prefers the https://code.visualstudio.com/[VS Code] editor, with the https://marketplace.visualstudio.com/items?itemName=kosz78.nim[Nim extension] which provides syntax highlighting and code completion, and the https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner[Code Runner extension] for quick compiling and running.
+Most of Nim users prefer the https://code.visualstudio.com/[VS Code] editor, with the https://marketplace.visualstudio.com/items?itemName=kosz78.nim[Nim extension] which provides syntax highlighting and code completion, and the https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner[Code Runner extension] for quick compiling and running.
+
+The author personally uses https://neovim.io/[NeoVim] editor, with https://github.com/alaviss/nim.nvim[this plugin] which provides additional features like syntax highlighting and code completion.
 
 If you're using other code editors, see https://github.com/nim-lang/Nim/wiki/Editor-Support[the wiki] for available editor support.
 
@@ -45,7 +48,7 @@ In a new text file called e.g. `helloworld.nim` we need to write just one line o
 include::code/helloworld.nim[]
 ----
 
-NOTE: The phrase you want to print must follow the `echo` command and must be enclosed in double-quotes (").
+NOTE: The phrase you want to print must follow the `echo` command and must be enclosed in double-quotes (`"`).
 
 First we need to compile our program, and then run it to see if it works as expected.
 

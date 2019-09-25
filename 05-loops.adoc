@@ -3,9 +3,11 @@
 
 
 Loops are another control flow construct which allow us to run some parts of code multiple times.
-This can either be a known number of times (for-loops) or for as long as some condition is satisfied (while-loops).
 
-{nbsp}
+In this chapter we will meet two kinds of loops:
+
+* for-loop: run a known number of times
+* while-loop: run as long some condition is satisfied
 
 
 == For loop
@@ -22,7 +24,8 @@ That variable will be available only inside the loop.
 Once the loop has finished, the value of the variable is discarded.
 
 The `iterable` is any object we can iterate through.
-Of the types already mentioned, strings are iterable objects. (More iterable types will be introduced in the next section.)
+Of the types already mentioned, strings are iterable objects.
+(More iterable types will be introduced in the <<Containers, next chapter>>.)
 
 All lines in the `loop body` are executed at every loop, which allows us to efficiently write repeating parts of code.
 

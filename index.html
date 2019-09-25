@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.5">
+<meta name="generator" content="Asciidoctor 2.0.10">
 <title>Nim basics</title>
 <link rel="stylesheet" href="./style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -159,7 +159,8 @@ But if you are reading this Nim tutorial, the chances are that you already know 
 <div class="ulist">
 <ul>
 <li>
-<p>People with lots of programming experience: other, more advanced, tutorials might suit you better. See <a href="https://nim-lang.org/docs/tut1.html">Official Tutorial</a> or <a href="https://nim-by-example.github.io/">Nim by Example</a>.</p>
+<p>People with lots of programming experience: other, more advanced, tutorials might suit you better.
+See <a href="https://nim-lang.org/docs/tut1.html">Official Tutorial</a> or <a href="https://nim-by-example.github.io/">Nim by Example</a>.</p>
 </li>
 <li>
 <p>People experienced in Nim (feel free to help make this tutorial better)</p>
@@ -202,7 +203,8 @@ We will check that the installation went well in a coming chapter.</p>
 If you are installing it that way, make sure it&#8217;s the most recent version (see the website for what is the latest version), otherwise install via one of two methods mentioned above.</p>
 </div>
 <div class="paragraph">
-<p>In this tutorial we will use the stable version, which is Nim 0.19.0 at the time of writing.</p>
+<p>In this tutorial we will use the stable version.
+Originally, this tutorial was written for Nim 0.19 (released in September 2018), and it should work for any newer version, including Nim 1.0.</p>
 </div>
 </div>
 </div>
@@ -214,7 +216,10 @@ If you are installing it that way, make sure it&#8217;s the most recent version 
 If you want syntax highlighting and code completion there are plugins for popular code editors which provide these features.</p>
 </div>
 <div class="paragraph">
-<p>The author prefers the <a href="https://code.visualstudio.com/">VS Code</a> editor, with the <a href="https://marketplace.visualstudio.com/items?itemName=kosz78.nim">Nim extension</a> which provides syntax highlighting and code completion, and the <a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner">Code Runner extension</a> for quick compiling and running.</p>
+<p>Most of Nim users prefer the <a href="https://code.visualstudio.com/">VS Code</a> editor, with the <a href="https://marketplace.visualstudio.com/items?itemName=kosz78.nim">Nim extension</a> which provides syntax highlighting and code completion, and the <a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner">Code Runner extension</a> for quick compiling and running.</p>
+</div>
+<div class="paragraph">
+<p>The author personally uses <a href="https://neovim.io/">NeoVim</a> editor, with <a href="https://github.com/alaviss/nim.nvim">this plugin</a> which provides additional features like syntax highlighting and code completion.</p>
 </div>
 <div class="paragraph">
 <p>If you&#8217;re using other code editors, see <a href="https://github.com/nim-lang/Nim/wiki/Editor-Support">the wiki</a> for available editor support.</p>
@@ -246,7 +251,7 @@ If you want syntax highlighting and code completion there are plugins for popula
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The phrase you want to print must follow the <code>echo</code> command and must be enclosed in double-quotes (").
+The phrase you want to print must follow the <code>echo</code> command and must be enclosed in double-quotes (<code>"</code>).
 </td>
 </tr>
 </table>
@@ -372,7 +377,7 @@ So <code>&lt;name&gt;</code> is not literally the word <code>name</code> in angu
 </div>
 <div class="paragraph">
 <p>Nim also has <a href="https://en.wikipedia.org/wiki/Type_inference">type inference</a> ability: the compiler can automatically detect the type of a name assignment from its value, without explicitly stating the type.
-We&#8217;ll look more into the various types in the next section.</p>
+We&#8217;ll look more into the various types in the <a href="#_basic_data_types">next chapter</a>.</p>
 </div>
 <div class="paragraph">
 <p>So we can assign a variable without an explicit type like this:</p>
@@ -560,7 +565,7 @@ Use <code>var</code> only for the variables which will be modified.</p>
 <h2 id="_integers">Integers</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>As seen in the previous section, integers are numbers which are written without a fractional component and without a decimal point.</p>
+<p>As seen in the previous chapter, integers are numbers which are written without a fractional component and without a decimal point.</p>
 </div>
 <div class="paragraph">
 <p>For example: <code>32</code>, <code>-174</code>, <code>0</code>, <code>10_000_000</code> are all integers.
@@ -937,7 +942,7 @@ q is still: xyz</code></pre>
 <div class="sectionbody">
 <div class="paragraph">
 <p>A boolean (or just <code>bool</code>) data type can only have two values: <code>true</code> or <code>false</code>.
-Booleans are usually used for control flow (next section), and they are often a result of relational operators.</p>
+Booleans are usually used for control flow (see <a href="#_control_flow">next chapter</a>), and they are often a result of relational operators.</p>
 </div>
 <div class="paragraph">
 <p>The usual naming convention for boolean variables is to write them as a simple yes/no (true/false) questions, e.g. <code>isEmpty</code>, <code>isFinished</code>, <code>isMoving</code>, etc.</p>
@@ -1453,11 +1458,12 @@ If one is not interested in some of those cases, <code>else: discard</code> can 
 <div class="openblock partintro">
 <div class="content">
 <div class="paragraph">
-<p>Loops are another control flow construct which allow us to run some parts of code multiple times.
-This can either be a known number of times (for-loops) or for as long as some condition is satisfied (while-loops).</p>
+<p>Loops are another control flow construct which allow us to run some parts of code multiple times.</p>
 </div>
 <div class="paragraph">
-<p>&#160;</p>
+<p>In this chapter we will meet two kinds of loops:
+* for-loop: run a known number of times
+* while-loop: run as long some condition is satisfied</p>
 </div>
 </div>
 </div>
@@ -1480,7 +1486,8 @@ Once the loop has finished, the value of the variable is discarded.</p>
 </div>
 <div class="paragraph">
 <p>The <code>iterable</code> is any object we can iterate through.
-Of the types already mentioned, strings are iterable objects. (More iterable types will be introduced in the next section.)</p>
+Of the types already mentioned, strings are iterable objects.
+(More iterable types will be introduced in the <a href="#_containers">next chapter</a>.)</p>
 </div>
 <div class="paragraph">
 <p>All lines in the <code>loop body</code> are executed at every loop, which allows us to efficiently write repeating parts of code.</p>
@@ -1793,7 +1800,7 @@ Create a program which will print first 30 rounds of Fizz buzz. (Hint: beware of
 <div class="content">
 <div class="paragraph">
 <p>Containers are data types which contain a collection of items and allow us to access those elements.
-Typically a container is also iterable, meaning that we can use them the same way we used strings in the loop chapter.</p>
+Typically a container is also iterable, meaning that we can use them the same way we used strings in the <a href="#_loops">loops chapter</a>.</p>
 </div>
 <div class="paragraph">
 <p>For example, a grocery list is a container of items we want to buy, and a list of primes is a container of numbers.
@@ -1812,9 +1819,9 @@ Written in pseudocode:</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>An array is the simplest container type.
-Arrays are homogenous, i.e. all elements in an array must have the same type.
-Arrays are also of a constant size, meaning that the amount of elements (or rather the amount of <em>possible</em> elements), must be known at compile-time.
-This means that we call arrays a "homogenous container of a constant length".</p>
+Arrays are homogeneous, i.e. all elements in an array must have the same type.
+Arrays are also of a constant size, meaning that the amount of elements (or rather: the amount of <em>possible</em> elements), must be known at compile-time.
+This means that we call arrays a "homogeneous container of a constant length".</p>
 </div>
 <div class="paragraph">
 <p>The array type is declared using <code>array[&lt;length&gt;, &lt;type&gt;]</code>, where <code>length</code> is the total capacity of the array (number of elements it can fit), and <code>type</code> is a type of all its elements.
@@ -1829,8 +1836,7 @@ The declaration can be omitted if both length and type can be inferred from the 
   <span class="n">a</span><span class="p">:</span> <span class="kt">array</span><span class="o">[</span><span class="mi">3</span><span class="p">,</span> <span class="kt">int</span><span class="o">]</span> <span class="o">=</span> <span class="o">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="o">]</span>
   <span class="n">b</span> <span class="o">=</span> <span class="o">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="o">]</span>        <i class="conum" data-value="1"></i><b>(1)</b>
   <span class="n">c</span> <span class="o">=</span> <span class="o">[]</span>  <span class="c"># error      </span><i class="conum" data-value="2"></i><b>(2)</b>
-  <span class="n">d</span><span class="p">:</span> <span class="kt">array</span><span class="o">[</span><span class="mi">7</span><span class="p">,</span> <span class="kt">string</span><span class="o">]</span>  <i class="conum" data-value="3"></i><b>(3)</b>
-  <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span></code></pre>
+  <span class="n">d</span><span class="p">:</span> <span class="kt">array</span><span class="o">[</span><span class="mi">7</span><span class="p">,</span> <span class="kt">string</span><span class="o">]</span>  <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1850,13 +1856,15 @@ The declaration can be omitted if both length and type can be inferred from the 
 </table>
 </div>
 <div class="paragraph">
-<p>Since the length of an array has to be known at compile-time this will not work:</p>
+<p>Since the length of an array has to be known at compile-time, this will not work:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">let</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+<pre class="rouge highlight"><code data-lang="nim"><span class="k">const</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">let</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
 
-<span class="k">var</span> <span class="n">a</span><span class="p">:</span> <span class="kt">array</span><span class="o">[</span><span class="n">n</span><span class="p">,</span> <span class="kt">char</span><span class="o">]</span> <span class="c"># error </span><i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+<span class="k">var</span> <span class="n">a</span><span class="p">:</span> <span class="kt">array</span><span class="o">[</span><span class="n">m</span><span class="p">,</span> <span class="kt">char</span><span class="o">]</span>
+<span class="k">var</span> <span class="n">b</span><span class="p">:</span> <span class="kt">array</span><span class="o">[</span><span class="n">n</span><span class="p">,</span> <span class="kt">char</span><span class="o">]</span> <span class="c"># error </span><i class="conum" data-value="1"></i><b>(1)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1874,7 +1882,7 @@ The declaration can be omitted if both length and type can be inferred from the 
 <div class="sectionbody">
 <div class="paragraph">
 <p>Sequences are containers similar to arrays, but their length doesn&#8217;t have to be known at compile time, and it can change during runtime: we declare only the type of the contained elements with <code>seq[&lt;type&gt;]</code>.
-Sequences are also homogenous, i.e. every element in a sequence has to be the same type.</p>
+Sequences are also homogeneous, i.e. every element in a sequence has to be the same type.</p>
 </div>
 <div class="paragraph">
 <p>The elements of a sequence are enclosed between <code>@[</code> and <code>]</code>.</p>
@@ -1899,7 +1907,7 @@ Sequences are also homogenous, i.e. every element in a sequence has to be the sa
 </table>
 </div>
 <div class="paragraph">
-<p>Another way to initialize an empty sequence is to call the <code>newSeq</code> procedure. We&#8217;ll look more at procedure calls in the next section but for now just know that this is also a possibility:</p>
+<p>Another way to initialize an empty sequence is to call the <code>newSeq</code> procedure. We&#8217;ll look more at procedure calls in the <a href="#_procedures">next chapter</a> but for now just know that this is also a possibility:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1923,14 +1931,14 @@ For this to work the sequence must be mutable (defined with <code>var</code>), a
 <div class="listingblock">
 <div class="title">seq.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">var</span>         <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="rouge highlight"><code data-lang="nim"><span class="k">var</span>
   <span class="n">g</span> <span class="o">=</span> <span class="o">@[</span><span class="sc">'x'</span><span class="p">,</span> <span class="sc">'y'</span><span class="o">]</span>
   <span class="n">h</span> <span class="o">=</span> <span class="o">@[</span><span class="sc">'1'</span><span class="p">,</span> <span class="sc">'2'</span><span class="p">,</span> <span class="sc">'3'</span><span class="o">]</span>
 
-<span class="n">g</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="sc">'z'</span><span class="p">)</span>  <i class="conum" data-value="2"></i><b>(2)</b>
+<span class="n">g</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="sc">'z'</span><span class="p">)</span>  <i class="conum" data-value="1"></i><b>(1)</b>
 <span class="n">echo</span> <span class="n">g</span>
 
-<span class="n">h</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>    <i class="conum" data-value="3"></i><b>(3)</b>
+<span class="n">h</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>    <i class="conum" data-value="2"></i><b>(2)</b>
 <span class="n">echo</span> <span class="n">h</span></code></pre>
 </div>
 </div>
@@ -1938,14 +1946,10 @@ For this to work the sequence must be mutable (defined with <code>var</code>), a
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Mutable type.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
 <td>Adding a new element of the same type (char).</td>
 </tr>
 <tr>
-<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
 <td>Adding another sequence containing the same type.</td>
 </tr>
 </table>
@@ -2048,7 +2052,7 @@ e</code></pre>
 </div>
 <div class="paragraph">
 <p>Slicing allows us to get a series of elements with one call.
-It uses the same syntax as ranges (introduced in the <a href="#_for_loop">for loop</a> section).</p>
+It uses the same syntax as ranges (introduced in the <a href="#_for_loop">for loop section</a>).</p>
 </div>
 <div class="paragraph">
 <p>If we use <code>start .. stop</code> syntax, both ends are included in the slice.
@@ -2121,8 +2125,8 @@ Tom and Barry</code></pre>
 <h2 id="_tuples">Tuples</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Both of the containers we&#8217;ve seen so far have been homogenous.
-Tuples, on the other hand, contain heterogenous data, i.e. elements of a tuple can be of different types.
+<p>Both of the containers we&#8217;ve seen so far have been homogeneous.
+Tuples, on the other hand, contain heterogeneous data, i.e. elements of a tuple can be of different types.
 Similarly to arrays, tuples have fixed-size.</p>
 </div>
 <div class="paragraph">
@@ -2203,7 +2207,7 @@ This can be used for accessing the elements of the tuple, instead of indexing.</
 </div>
 </li>
 <li>
-<p>Re-do the <a href="#_exercises_3">Collatz conjecture exercise</a>, but this time instead of printing each step, add it to a sequence.</p>
+<p>Re-do the <a href="#_exercises_2">Collatz conjecture exercise</a>, but this time instead of printing each step, add it to a sequence.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -2275,13 +2279,13 @@ Now we&#8217;ll see how to create and use our own procedures.</p>
 <div class="paragraph">
 <p>As mentioned in the beginning of this section, procedures are often called functions in other languages.
 This is actually a bit of a misnomer if we consider the mathematical definition of a function.
-Mathematical functions take a set of arguments (like <code>f(x)</code>) and always return the same answer for the same input.</p>
+Mathematical functions take a set of arguments (like <code>f(x, y)</code>, where <code>f</code> is a function, and <code>x</code> and <code>y</code> are its arguments) and <em>always</em> return the same answer for the same input.</p>
 </div>
 <div class="paragraph">
 <p>Programmatic procedures on the other hand don&#8217;t always return the same output for a given input.
 Sometimes they don&#8217;t return anything at all.
 This is because our computer programs can store state in the variables we mentioned earlier which procedures can read and change.
-In Nim the word <code>func</code> is currently reserved to be used as the more mathematically correct kind of function, forcing no side-effects.</p>
+In Nim, the word <code>func</code> is currently reserved to be used as the more mathematically correct kind of function, forcing no side-effects.</p>
 </div>
 </div>
 </div>
@@ -2827,7 +2831,7 @@ This can be extended with modules, which give more functionality for some specif
 <div class="sectionbody">
 <div class="paragraph">
 <p>If we want to import a module and all of its functionality, all we have to do is put <code>import &lt;moduleName&gt;</code> in our file.
-This is commonly done on the top so we can easily see what our code uses.</p>
+This is commonly done on the top of the file so we can easily see what our code uses.</p>
 </div>
 <div class="listingblock">
 <div class="title">stringutils.nim</div>
@@ -2869,6 +2873,21 @@ This is commonly done on the top so we can easily see what our code uses.</p>
 MY STRING WITH WHITESPACE.
 !!!!!</code></pre>
 </div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+To the users coming from other programming languages (especially Python), the way that imports work in Nim might seem "wrong". If that&#8217;s the case, <a href="https://narimiran.github.io/2019/07/01/nim-import.html">this</a> is the recommended reading.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>&#160;</p>
 </div>
 <div class="listingblock">
 <div class="title">maths.nim</div>
@@ -3000,8 +3019,13 @@ With the following directory structure:</p>
 <h1 id="_interacting_with_user_input" class="sect0">Interacting with user input</h1>
 <div class="openblock partintro">
 <div class="content">
-Using the stuff we&#8217;ve introduced so far (basic data types and containers, control flow, loops) allows us to make quite a few simple programs.
-To make our programs more interactive, we need an option to read data from a file, or ask a user for an input.
+<div class="paragraph">
+<p>Using the stuff we&#8217;ve introduced so far (basic data types and containers, control flow, loops) allows us to make quite a few simple programs.</p>
+</div>
+<div class="paragraph">
+<p>In this chapter we will learn how to make our programs more interactive.
+For that we need an option to read data from a file, or ask a user for an input.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
