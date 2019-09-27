@@ -3,12 +3,15 @@
 :rouge-style: gruvbox
 :source-language: nim
 :source-dir: code
+:pdf-themesdir: styles
+:pdf-theme: pdf
+:pdf-folio-placement: physical
 :icons: font
-:stylesheet: style.css
+:stylesheet: styles/style.css
 :linkcss:
 :doctype: book
 :toc: left
-:nofooter:
+
 
 
 https://nim-lang.org/[Nim] is a relatively new programming language which allows users to write easy-to-read high-performance code.

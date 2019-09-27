@@ -1,6 +1,7 @@
 table {
     border-collapse: separate;
     border-spacing: 0.2em 0.6em;
+    font-size: 1.06em;
 }
 
 *, *:before, *:after {
@@ -21,17 +22,18 @@ table {
 
 body {
     background: #fcfaf7;
-    color: #222727;
+    color: #010d11;
+    text-align: justify;
     margin-top: -1.8em;
     font-family: "Fira Sans", "Open Sans", "Noto Sans", "DejaVu Sans", sans-serif;
-    line-height: 1.6;
+    line-height: 1.5;
     tab-size: 4;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, #toctitle, .sidebarblock>.content>.title, h4, h5, h6 {
-    font-weight: 400;
+    font-weight: 600;
     font-style: normal;
     color: #cb4b16;
     margin-top: 2.5em;
@@ -62,14 +64,14 @@ a:hover, a:focus {
 }
 
 p {
-    font-size: 1.125em;
-    text-rendering: optimizeLegibility
+    font-size: 1.25em;
+    text-rendering: optimizeLegibility;
 }
 
 
 *:not(pre)>code {
     padding: 0.0em 0.35ex;
-    background-color: #eeebe2;
+    background-color: #e5e7e8;
     border-radius: 6px;
     -webkit-border-radius: 6px;
     word-wrap: break-word;
@@ -82,7 +84,7 @@ pre.rouge {
 pre, pre>code {
     line-height: 1.30;
     font-family: "Fira Mono", "Hack", "Noto Sans Mono", "DejaVu Sans Mono", monospace;
-    font-size: 0.95em;
+    font-size: 1.0em;
     border-radius: 12px;
     -webkit-border-radius: 12px;
 }
@@ -99,7 +101,7 @@ pre, pre>code {
 
 .admonitionblock td.icon .icon-note:before {
     content: "\f05a";
-    color: #586e75;
+    color: #7b868a;
 }
 
 .admonitionblock td.icon .icon-warning:before {
@@ -114,7 +116,7 @@ pre, pre>code {
 
 .listingblock>.title {
     line-height: 1.0;
-    font-size: 0.95em;
+    font-size: 1.0em;
     color: #cb4b16;
     font-weight: 400;
     font-style: italic;
@@ -124,7 +126,7 @@ pre, pre>code {
 .conum[data-value] {
     display: inline-block;
     color: #fcfaf7;
-    background-color: #586e75;
+    background-color: #7b868a;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     text-align: center;
@@ -137,7 +139,7 @@ pre, pre>code {
 }
 
 hr {
-    border: solid #586e75;
+    border: solid #7b868a;
     border-width: 1px 0 0;
     margin-top: 5em;
 }
@@ -169,20 +171,21 @@ b.conum * {
     color: inherit!important;
 }
 
-ol li {
-    padding-left: 1em;
+li p {
+    margin-top: -0.5em;
+    padding-left: 0.5em;
 }
 
 @media only screen and (min-width:850px) {
     body.toc2 {
-        padding-left: 15em;
+        padding-left: 17em;
         margin-top: -5em;
     }
 
     #toc.toc2 {
         background: #fcfaf7;
         position: fixed;
-        width: 15em;
+        width: 17em;
         left: 0;
         top: 0;
         border-right: 2px solid #efefed;
@@ -214,4 +217,5 @@ ol li {
     margin-left: 0.5em;
     margin-top: 0em;
     margin-bottom: 0em;
+    text-align: left;
 }

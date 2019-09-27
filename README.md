@@ -10,6 +10,15 @@ Please report any errors to the [issue tracker](https://github.com/narimiran/nim
 
 Pull requests are welcome, but before making (significant) changes, please open an issue so it can be discussed what is the best way to tackle the specific problem.
 
+After making the changes, make sure to build new web and pdf versions:
+```bash
+make
+```
+
+If you just want to see the changes, while working on a significant refactoring, you can just build web version, as it is much faster:
+```bash
+make web
+```
 
 
 ## License
