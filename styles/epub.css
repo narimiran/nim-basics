@@ -1,0 +1,191 @@
+table {
+    border-collapse: separate;
+    border-spacing: 1.2em 0.6em;
+    font-size: 0.95em;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+#header, #content, #footnotes, #footer {
+    width: 100%;
+    margin-left: 0em;
+    margin-right: 0em;
+}
+
+body {
+    background: #fcfaf7;
+    color: #010d11;
+    text-align: justify;
+    margin-top: -1.8em;
+    /* margin-left: 0em; */
+    font-family: "Fira Sans", "Open Sans", "Noto Sans", "DejaVu Sans", sans-serif;
+    line-height: 1.5;
+    tab-size: 4;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, #toctitle, .sidebarblock>.content>.title, h4, h5, h6 {
+    font-weight: 600;
+    font-style: normal;
+    text-align: left;
+    color: #cb4b16;
+    margin-top: 2.5em;
+}
+
+h1 {
+  margin-top: 4.0em;
+  font-size: 1.75em;
+}
+
+h2 {
+  font-size: 1.33em;
+}
+
+h3 {
+  font-size: 1.125em;
+  font-style: italic;
+}
+
+code {
+    font-family: "Fira Mono", "Hack", "Noto Sans Mono", "DejaVu Sans Mono", monospace;
+    font-size: 0.9em;
+    font-weight: 400;
+}
+
+a {
+    color: #268bd2;
+    text-decoration-color: #7daed1;
+}
+
+a:hover, a:focus {
+    color: #cb4b16;
+    text-decoration-color: #cb4b16;
+}
+
+p {
+    font-size: 1em;
+    text-rendering: optimizeLegibility;
+}
+
+
+*:not(pre)>code {
+    padding: 0.0em 0.35ex;
+    background-color: #e5e7e8;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    word-wrap: break-word;
+}
+
+pre.rouge {
+  padding: 1.0em;
+  background-color: #e5e7e8;
+}
+
+pre, pre>code {
+    line-height: 1.30;
+    font-family: "Fira Mono", "Hack", "Noto Sans Mono", "DejaVu Sans Mono", monospace;
+    font-size: 0.9em;
+}
+
+.admonitionblock {
+  margin-left: 1em;
+  margin-right: 1em;
+  font-style: italic;
+}
+
+.literalblock pre, .listingblock pre:not(.highlight), .listingblock pre[class="highlight"], .listingblock pre[class^="highlight "], .listingblock pre.CodeRay, .listingblock pre.prettyprint {
+    background: #eeebe2;
+    padding: 10px;
+}
+
+.listingblock>.title {
+    line-height: 1.0;
+    font-size: 0.8em;
+    color: #cb4b16;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: -0.5em;
+}
+
+.conum[data-value] {
+    display: inline-block;
+    color: #fcfaf7;
+    background-color: #7b868a;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    text-align: center;
+    font-size: 0.8em;
+    width: 3.0em;
+    line-height: 1.5em;
+    margin-right: 1em;
+    font-style: normal;
+    font-weight: bold;
+}
+
+hr {
+    border: solid #7b868a;
+    border-width: 1px 0 0;
+    margin-top: 5em;
+}
+
+em, i {
+    font-style: italic;
+    line-height: inherit;
+}
+
+strong, b {
+    font-weight: bold;
+    line-height: inherit;
+}
+
+.conum[data-value]+b {
+    display: none;
+}
+
+.conum[data-value]:after {
+    content: attr(data-value)
+}
+
+pre .conum[data-value] {
+    position: relative;
+    top: -.125em;
+}
+
+b.conum * {
+    color: inherit!important;
+}
+
+li p {
+    margin-top: -0.5em;
+    padding-left: 0.5em;
+}
+
+#toc.toc2 #toctitle {
+    margin-top: 0;
+    margin-bottom: .8rem;
+    font-size: 1.25em;
+}
+#toc.toc2>ul {
+    font-size: 0.875em;
+    padding-left: 0.5em;
+}
+
+#toc.toc2 ul ul {
+    padding-left: 0.5em;
+}
+
+#toc.toc2 a {
+    text-decoration: none;
+}
+
+#toc.toc2 li {
+    margin-left: 0.5em;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    text-align: left;
+}
