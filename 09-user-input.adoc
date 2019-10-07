@@ -92,7 +92,8 @@ Alice
 Hello Alice, nice to meet you!
 ----
 
-NOTE: VS Code users cannot run this the usual way (using `Ctrl+Alt+N`) because output window doesn't allow user inputs. This needs to be run in the terminal.
+NOTE: If you are using an outdated version of VS Code, you cannot run this the usual way (using `Ctrl+Alt+N`) because output window doesn't allow user inputs -- you need to run these examples in the terminal. +
+With the newer versions of VS Code there is no such limitation.
 
 
 
