@@ -6,6 +6,7 @@
 :pdf-themesdir: styles
 :pdf-theme: pdf
 :pdf-folio-placement: physical
+:front-cover-image: image:styles/epub-cover.png[Front Cover,1050,1600]
 :icons: font
 :stylesheet: styles/style.css
 :linkcss:
