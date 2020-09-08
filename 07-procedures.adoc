@@ -222,6 +222,10 @@ include::{source-dir}/result.nim[lines=1..9]
 33
 ----
 
+Note that this procedure is here to demonstrate the `result` variable, and it is not 100% correct:
+if you would pass a sequence containing only negative numbers, this procedure would return `0` (which is _not_ contained in the sequence).
+
+
 
 {nbsp}
 
