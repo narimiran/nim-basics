@@ -49,7 +49,7 @@ pre.rouge .kt {
 pre.rouge .kd {
   color: #fe8019;
 }
-pre.rouge .s, pre.rouge .sa, pre.rouge .sb, pre.rouge .sc, pre.rouge .dl, pre.rouge .sd, pre.rouge .s2, pre.rouge .sh, pre.rouge .sx, pre.rouge .s1 {
+pre.rouge .s, pre.rouge .sb, pre.rouge .sc, pre.rouge .dl, pre.rouge .sd, pre.rouge .s2, pre.rouge .sh, pre.rouge .sx, pre.rouge .s1 {
   color: #b8bb26;
   font-style: italic;
 }
@@ -60,6 +60,9 @@ pre.rouge .si {
 pre.rouge .sr {
   color: #b8bb26;
   font-style: italic;
+}
+pre.rouge .sa {
+  color: #fb4934;
 }
 pre.rouge .se {
   color: #fe8019;

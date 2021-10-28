@@ -25,7 +25,7 @@ Originally, this tutorial was written for Nim 0.19 (released in September 2018),
 You can write Nim code in any text editor, and then compile and run it from the terminal.
 If you want syntax highlighting and code completion there are plugins for popular code editors which provide these features.
 
-Most of Nim users prefer the https://code.visualstudio.com/[VS Code] editor, with the https://marketplace.visualstudio.com/items?itemName=kosz78.nim[Nim extension] which provides syntax highlighting and code completion, and the https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner[Code Runner extension] for quick compiling and running.
+Most of Nim users prefer the https://code.visualstudio.com/[VS Code] editor, with the https://marketplace.visualstudio.com/items?itemName=nimsaem.nimvscode[Nim extension] which provides syntax highlighting and code completion, and the https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner[Code Runner extension] for quick compiling and running.
 
 The author personally uses https://neovim.io/[NeoVim] editor, with https://github.com/alaviss/nim.nvim[this plugin] which provides additional features like syntax highlighting and code completion.
 
