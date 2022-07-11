@@ -344,7 +344,7 @@ For example: `(5 < 7) and (11 + 9 == 32 - 2*6)` will become `true and (20 == 20)
 == Recap
 
 This was the longest chapter in this tutorial and we covered a lot of ground.
-Take your time to go trough each data type and experiment with what you can do with each of them.
+Take your time to go through each data type and experiment with what you can do with each of them.
 
 Types might seem like a restriction at first, but they allow the Nim compiler to both make your code faster, and make sure you're not doing something wrong by accident -- this is especially beneficial in large code bases.
 
