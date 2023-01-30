@@ -78,7 +78,7 @@ proc plus*(a, b: int): int = <1>
 proc minus(a, b: int): int = <2>
   return a - b
 ----
-<1> Notice how the `plus` procedure now has an asterisk (`*`) after it's name, this tells Nim that another file importing this one will be able to use this procedure.
+<1> Notice how the `plus` procedure now has an asterisk (`*`) after its name, this tells Nim that another file importing this one will be able to use this procedure.
 <2> By contrast this will not be visible when importing this file.
 
 [source]
