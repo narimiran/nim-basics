@@ -146,7 +146,7 @@ var k = -5
 let l = k + 7   <2>
 ----
 <1> The value of an immutable cannot be changed.
-<2> In contrast to `const` example above, this works.
+<2> In contrast to the `const` example above, this works.
 
 In practice, you will see/use `let` more frequently than `const`.
 
