@@ -6,7 +6,7 @@
 
 Nim has ready made distributions for all three major operating systems and there are several options when it comes to installing Nim.
 
-You can follow https://nim-lang.org/install.html[the official installation procedure] to install the latest stable version, or you can use a tool called https://github.com/dom96/choosenim[choosenim] which enables you to easily switch between the stable and the latest development version if you're interested in the latest features and bugfixes.
+You can follow https://nim-lang.org/install.html[the official installation procedure] to install the latest stable version, or you can use a tool called https://github.com/nim-lang/choosenim[choosenim] which enables you to easily switch between the stable and the latest development version if you're interested in the latest features and bugfixes.
 
 Whichever way you choose, just follow the installation procedure explained at each link and Nim should be installed.
 We will check that the installation went well in a coming chapter.
