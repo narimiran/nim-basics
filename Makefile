@@ -23,11 +23,11 @@ pdf: nim-basics.pdf
 epub: nim-basics.epub
 
 .PHONY: all
-all: web pdf epub
+all: web epub #pdf
 
 .DEFAULT_GOAL := all
 
 
 .PHONY: clean
 clean:
-	rm nim-basics.pdf index.html
+	rm nim-basics.pdf nim-basics.epub index.html

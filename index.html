@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.16">
+<meta name="generator" content="Asciidoctor 2.0.23">
 <title>Nim basics</title>
 <link rel="stylesheet" href="./styles/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -129,7 +129,7 @@
 But if you are reading this Nim tutorial, the chances are that you already know about Nim.</p>
 </div>
 <div class="paragraph">
-<p>The tutorial is available both <a href="https://narimiran.github.io/nim-basics/">online</a> and as a <a href="https://github.com/narimiran/nim-basics/raw/master/nim-basics.pdf">PDF</a>.</p>
+<p>The tutorial is available both <a href="https://narimiran.github.io/nim-basics/">online</a> and as a <a href="https://github.com/narimiran/nim-basics/raw/master/nim-basics.epub">book in epub format</a>.</p>
 </div>
 <div class="paragraph">
 <p>This is a work-in-progress: if you spot any errors and/or you have an idea how to make this tutorial better, please report it to the <a href="https://github.com/narimiran/nim-basics/issues">issue tracker</a>.</p>
@@ -193,7 +193,7 @@ The exercises at the end of some chapters should be non-negotiable&#8201;&#8212;
 <p>Nim has ready made distributions for all three major operating systems and there are several options when it comes to installing Nim.</p>
 </div>
 <div class="paragraph">
-<p>You can follow <a href="https://nim-lang.org/install.html">the official installation procedure</a> to install the latest stable version, or you can use a tool called <a href="https://github.com/dom96/choosenim">choosenim</a> which enables you to easily switch between the stable and the latest development version if you&#8217;re interested in the latest features and bugfixes.</p>
+<p>You can follow <a href="https://nim-lang.org/install.html">the official installation procedure</a> to install the latest stable version, or you can use a tool called <a href="https://github.com/nim-lang/choosenim">choosenim</a> which enables you to easily switch between the stable and the latest development version if you&#8217;re interested in the latest features and bugfixes.</p>
 </div>
 <div class="paragraph">
 <p>Whichever way you choose, just follow the installation procedure explained at each link and Nim should be installed.
@@ -205,7 +205,7 @@ If you are installing it that way, make sure it&#8217;s the most recent version 
 </div>
 <div class="paragraph">
 <p>In this tutorial we will use the stable version.
-Originally, this tutorial was written for Nim 0.19 (released in September 2018), and it should work for any newer version, including Nim 1.0.</p>
+Originally, this tutorial was written for Nim 0.19 (released in September 2018), and it should work for any newer version, including Nim 1.x and Nim 2.x.</p>
 </div>
 </div>
 </div>
@@ -217,7 +217,7 @@ Originally, this tutorial was written for Nim 0.19 (released in September 2018),
 If you want syntax highlighting and code completion there are plugins for popular code editors which provide these features.</p>
 </div>
 <div class="paragraph">
-<p>Most of Nim users prefer the <a href="https://code.visualstudio.com/">VS Code</a> editor, with the <a href="https://marketplace.visualstudio.com/items?itemName=nimsaem.nimvscode">Nim extension</a> which provides syntax highlighting and code completion, and the <a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner">Code Runner extension</a> for quick compiling and running.</p>
+<p>Most of Nim users prefer the <a href="https://code.visualstudio.com/">VS Code</a> editor, with the <a href="https://marketplace.visualstudio.com/items?itemName=NimLang.nimlang">Nim extension</a> which provides syntax highlighting and code completion, and the <a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner">Code Runner extension</a> for quick compiling and running.</p>
 </div>
 <div class="paragraph">
 <p>The author personally uses <a href="https://neovim.io/">NeoVim</a> editor, with <a href="https://github.com/alaviss/nim.nvim">this plugin</a> which provides additional features like syntax highlighting and code completion.</p>
@@ -547,7 +547,7 @@ Constants in Nim are written just like any other variable.</p>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>In contrast to <code>const</code> example above, this works.</td>
+<td>In contrast to the <code>const</code> example above, this works.</td>
 </tr>
 </table>
 </div>
@@ -946,7 +946,7 @@ q is still: xyz</code></pre>
 Booleans are usually used for control flow (see <a href="#_control_flow">next chapter</a>), and they are often a result of relational operators.</p>
 </div>
 <div class="paragraph">
-<p>The usual naming convention for boolean variables is to write them as a simple yes/no (true/false) questions, e.g. <code>isEmpty</code>, <code>isFinished</code>, <code>isMoving</code>, etc.</p>
+<p>The usual naming convention for boolean variables is to write them as a simple yes/no (true/false) question, e.g. <code>isEmpty</code>, <code>isFinished</code>, <code>isMoving</code>, etc.</p>
 </div>
 <div class="sect2">
 <h3 id="_relational_operators">Relational operators</h3>
@@ -1112,7 +1112,7 @@ not F: true</code></pre>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This was the longest chapter in this tutorial and we covered a lot of ground.
-Take your time to go trough each data type and experiment with what you can do with each of them.</p>
+Take your time to go through each data type and experiment with what you can do with each of them.</p>
 </div>
 <div class="paragraph">
 <p>Types might seem like a restriction at first, but they allow the Nim compiler to both make your code faster, and make sure you&#8217;re not doing something wrong by accident&#8201;&#8212;&#8201;this is especially beneficial in large code bases.</p>
@@ -2967,7 +2967,7 @@ If you create two files side by side in a folder, let&#8217;s call them <code>fi
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Notice how the <code>plus</code> procedure now has an asterisk (<code>*</code>) after it&#8217;s name, this tells Nim that another file importing this one will be able to use this procedure.</td>
+<td>Notice how the <code>plus</code> procedure now has an asterisk (<code>*</code>) after its name, this tells Nim that another file importing this one will be able to use this procedure.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>

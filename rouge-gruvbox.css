@@ -37,6 +37,16 @@ pre.rouge .gh {
   color: #b8bb26;
   font-weight: bold;
 }
+pre.rouge .ge {
+  font-style: italic;
+}
+pre.rouge .ges {
+  font-weight: bold;
+  font-style: italic;
+}
+pre.rouge .gs {
+  font-weight: bold;
+}
 pre.rouge .k, pre.rouge .kn, pre.rouge .kp, pre.rouge .kr, pre.rouge .kv {
   color: #fb4934;
 }
