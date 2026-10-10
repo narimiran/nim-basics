@@ -5,6 +5,7 @@
 == Integers
 
 As seen in the previous chapter, integers are numbers which are written without a fractional component and without a decimal point.
+Type name for integers is `int` then declaring variable.
 
 For example: `32`, `-174`, `0`, `10_000_000` are all integers.
 Notice that we can use `_` as a thousands separator, to make larger numbers more readable (it is easier to see that we're talking about 10 million when it's written as 10_000_000 rather than as 10000000).
@@ -40,6 +41,7 @@ a mod b = 3
 == Floats
 
 Floating-point numbers, or floats for short, are an https://en.wikipedia.org/wiki/Floating-point_arithmetic[approximate representation] of real numbers.
+Type name for floats is `float` then declaring variable.
 
 For example: `2.73`, `-3.14`, `5.0`, `4e7` are floats.
 Notice that we can use scientific notation for large floats, where the number after the `e` is the exponent.
